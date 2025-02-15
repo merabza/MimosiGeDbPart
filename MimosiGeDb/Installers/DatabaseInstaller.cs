@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using WebInstallers;
 using CarcassDb;
+using MimosiGeDb;
 
 namespace AppMimosiGeDb.Installers;
 
@@ -30,7 +31,7 @@ public sealed class AppMimosiGeDatabaseInstaller : IInstaller
         }
         
         builder.Services.AddDbContext<CarcassDbContext>(options => options.UseSqlServer(connectionString));
-        builder.Services.AddDbContext<AppMimosiGeDbContext>(options => options.UseSqlServer(connectionString));
+        builder.Services.AddDbContext<MimosiGeDbContext>(options => options.UseSqlServer(connectionString));
         if (debugMode)
         {
             Console.WriteLine($"{GetType().Name}.{nameof(InstallServices)} Finished");

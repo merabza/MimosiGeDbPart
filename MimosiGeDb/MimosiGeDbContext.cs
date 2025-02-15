@@ -6,7 +6,6 @@ using System;
 using System.Linq;
 
 using CarcassDb;
-using MimosiGeDb.Models;
 
 namespace MimosiGeDb;
 
