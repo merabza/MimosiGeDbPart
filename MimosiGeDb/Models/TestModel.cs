@@ -1,6 +1,6 @@
 //Created by TestModelClassCreator at 2/15/2025 11:07:44 AM
 
-namespace AppMimosiGeDb.Models;
+namespace MimosiGeDb.Models;
 
 //ეს არის სატესტო მოდელი, რომელიც არის უბრალოდ ნიმუშისათვის და შესაძლებელია წაიშალოს საჭირების შემთხვევაში
 

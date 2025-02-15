@@ -6,12 +6,11 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using WebInstallers;
 using CarcassDb;
-using MimosiGeDb;
 
-namespace AppMimosiGeDb.Installers;
+namespace MimosiGeDb.Installers;
 
 // ReSharper disable once UnusedType.Global
-public sealed class AppMimosiGeDatabaseInstaller : IInstaller
+public sealed class MimosiGeDatabaseInstaller : IInstaller
 {
     public int InstallPriority => 30;
     public int ServiceUsePriority => 30;
@@ -22,11 +21,11 @@ public sealed class AppMimosiGeDatabaseInstaller : IInstaller
         {
             Console.WriteLine($"{GetType().Name}.{nameof(InstallServices)} Started");
         }
-        var connectionString = builder.Configuration["Data:AppMimosiGeDatabase:ConnectionString"];
+        var connectionString = builder.Configuration["Data:MimosiGeDatabase:ConnectionString"];
         
         if (string.IsNullOrWhiteSpace(connectionString) && !debugMode)
         {
-            Console.WriteLine("AppMimosiGeDatabaseInstaller.InstallServices connectionString is empty");
+            Console.WriteLine("MimosiGeDatabaseInstaller.InstallServices connectionString is empty");
             return false;
         }
         
