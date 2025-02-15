@@ -1,0 +1,13 @@
+{
+  "ExcludeTables": ["settingTypes", "dataRights", "dataRightTypes", "users"],
+  "SingularityExceptions": {
+    "menu": "menuItm"
+  },
+  "ExcludeFields": [
+    {
+      "TableName": "menuGroups",
+      "FieldName": "MengImage"
+    }
+  ],
+  "ReplaceFieldNames": []
+}
