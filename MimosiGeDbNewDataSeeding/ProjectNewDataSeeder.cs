@@ -11,10 +11,8 @@ public sealed class ProjectNewDataSeeder : ProjectDataSeeder
     private readonly IDataFixRepository _dataFixRepository;
 
     // ReSharper disable once ConvertToPrimaryConstructor
-    public ProjectNewDataSeeder(ILogger<CarcassDataSeeder> logger,
-        DataSeedersFabric dataSeedersFabric,
-        IDataFixRepository dataFixRepository,
-        bool checkOnly) : base(logger, dataSeedersFabric, checkOnly)
+    public ProjectNewDataSeeder(ILogger<CarcassDataSeeder> logger, DataSeedersFabric dataSeedersFabric,
+        IDataFixRepository dataFixRepository, bool checkOnly) : base(logger, dataSeedersFabric, checkOnly)
     {
         _dataFixRepository = dataFixRepository;
     }
