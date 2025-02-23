@@ -30,8 +30,6 @@ public sealed class MimosiGeDbContext : CarcassDbContext
     //ბაზაში არსებული ცხრილები წარმოდგენილი DbSet-ების სახით
     public DbSet<AcademicYears> AcademicYears { get; set; }
 
-    public DbSet<AcademicYearsQuery> AcademicYearsQuery { get; set; }
-
     public DbSet<AdStuffContracts> AdStuffContracts { get; set; }
 
     public DbSet<AdStuffRealWorkTimes> AdStuffRealWorkTimes { get; set; }
