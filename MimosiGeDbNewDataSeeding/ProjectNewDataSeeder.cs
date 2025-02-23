@@ -1,4 +1,5 @@
-﻿using CarcassDataSeeding;
+﻿using System.Collections.Generic;
+using CarcassDataSeeding;
 using MimosiGeDbDataSeeding;
 using LanguageExt;
 using Microsoft.Extensions.Logging;
@@ -17,7 +18,7 @@ public sealed class ProjectNewDataSeeder : ProjectDataSeeder
         _dataFixRepository = dataFixRepository;
     }
 
-    protected override Option<Err[]> SeedProjectSpecificData()
+    protected override Option<IEnumerable<Err>> SeedProjectSpecificData()
     {
         //AgrNewDataSeedersFabric seederFabric = (AgrNewDataSeedersFabric)DataSeedersFabric;
 
