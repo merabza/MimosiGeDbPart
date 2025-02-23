@@ -1,10 +1,9 @@
-//Created by DbContextForCarcassClassCreator at 2/15/2025 11:07:44 AM
-
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
 using System;
 using System.Linq;
 using CarcassDb;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
+using MimosiGeDb.Models;
 
 namespace MimosiGeDb;
 
@@ -28,6 +27,133 @@ public sealed class MimosiGeDbContext : CarcassDbContext
         //Console.WriteLine("MimosiGeDbContext Constructor 4...");
     }
 
+    //ბაზაში არსებული ცხრილები წარმოდგენილი DbSet-ების სახით
+    public DbSet<AcademicYears> AcademicYears { get; set; }
+
+    public DbSet<AcademicYearsQuery> AcademicYearsQuery { get; set; }
+
+    public DbSet<AdStuffContracts> AdStuffContracts { get; set; }
+
+    public DbSet<AdStuffRealWorkTimes> AdStuffRealWorkTimes { get; set; }
+
+    public DbSet<AdStuffSubstituteScheme> AdStuffSubstituteScheme { get; set; }
+
+    public DbSet<AdStuffSubstituteTimes> AdStuffSubstituteTimes { get; set; }
+
+    public DbSet<AdStuffWorkTimesPlan> AdStuffWorkTimesPlan { get; set; }
+
+    public DbSet<BankAccounts> BankAccounts { get; set; }
+
+    public DbSet<BooksAndMaterials> BooksAndMaterials { get; set; }
+
+    public DbSet<BooksAndMaterialsTypes> BooksAndMaterialsTypes { get; set; }
+
+    public DbSet<Cources> Cources { get; set; }
+
+    public DbSet<CrmAnswerType> CrmAnswerType { get; set; }
+
+    public DbSet<CrmCallType> CrmCallType { get; set; }
+
+    public DbSet<CrmCalls> CrmCalls { get; set; }
+
+    public DbSet<ErrorLogTexts> ErrorLogTexts { get; set; }
+
+    public DbSet<FinancedStudies> FinancedStudies { get; set; }
+
+    public DbSet<GeoMonths> GeoMonths { get; set; }
+
+    public DbSet<GeoPhrases> GeoPhrases { get; set; }
+
+    public DbSet<GroupBooksAndMaterials> GroupBooksAndMaterials { get; set; }
+
+    public DbSet<GroupDayTimePlace> GroupDayTimePlace { get; set; }
+
+    public DbSet<GroupLessonsCountByMonths> GroupLessonsCountByMonths { get; set; }
+
+    public DbSet<GroupSizes> GroupSizes { get; set; }
+
+    public DbSet<Groups> Groups { get; set; }
+
+    public DbSet<GroupsByStudents> GroupsByStudents { get; set; }
+
+    public DbSet<GroupsByTeachers> GroupsByTeachers { get; set; }
+
+    public DbSet<Humans> Humans { get; set; }
+
+    public DbSet<LessonBooksAndMaterials> LessonBooksAndMaterials { get; set; }
+
+    public DbSet<LessonStatuses> LessonStatuses { get; set; }
+
+    public DbSet<Lessons> Lessons { get; set; }
+
+    public DbSet<LessonsByStudents> LessonsByStudents { get; set; }
+
+    public DbSet<LessonsCheckCreateErrorLogs> LessonsCheckCreateErrorLogs { get; set; }
+
+    public DbSet<MonthDaies> MonthDaies { get; set; }
+
+    public DbSet<OperationMonths> OperationMonths { get; set; }
+
+    public DbSet<Payments> Payments { get; set; }
+
+    public DbSet<ReportCategories> ReportCategories { get; set; }
+
+    public DbSet<ReportParameterDates> ReportParameterDates { get; set; }
+
+    public DbSet<ReportParameterNumbers> ReportParameterNumbers { get; set; }
+
+    public DbSet<Reports> Reports { get; set; }
+
+    public DbSet<ReportsByCategories> ReportsByCategories { get; set; }
+
+    public DbSet<Rooms> Rooms { get; set; }
+
+    public DbSet<RsBenefCategories> RsBenefCategories { get; set; }
+
+    public DbSet<RsCountries> RsCountries { get; set; }
+
+    public DbSet<RsQuoteTypes> RsQuoteTypes { get; set; }
+
+    public DbSet<RsTaxRates> RsTaxRates { get; set; }
+
+    public DbSet<SalaryCharges> SalaryCharges { get; set; }
+
+    public DbSet<SalaryChargesChanges> SalaryChargesChanges { get; set; }
+
+    public DbSet<SalaryHeaders> SalaryHeaders { get; set; }
+
+    public DbSet<SalaryLines> SalaryLines { get; set; }
+
+    public DbSet<SalaryLinesDetails> SalaryLinesDetails { get; set; }
+
+    public DbSet<SalaryPartTypes> SalaryPartTypes { get; set; }
+
+    public DbSet<SalaryParts> SalaryParts { get; set; }
+
+    public DbSet<StudentContractDetails> StudentContractDetails { get; set; }
+
+    public DbSet<StudentContracts> StudentContracts { get; set; }
+
+    public DbSet<StudentStatuses> StudentStatuses { get; set; }
+
+    public DbSet<Stuff> Stuff { get; set; }
+
+    public DbSet<SummaryComments> SummaryComments { get; set; }
+
+    public DbSet<TeacherContracts> TeacherContracts { get; set; }
+
+    public DbSet<TeacherSalarySchemes> TeacherSalarySchemes { get; set; }
+
+    public DbSet<Times> Times { get; set; }
+
+    public DbSet<WeekDaies> WeekDaies { get; set; }
+
+    public DbSet<WeekNumbers> WeekNumbers { get; set; }
+
+    public DbSet<WorkHourGroups> WorkHourGroups { get; set; }
+
+    public DbSet<WorkHours> WorkHours { get; set; }
+
     private static DbContextOptions<T> ChangeOptionsType<T>(DbContextOptions options) where T : DbContext
     {
         //Console.WriteLine("MimosiGeDbContext ChangeOptionsType Start...");
@@ -40,9 +166,6 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
         return new DbContextOptionsBuilder<T>().UseSqlServer(connectionString).EnableSensitiveDataLogging().Options;
     }
-
-    //ბაზაში არსებული ცხრილები წარმოდგენილი DbSet-ების სახით
-    // public virtual DbSet<ActantCombination> ActantCombinations => Set<ActantCombination>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
