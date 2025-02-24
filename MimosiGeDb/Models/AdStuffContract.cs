@@ -2,11 +2,11 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class AdStuffContracts
+public partial class AdStuffContract
 {
     public int Id { get; set; }
 
-    public string ContractNumber { get; set; } = null!;
+    public required string ContractNumber { get; set; }
 
     public DateTime ContractDate { get; set; }
 

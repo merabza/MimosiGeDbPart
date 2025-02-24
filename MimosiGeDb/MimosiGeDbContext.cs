@@ -3,6 +3,7 @@ using System.Linq;
 using CarcassDb;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
+using MimosiGeDb.Conventions;
 using MimosiGeDb.Models;
 
 namespace MimosiGeDb;
@@ -28,41 +29,39 @@ public sealed class MimosiGeDbContext : CarcassDbContext
     }
 
     //ბაზაში არსებული ცხრილები წარმოდგენილი DbSet-ების სახით
-    public DbSet<AcademicYears> AcademicYears { get; set; }
+    public DbSet<AcademicYear> AcademicYears { get; set; }
 
-    public DbSet<AdStuffContracts> AdStuffContracts { get; set; }
+    public DbSet<AdStuffContract> AdStuffContracts { get; set; }
 
-    public DbSet<AdStuffRealWorkTimes> AdStuffRealWorkTimes { get; set; }
+    public DbSet<AdStuffRealWorkTime> AdStuffRealWorkTimes { get; set; }
 
     public DbSet<AdStuffSubstituteScheme> AdStuffSubstituteScheme { get; set; }
 
-    public DbSet<AdStuffSubstituteTimes> AdStuffSubstituteTimes { get; set; }
+    public DbSet<AdStuffSubstituteTime> AdStuffSubstituteTimes { get; set; }
 
     public DbSet<AdStuffWorkTimesPlan> AdStuffWorkTimesPlan { get; set; }
 
-    public DbSet<BankAccounts> BankAccounts { get; set; }
+    public DbSet<BankAccount> BankAccounts { get; set; }
 
-    public DbSet<BooksAndMaterials> BooksAndMaterials { get; set; }
+    public DbSet<BookOrMaterial> BooksOrMaterials { get; set; }
 
-    public DbSet<BooksAndMaterialsTypes> BooksAndMaterialsTypes { get; set; }
+    public DbSet<BookOrMaterialType> BookOrMaterialTypes { get; set; }
 
-    public DbSet<Cources> Cources { get; set; }
+    public DbSet<Course> Cources { get; set; }
 
     public DbSet<CrmAnswerType> CrmAnswerType { get; set; }
 
     public DbSet<CrmCallType> CrmCallType { get; set; }
 
-    public DbSet<CrmCalls> CrmCalls { get; set; }
+    public DbSet<CrmCall> CrmCalls { get; set; }
 
-    public DbSet<ErrorLogTexts> ErrorLogTexts { get; set; }
+    public DbSet<ErrorLogText> ErrorLogTexts { get; set; }
 
-    public DbSet<FinancedStudies> FinancedStudies { get; set; }
+    public DbSet<GeoMonth> GeoMonths { get; set; }
 
-    public DbSet<GeoMonths> GeoMonths { get; set; }
+    public DbSet<GeoPhrase> GeoPhrases { get; set; }
 
-    public DbSet<GeoPhrases> GeoPhrases { get; set; }
-
-    public DbSet<GroupBooksAndMaterials> GroupBooksAndMaterials { get; set; }
+    public DbSet<GroupBookOrMaterial> GroupBooksAndMaterials { get; set; }
 
     public DbSet<GroupDayTimePlace> GroupDayTimePlace { get; set; }
 
@@ -174,5 +173,9 @@ public sealed class MimosiGeDbContext : CarcassDbContext
         //Console.WriteLine("MimosiGeDbContext OnModelCreating Pass 1...");
 
         modelBuilder.ApplyConfigurationsFromAssembly(AssemblyReference.Assembly);
+    }
+    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+        configurationBuilder.Conventions.Add(_ =>  new DatabaseEntitiesDefaultConvention());
     }
 }

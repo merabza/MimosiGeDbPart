@@ -2,11 +2,11 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class AcademicYears
+public class AcademicYear
 {
-    public int Id { get; set; }
+    public int AyId { get; set; }
 
-    public string AcademicyearName { get; set; } = null!;
+    public required string AcademicYearName { get; set; }
 
     public DateTime StartDate { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class AdStuffRealWorkTimes
+public partial class AdStuffRealWorkTime
 {
     public int Id { get; set; }
 

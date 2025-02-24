@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using WebInstallers;
 using CarcassDb;
+using MimosiGeDb.Conventions;
 
 namespace MimosiGeDb.Installers;
 
@@ -47,3 +48,18 @@ public sealed class MimosiGeDatabaseInstaller : IInstaller
         return true;
     }
 }
+
+/*
+public class YourDbContext : DbContext
+   {
+       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+       {
+           optionsBuilder.UseSqlServer("YourConnectionString", options =>
+           {
+               options.AddCustomConventionSetBuilder<CustomConventionSetBuilder>();
+           });
+       }
+   
+       // Your DbSets...
+   }
+    */

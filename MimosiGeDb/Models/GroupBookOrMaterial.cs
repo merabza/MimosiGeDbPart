@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class GroupBooksAndMaterials
+public partial class GroupBookOrMaterial
 {
     public int Id { get; set; }
 

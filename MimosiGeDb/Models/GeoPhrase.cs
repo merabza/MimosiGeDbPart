@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class GeoPhrases
+public partial class GeoPhrase
 {
     public int GpId { get; set; }
 

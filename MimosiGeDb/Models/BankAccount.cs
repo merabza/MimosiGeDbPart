@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class BankAccounts
+public partial class BankAccount
 {
     public int Id { get; set; }
 

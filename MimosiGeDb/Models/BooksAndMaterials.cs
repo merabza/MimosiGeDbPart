@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class BooksAndMaterials
+public partial class BookOrMaterial
 {
     public int Id { get; set; }
 

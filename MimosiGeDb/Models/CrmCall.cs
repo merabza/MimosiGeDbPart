@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class CrmCalls
+public partial class CrmCall
 {
     public int Id { get; set; }
 

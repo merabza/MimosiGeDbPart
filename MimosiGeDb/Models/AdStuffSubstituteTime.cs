@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class AdStuffSubstituteTimes
+public partial class AdStuffSubstituteTime
 {
     public int Id { get; set; }
 
