@@ -174,6 +174,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
         modelBuilder.ApplyConfigurationsFromAssembly(AssemblyReference.Assembly);
     }
+
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
     {
         configurationBuilder.Conventions.Add(_ =>  new DatabaseEntitiesDefaultConvention());
