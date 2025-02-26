@@ -7,7 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using WebInstallers;
 using CarcassDb;
-using MimosiGeDb.Conventions;
 
 namespace MimosiGeDb.Installers;
 

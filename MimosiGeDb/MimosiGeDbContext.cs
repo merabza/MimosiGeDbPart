@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
 using CarcassDb;
+using DatabaseToolsShared;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
-using MimosiGeDb.Conventions;
 using MimosiGeDb.Models;
 
 namespace MimosiGeDb;
