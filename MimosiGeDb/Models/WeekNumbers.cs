@@ -11,4 +11,5 @@ public partial class WeekNumbers
     public DateTime? FirstDay { get; set; }
 
     public bool Active { get; set; }
+
 }

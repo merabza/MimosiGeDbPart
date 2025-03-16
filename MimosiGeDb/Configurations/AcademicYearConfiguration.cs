@@ -13,4 +13,3 @@ public class AcademicYearConfiguration : IEntityTypeConfiguration<AcademicYear>
         builder.Property(e => e.AcademicYearName).HasMaxLength(9);
     }
 }
-

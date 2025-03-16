@@ -1,8 +1,12 @@
-﻿namespace MimosiGeDb.Models;
+﻿using System.Collections.Generic;
 
-public partial class CrmCallType
+namespace MimosiGeDb.Models;
+
+public class CrmCallType
 {
-    public int Id { get; set; }
+    public int CctId { get; set; }
 
-    public string? CallTypeName { get; set; }
+    public required string CallTypeName { get; set; }
+
+    public ICollection<CrmCall> CrmCalls { get; set; } = new List<CrmCall>();
 }

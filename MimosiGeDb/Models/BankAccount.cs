@@ -1,14 +1,30 @@
-﻿namespace MimosiGeDb.Models;
+﻿using System.Collections.Generic;
 
-public partial class BankAccount
+namespace MimosiGeDb.Models;
+
+public class BankAccount
 {
-    public int Id { get; set; }
+    public int BaId { get; set; }
 
-    public string BankName { get; set; } = null!;
+    /// <summary>
+    ///     ბანკის სახელი
+    /// </summary>
+    public required string BankName { get; set; }
 
-    public string BankCode { get; set; } = null!;
+    /// <summary>
+    ///     ბანკის კოდი
+    /// </summary>
+    public required string BankCode { get; set; }
 
+    /// <summary>
+    ///     ორგანიზაციის ანგარიშის ნომერი
+    /// </summary>
     public string? AccountNumber { get; set; }
 
+    /// <summary>
+    ///     უიმედო ვალი
+    /// </summary>
     public bool DesperateDebt { get; set; }
+
+    public ICollection<Payments> Payments { get; set; } = new List<Payments>();
 }

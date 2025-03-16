@@ -1,8 +1,15 @@
-﻿namespace MimosiGeDb.Models;
+﻿using System.Collections.Generic;
 
-public partial class CrmAnswerType
+namespace MimosiGeDb.Models;
+
+public class CrmAnswerType
 {
-    public int Id { get; set; }
+    public int CatId { get; set; }
 
-    public string? AnswerName { get; set; }
+    /// <summary>
+    /// პასუხის ტიპის სახელი
+    /// </summary>
+    public required string AnswerName { get; set; }
+
+    public ICollection<CrmCall> CrmCalls { get; set; } = new List<CrmCall>();
 }

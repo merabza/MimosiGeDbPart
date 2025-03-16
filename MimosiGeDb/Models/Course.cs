@@ -1,8 +1,20 @@
-﻿namespace MimosiGeDb.Models;
+﻿using System.Collections.Generic;
 
-public partial class Course
+namespace MimosiGeDb.Models;
+
+public class Course
 {
-    public int Id { get; set; }
+    public int CrsId { get; set; }
 
-    public string CourseName { get; set; } = null!;
+    /// <summary>
+    ///     კურსის, საგნის სახელი
+    /// </summary>
+    public required string CourseName { get; set; }
+
+    public ICollection<Group> Groups { get; set; } = new List<Group>();
+
+    public ICollection<StudentContractDetails> StudentContractDetails { get; set; } =
+        new List<StudentContractDetails>();
+
+    public ICollection<SummaryComments> SummaryComments { get; set; } = new List<SummaryComments>();
 }

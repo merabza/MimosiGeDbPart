@@ -12,6 +12,5 @@ public class BankAccountConfiguration : IEntityTypeConfiguration<BankAccount>
         builder.Property(e => e.AccountNumber).HasMaxLength(22);
         builder.Property(e => e.BankCode).HasMaxLength(8);
         builder.Property(e => e.BankName).HasMaxLength(255);
-
     }
 }

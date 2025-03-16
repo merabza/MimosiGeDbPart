@@ -1,10 +1,16 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class GeoMonth
+public class GeoMonth
 {
-    public int Id { get; set; }
+    public int GmnId { get; set; }
 
-    public string? GmName { get; set; }
+    /// <summary>
+    ///     თვის სახელი
+    /// </summary>
+    public required string GmnName { get; set; }
 
-    public string? GmDative { get; set; }
+    /// <summary>
+    ///     მიცემით ბრუნვაში
+    /// </summary>
+    public required string GmnDative { get; set; }
 }

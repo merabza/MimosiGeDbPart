@@ -31,23 +31,13 @@ public sealed class MimosiGeDbContext : CarcassDbContext
     //ბაზაში არსებული ცხრილები წარმოდგენილი DbSet-ების სახით
     public DbSet<AcademicYear> AcademicYears { get; set; }
 
-    public DbSet<AdStuffContract> AdStuffContracts { get; set; }
-
-    public DbSet<AdStuffRealWorkTime> AdStuffRealWorkTimes { get; set; }
-
-    public DbSet<AdStuffSubstituteScheme> AdStuffSubstituteScheme { get; set; }
-
-    public DbSet<AdStuffSubstituteTime> AdStuffSubstituteTimes { get; set; }
-
-    public DbSet<AdStuffWorkTimesPlan> AdStuffWorkTimesPlan { get; set; }
-
     public DbSet<BankAccount> BankAccounts { get; set; }
 
     public DbSet<BookOrMaterial> BooksOrMaterials { get; set; }
 
     public DbSet<BookOrMaterialType> BookOrMaterialTypes { get; set; }
 
-    public DbSet<Course> Cources { get; set; }
+    public DbSet<Course> Courses { get; set; }
 
     public DbSet<CrmAnswerType> CrmAnswerType { get; set; }
 
@@ -67,17 +57,17 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<GroupLessonsCountByMonths> GroupLessonsCountByMonths { get; set; }
 
-    public DbSet<GroupSizes> GroupSizes { get; set; }
+    public DbSet<GroupSize> GroupSizes { get; set; }
 
-    public DbSet<Groups> Groups { get; set; }
+    public DbSet<Group> Groups { get; set; }
 
-    public DbSet<GroupsByStudents> GroupsByStudents { get; set; }
+    public DbSet<GroupsByStudent> GroupsByStudents { get; set; }
 
     public DbSet<GroupsByTeachers> GroupsByTeachers { get; set; }
 
     public DbSet<Humans> Humans { get; set; }
 
-    public DbSet<LessonBooksAndMaterials> LessonBooksAndMaterials { get; set; }
+    public DbSet<LessonMaterial> LessonBooksAndMaterials { get; set; }
 
     public DbSet<LessonStatuses> LessonStatuses { get; set; }
 
@@ -121,7 +111,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<SalaryLines> SalaryLines { get; set; }
 
-    public DbSet<SalaryLinesDetails> SalaryLinesDetails { get; set; }
+    public DbSet<SalaryLineDetail> SalaryLinesDetails { get; set; }
 
     public DbSet<SalaryPartTypes> SalaryPartTypes { get; set; }
 
@@ -129,9 +119,9 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<StudentContractDetails> StudentContractDetails { get; set; }
 
-    public DbSet<StudentContracts> StudentContracts { get; set; }
+    public DbSet<StudentContract> StudentContracts { get; set; }
 
-    public DbSet<StudentStatuses> StudentStatuses { get; set; }
+    public DbSet<StudentStatus> StudentStatuses { get; set; }
 
     public DbSet<Stuff> Stuff { get; set; }
 
@@ -141,9 +131,9 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<TeacherSalarySchemes> TeacherSalarySchemes { get; set; }
 
-    public DbSet<Times> Times { get; set; }
+    public DbSet<Time> Times { get; set; }
 
-    public DbSet<WeekDaies> WeekDaies { get; set; }
+    public DbSet<WeekDay> WeekDaies { get; set; }
 
     public DbSet<WeekNumbers> WeekNumbers { get; set; }
 
@@ -177,6 +167,6 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
     {
-        configurationBuilder.Conventions.Add(_ =>  new DatabaseEntitiesDefaultConvention());
+        configurationBuilder.Conventions.Add(_ => new DatabaseEntitiesDefaultConvention());
     }
 }

@@ -2,19 +2,66 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class CrmCall
+public class CrmCall
 {
-    public int Id { get; set; }
+    private CrmAnswerType? _answerTypeNavigation;
 
+    private CrmCallType? _callTypeNavigation;
+
+    private StudentContract? _studentContractNavigation;
+    public int CcId { get; set; }
+
+    /// <summary>
+    ///     მოსწავლის იდენტიფიკატორი
+    /// </summary>
     public int StudentContractId { get; set; }
 
-    public int? CallType { get; set; }
+    /// <summary>
+    ///     დარეკვის მიზეზის იდენტიფიკატორი
+    /// </summary>
+    public int CallTypeId { get; set; }
 
-    public DateTime? CallDate { get; set; }
+    /// <summary>
+    ///     დარეკვის თარიღი
+    /// </summary>
+    public DateTime CallDate { get; set; }
 
-    public int? AnswerType { get; set; }
+    /// <summary>
+    ///     შედეგი
+    /// </summary>
+    public int AnswerTypeId { get; set; }
 
-    public string? CallConv { get; set; }
+    /// <summary>
+    ///     საუბრის შინაარსი
+    /// </summary>
+    public string? CallConversation { get; set; }
 
+    /// <summary>
+    ///     უნდა გადაიხადოს თარიღამდე
+    /// </summary>
     public DateTime? MustPayDate { get; set; }
+
+    public CrmAnswerType AnswerTypeNavigation
+    {
+        get =>
+            _answerTypeNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(AnswerTypeNavigation));
+        set => _answerTypeNavigation = value;
+    }
+
+    public virtual CrmCallType CallTypeNavigation
+    {
+        get =>
+            _callTypeNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(CallTypeNavigation));
+        set => _callTypeNavigation = value;
+    }
+
+    public virtual StudentContract StudentContractNavigation
+    {
+        get =>
+            _studentContractNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(StudentContractNavigation));
+        set => _studentContractNavigation = value;
+    }
 }

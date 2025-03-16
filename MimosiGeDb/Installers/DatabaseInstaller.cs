@@ -58,7 +58,7 @@ public class YourDbContext : DbContext
                options.AddCustomConventionSetBuilder<CustomConventionSetBuilder>();
            });
        }
-   
+
        // Your DbSets...
    }
     */

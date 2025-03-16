@@ -1,8 +1,16 @@
-﻿namespace MimosiGeDb.Models;
+﻿using System.Collections.Generic;
 
-public partial class ErrorLogText
+namespace MimosiGeDb.Models;
+
+public class ErrorLogText
 {
-    public int Id { get; set; }
+    public int EltId { get; set; }
 
-    public string? Text { get; set; }
+    /// <summary>
+    ///     შეცდომის ტექსტი
+    /// </summary>
+    public required string Text { get; set; }
+
+    public ICollection<LessonsCheckCreateErrorLogs> LessonsCheckCreateErrorLogs { get; set; } =
+        new List<LessonsCheckCreateErrorLogs>();
 }
