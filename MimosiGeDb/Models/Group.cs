@@ -70,14 +70,14 @@ public class Group
 
     public ICollection<GroupDayTimePlace> GroupDayTimePlace { get; set; } = new List<GroupDayTimePlace>();
 
-    public ICollection<GroupsByStudent> GroupsByStudents { get; set; } = new List<GroupsByStudent>();
+    public ICollection<GroupByStudent> GroupsByStudents { get; set; } = new List<GroupByStudent>();
 
-    public ICollection<GroupsByTeachers> GroupsByTeachers { get; set; } = new List<GroupsByTeachers>();
+    public ICollection<GroupByTeachers> GroupsByTeachers { get; set; } = new List<GroupByTeachers>();
 
-    public ICollection<Lessons> Lessons { get; set; } = new List<Lessons>();
+    public ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
 
-    public ICollection<LessonsCheckCreateErrorLogs> LessonsCheckCreateErrorLogs { get; set; } =
-        new List<LessonsCheckCreateErrorLogs>();
+    public ICollection<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; } =
+        new List<LessonCheckCreateErrorLog>();
 
     public ICollection<SalaryLineDetail> SalaryLinesDetails { get; set; } = new List<SalaryLineDetail>();
 }

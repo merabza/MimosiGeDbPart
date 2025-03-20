@@ -61,63 +61,63 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<Group> Groups { get; set; }
 
-    public DbSet<GroupsByStudent> GroupsByStudents { get; set; }
+    public DbSet<GroupByStudent> GroupsByStudents { get; set; }
 
-    public DbSet<GroupsByTeachers> GroupsByTeachers { get; set; }
+    public DbSet<GroupByTeachers> GroupsByTeachers { get; set; }
 
-    public DbSet<Humans> Humans { get; set; }
+    public DbSet<Human> Humans { get; set; }
 
     public DbSet<LessonMaterial> LessonBooksAndMaterials { get; set; }
 
-    public DbSet<LessonStatuses> LessonStatuses { get; set; }
+    public DbSet<LessonStatus> LessonStatuses { get; set; }
 
-    public DbSet<Lessons> Lessons { get; set; }
+    public DbSet<Lesson> Lessons { get; set; }
 
-    public DbSet<LessonsByStudents> LessonsByStudents { get; set; }
+    public DbSet<LessonByStudent> LessonsByStudents { get; set; }
 
-    public DbSet<LessonsCheckCreateErrorLogs> LessonsCheckCreateErrorLogs { get; set; }
+    public DbSet<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; }
 
-    public DbSet<MonthDaies> MonthDaies { get; set; }
+    public DbSet<MonthDey> MonthDaies { get; set; }
 
-    public DbSet<OperationMonths> OperationMonths { get; set; }
+    public DbSet<OperationMonth> OperationMonths { get; set; }
 
-    public DbSet<Payments> Payments { get; set; }
+    public DbSet<Payment> Payments { get; set; }
 
-    public DbSet<ReportCategories> ReportCategories { get; set; }
+    public DbSet<ReportCategory> ReportCategories { get; set; }
 
-    public DbSet<ReportParameterDates> ReportParameterDates { get; set; }
+    public DbSet<ReportParameterDate> ReportParameterDates { get; set; }
 
-    public DbSet<ReportParameterNumbers> ReportParameterNumbers { get; set; }
+    public DbSet<ReportParameterNumber> ReportParameterNumbers { get; set; }
 
-    public DbSet<Reports> Reports { get; set; }
+    public DbSet<Report> Reports { get; set; }
 
-    public DbSet<ReportsByCategories> ReportsByCategories { get; set; }
+    public DbSet<ReportByCategory> ReportsByCategories { get; set; }
 
-    public DbSet<Rooms> Rooms { get; set; }
+    public DbSet<Room> Rooms { get; set; }
 
-    public DbSet<RsBenefCategories> RsBenefCategories { get; set; }
+    public DbSet<RsBenefCategory> RsBenefCategories { get; set; }
 
-    public DbSet<RsCountries> RsCountries { get; set; }
+    public DbSet<RsCountry> RsCountries { get; set; }
 
-    public DbSet<RsQuoteTypes> RsQuoteTypes { get; set; }
+    public DbSet<RsQuoteType> RsQuoteTypes { get; set; }
 
-    public DbSet<RsTaxRates> RsTaxRates { get; set; }
+    public DbSet<RsTaxRate> RsTaxRates { get; set; }
 
-    public DbSet<SalaryCharges> SalaryCharges { get; set; }
+    public DbSet<SalaryCharge> SalaryCharges { get; set; }
 
-    public DbSet<SalaryChargesChanges> SalaryChargesChanges { get; set; }
+    public DbSet<SalaryChargeChange> SalaryChargesChanges { get; set; }
 
-    public DbSet<SalaryHeaders> SalaryHeaders { get; set; }
+    public DbSet<SalaryHeader> SalaryHeaders { get; set; }
 
-    public DbSet<SalaryLines> SalaryLines { get; set; }
+    public DbSet<SalaryLine> SalaryLines { get; set; }
 
     public DbSet<SalaryLineDetail> SalaryLinesDetails { get; set; }
 
-    public DbSet<SalaryPartTypes> SalaryPartTypes { get; set; }
+    public DbSet<SalaryPartType> SalaryPartTypes { get; set; }
 
-    public DbSet<SalaryParts> SalaryParts { get; set; }
+    public DbSet<SalaryPart> SalaryParts { get; set; }
 
-    public DbSet<StudentContractDetails> StudentContractDetails { get; set; }
+    public DbSet<StudentContractDetail> StudentContractDetails { get; set; }
 
     public DbSet<StudentContract> StudentContracts { get; set; }
 
@@ -125,17 +125,17 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<Stuff> Stuff { get; set; }
 
-    public DbSet<SummaryComments> SummaryComments { get; set; }
+    public DbSet<SummaryComment> SummaryComments { get; set; }
 
-    public DbSet<TeacherContracts> TeacherContracts { get; set; }
+    public DbSet<TeacherContract> TeacherContracts { get; set; }
 
-    public DbSet<TeacherSalarySchemes> TeacherSalarySchemes { get; set; }
+    public DbSet<TeacherSalaryScheme> TeacherSalarySchemes { get; set; }
 
     public DbSet<Time> Times { get; set; }
 
     public DbSet<WeekDay> WeekDaies { get; set; }
 
-    public DbSet<WeekNumbers> WeekNumbers { get; set; }
+    public DbSet<WeekNumber> WeekNumbers { get; set; }
 
     public DbSet<WorkHourGroups> WorkHourGroups { get; set; }
 

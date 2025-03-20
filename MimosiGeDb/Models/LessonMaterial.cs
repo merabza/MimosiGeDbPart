@@ -4,10 +4,9 @@ namespace MimosiGeDb.Models;
 
 public class LessonMaterial
 {
-    private Lessons? _lessonsNavigation;
+    private Lesson? _lessonsNavigation;
 
     private Material? _materialNavigation;
-
 
     public int LmId { get; set; }
 
@@ -29,7 +28,7 @@ public class LessonMaterial
         set => _materialNavigation = value;
     }
 
-    public Lessons LessonsNavigation
+    public Lesson LessonsNavigation
     {
         get =>
             _lessonsNavigation ??

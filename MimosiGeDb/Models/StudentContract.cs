@@ -56,16 +56,16 @@ public class StudentContract
 
     public virtual ICollection<CrmCall> CrmCalls { get; set; } = new List<CrmCall>();
 
-    public virtual Humans ParentH { get; set; } = null!;
+    public virtual Human ParentH { get; set; } = null!;
 
-    public virtual ICollection<Payments> Payments { get; set; } = new List<Payments>();
+    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
-    public virtual ICollection<StudentContractDetails> StudentContractDetails { get; set; } =
-        new List<StudentContractDetails>();
+    public virtual ICollection<StudentContractDetail> StudentContractDetails { get; set; } =
+        new List<StudentContractDetail>();
 
-    public virtual Humans StudentH { get; set; } = null!;
+    public virtual Human StudentH { get; set; } = null!;
 
     public virtual StudentStatus? StudentStatus { get; set; }
 
-    public virtual ICollection<SummaryComments> SummaryComments { get; set; } = new List<SummaryComments>();
+    public virtual ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
 }

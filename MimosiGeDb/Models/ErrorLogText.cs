@@ -11,6 +11,6 @@ public class ErrorLogText
     /// </summary>
     public required string Text { get; set; }
 
-    public ICollection<LessonsCheckCreateErrorLogs> LessonsCheckCreateErrorLogs { get; set; } =
-        new List<LessonsCheckCreateErrorLogs>();
+    public ICollection<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; } =
+        new List<LessonCheckCreateErrorLog>();
 }

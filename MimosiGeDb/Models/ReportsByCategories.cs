@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class ReportsByCategories
+public partial class ReportByCategory
 {
     public int Id { get; set; }
 
@@ -14,7 +14,7 @@ public partial class ReportsByCategories
     /// </summary>
     public int? ReportId { get; set; }
 
-    public virtual Reports? Report { get; set; }
+    public virtual Report? Report { get; set; }
 
-    public virtual ReportCategories? ReportCategory { get; set; }
+    public virtual ReportCategory? ReportCategory { get; set; }
 }

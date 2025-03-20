@@ -23,5 +23,4 @@ public partial class Stuff
     /// მონაწილეობს სახელფასო პროგრამაში
     /// </summary>
     public bool SalaryProgram { get; set; }
-
 }

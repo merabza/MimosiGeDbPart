@@ -24,5 +24,5 @@ public partial class WorkHourGroups
     /// </summary>
     public decimal? WhgSalaryNet { get; set; }
 
-    public virtual ICollection<TeacherContracts> TeacherContracts { get; set; } = new List<TeacherContracts>();
+    public virtual ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
 }

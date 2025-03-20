@@ -8,7 +8,7 @@ public class CrmCallTypeConfiguration : IEntityTypeConfiguration<CrmCallType>
 {
     public void Configure(EntityTypeBuilder<CrmCallType> builder)
     {
-        builder.HasKey(e => e.Id);
+        builder.HasKey(e => e.CctId);
 
         builder.Property(e => e.CallTypeName).HasMaxLength(255);
     }

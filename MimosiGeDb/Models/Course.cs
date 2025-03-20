@@ -13,8 +13,8 @@ public class Course
 
     public ICollection<Group> Groups { get; set; } = new List<Group>();
 
-    public ICollection<StudentContractDetails> StudentContractDetails { get; set; } =
-        new List<StudentContractDetails>();
+    public ICollection<StudentContractDetail> StudentContractDetails { get; set; } =
+        new List<StudentContractDetail>();
 
-    public ICollection<SummaryComments> SummaryComments { get; set; } = new List<SummaryComments>();
+    public ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
 }

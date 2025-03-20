@@ -26,5 +26,5 @@ public class BankAccount
     /// </summary>
     public bool DesperateDebt { get; set; }
 
-    public ICollection<Payments> Payments { get; set; } = new List<Payments>();
+    public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 }

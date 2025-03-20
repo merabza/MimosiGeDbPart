@@ -8,7 +8,7 @@ public class CourseConfiguration : IEntityTypeConfiguration<Course>
 {
     public void Configure(EntityTypeBuilder<Course> builder)
     {
-        builder.HasKey(e => e.Id);
+        builder.HasKey(e => e.CrsId);
 
         builder.Property(e => e.CourseName).HasMaxLength(255);
     }

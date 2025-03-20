@@ -12,6 +12,6 @@ public class GroupSize
 
     public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
 
-    public virtual ICollection<StudentContractDetails> StudentContractDetails { get; set; } =
-        new List<StudentContractDetails>();
+    public virtual ICollection<StudentContractDetail> StudentContractDetails { get; set; } =
+        new List<StudentContractDetail>();
 }

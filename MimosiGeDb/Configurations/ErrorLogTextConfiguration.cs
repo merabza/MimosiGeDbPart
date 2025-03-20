@@ -8,7 +8,7 @@ public class ErrorLogTextConfiguration : IEntityTypeConfiguration<ErrorLogText>
 {
     public void Configure(EntityTypeBuilder<ErrorLogText> builder)
     {
-        builder.HasKey(e => e.Id);
+        builder.HasKey(e => e.EltId);
 
         builder.Property(e => e.Text).HasMaxLength(255);
     }

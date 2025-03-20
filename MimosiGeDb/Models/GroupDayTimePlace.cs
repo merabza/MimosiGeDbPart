@@ -6,7 +6,7 @@ public class GroupDayTimePlace
 {
     private Group? _groupNavigation;
 
-    private Rooms? _roomNavigation;
+    private Room? _roomNavigation;
 
     private Time? _timeNavigation;
 
@@ -56,7 +56,7 @@ public class GroupDayTimePlace
         set => _groupNavigation = value;
     }
 
-    public Rooms RoomNavigation
+    public Room RoomNavigation
     {
         get =>
             _roomNavigation ?? throw new InvalidOperationException("Uninitialized property: " + nameof(RoomNavigation));

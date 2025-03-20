@@ -21,5 +21,5 @@ public partial class WorkHours
     /// </summary>
     public DateTime? WhEnd { get; set; }
 
-    public virtual TeacherContracts TeacherContract { get; set; } = null!;
+    public virtual TeacherContract TeacherContract { get; set; } = null!;
 }

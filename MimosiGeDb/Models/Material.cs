@@ -28,6 +28,5 @@ public class Material
 
     public virtual MaterialType MatType { get; set; } = null!;
 
-    public virtual ICollection<LessonMaterial> LessonBooksAndMaterials { get; set; } =
-        new List<LessonMaterial>();
+    public virtual ICollection<LessonMaterial> LessonBooksAndMaterials { get; set; } = new List<LessonMaterial>();
 }

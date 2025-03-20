@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class WeekNumbers
+public partial class WeekNumber
 {
     public int Id { get; set; }
 
@@ -11,5 +11,4 @@ public partial class WeekNumbers
     public DateTime? FirstDay { get; set; }
 
     public bool Active { get; set; }
-
 }

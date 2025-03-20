@@ -8,7 +8,7 @@ public class BankAccountConfiguration : IEntityTypeConfiguration<BankAccount>
 {
     public void Configure(EntityTypeBuilder<BankAccount> builder)
     {
-        builder.HasKey(e => e.Id);
+        builder.HasKey(e => e.BaId);
         builder.Property(e => e.AccountNumber).HasMaxLength(22);
         builder.Property(e => e.BankCode).HasMaxLength(8);
         builder.Property(e => e.BankName).HasMaxLength(255);

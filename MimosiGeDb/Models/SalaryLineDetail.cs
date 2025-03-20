@@ -34,5 +34,5 @@ public class SalaryLineDetail
 
     public virtual Group Group { get; set; } = null!;
 
-    public virtual SalaryLines Sa { get; set; } = null!;
+    public virtual SalaryLine Sa { get; set; } = null!;
 }
