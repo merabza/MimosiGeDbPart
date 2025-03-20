@@ -2,29 +2,28 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class SalaryCharge
+public class SalaryCharge
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// ხელფასის დარიცხვის თვე
+    ///     ხელფასის დარიცხვის თვე
     /// </summary>
     public int OpMonthDateId { get; set; }
 
     /// <summary>
-    /// მასწავლებელი
+    ///     მასწავლებელი
     /// </summary>
     public int? TeacherContractId { get; set; }
 
     /// <summary>
-    /// გადასახდელი თანხა
+    ///     გადასახდელი თანხა
     /// </summary>
     public double Amount { get; set; }
 
     public virtual OperationMonth OpMonthDate { get; set; } = null!;
 
-    public virtual ICollection<SalaryChargeChange> SalaryChargesChanges { get; set; } =
-        new List<SalaryChargeChange>();
+    public virtual ICollection<SalaryChargeChange> SalaryChargesChanges { get; set; } = new List<SalaryChargeChange>();
 
     public virtual TeacherContract? TeacherContract { get; set; }
 }

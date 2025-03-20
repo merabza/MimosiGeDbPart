@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class LessonStatus
+public class LessonStatus
 {
     public int Id { get; set; }
 

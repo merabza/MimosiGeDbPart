@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class Room
+public class Room
 {
     public int Id { get; set; }
 

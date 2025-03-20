@@ -2,17 +2,17 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class ReportParameterDate
+public class ReportParameterDate
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// პარამეტრის სახელი
+    ///     პარამეტრის სახელი
     /// </summary>
     public string ParamName { get; set; } = null!;
 
     /// <summary>
-    /// პარამეტრის მნიშვნელობა (თარიღი და დრო)
+    ///     პარამეტრის მნიშვნელობა (თარიღი და დრო)
     /// </summary>
     public DateTime ParamValue { get; set; }
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public partial class OperationMonth
+public class OperationMonth
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// თვე
+    ///     თვე
     /// </summary>
     public DateTime? MonthDate { get; set; }
 

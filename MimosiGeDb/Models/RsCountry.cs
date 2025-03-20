@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class RsCountry
+public class RsCountry
 {
     public int Id { get; set; }
 

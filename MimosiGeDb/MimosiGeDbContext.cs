@@ -33,9 +33,9 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<BankAccount> BankAccounts { get; set; }
 
-    public DbSet<BookOrMaterial> BooksOrMaterials { get; set; }
+    public DbSet<Material> Materials { get; set; }
 
-    public DbSet<BookOrMaterialType> BookOrMaterialTypes { get; set; }
+    public DbSet<MaterialType> MaterialTypes { get; set; }
 
     public DbSet<Course> Courses { get; set; }
 
@@ -49,13 +49,9 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<GeoMonth> GeoMonths { get; set; }
 
-    public DbSet<GeoPhrase> GeoPhrases { get; set; }
-
-    public DbSet<GroupBookOrMaterial> GroupBooksAndMaterials { get; set; }
+    public DbSet<GroupMaterial> GroupMaterials { get; set; }
 
     public DbSet<GroupDayTimePlace> GroupDayTimePlace { get; set; }
-
-    public DbSet<GroupLessonsCountByMonths> GroupLessonsCountByMonths { get; set; }
 
     public DbSet<GroupSize> GroupSizes { get; set; }
 

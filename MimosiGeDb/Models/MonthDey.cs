@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class MonthDey
+public class MonthDey
 {
     public int Id { get; set; }
 

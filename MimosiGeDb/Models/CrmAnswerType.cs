@@ -7,7 +7,7 @@ public class CrmAnswerType
     public int CatId { get; set; }
 
     /// <summary>
-    /// პასუხის ტიპის სახელი
+    ///     პასუხის ტიპის სახელი
     /// </summary>
     public required string AnswerName { get; set; }
 

@@ -12,8 +12,5 @@ public class WeekDay
 
     public float? WeekDeyNom { get; set; }
 
-    public virtual ICollection<AdStuffSubstituteScheme> AdStuffSubstituteScheme { get; set; } =
-        new List<AdStuffSubstituteScheme>();
-
     public virtual ICollection<GroupDayTimePlace> GroupDayTimePlace { get; set; } = new List<GroupDayTimePlace>();
 }

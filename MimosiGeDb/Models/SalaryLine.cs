@@ -3,75 +3,75 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public partial class SalaryLine
+public class SalaryLine
 {
     /// <summary>
-    /// სტრიქონის იდენტიფიკატორი
+    ///     სტრიქონის იდენტიფიკატორი
     /// </summary>
     public int SaId { get; set; }
 
     /// <summary>
-    /// სათაურის იდენტიფიკატორი
+    ///     სათაურის იდენტიფიკატორი
     /// </summary>
     public int ShId { get; set; }
 
     /// <summary>
-    /// კონტრაქტის იდენტიფიკატორი
+    ///     კონტრაქტის იდენტიფიკატორი
     /// </summary>
     public int TeacherContractId { get; set; }
 
     /// <summary>
-    /// მთლიანი ნამუშევარი დამრგვალებული 2 ლარზე
+    ///     მთლიანი ნამუშევარი დამრგვალებული 2 ლარზე
     /// </summary>
     public decimal SaNetAmountRound { get; set; }
 
     /// <summary>
-    /// დარიცხული თანხა
+    ///     დარიცხული თანხა
     /// </summary>
     public decimal SaAmountGross { get; set; }
 
     /// <summary>
-    /// საპენსიოს 2%
+    ///     საპენსიოს 2%
     /// </summary>
     public decimal SaPension2 { get; set; }
 
     /// <summary>
-    /// დარიცხვას გამოკლებული საპენსიო
+    ///     დარიცხვას გამოკლებული საპენსიო
     /// </summary>
     public decimal SaGrossMinusPension { get; set; }
 
     /// <summary>
-    /// საშემოსავლო
+    ///     საშემოსავლო
     /// </summary>
     public decimal SaIncomeTax { get; set; }
 
     /// <summary>
-    /// გამოქვითვა
+    ///     გამოქვითვა
     /// </summary>
     public decimal SaGamokvitva { get; set; }
 
     /// <summary>
-    /// საპენსიოს 4% გადასარიცხი
+    ///     საპენსიოს 4% გადასარიცხი
     /// </summary>
     public decimal SaPension4 { get; set; }
 
     /// <summary>
-    /// გადასარიცხი თანხა
+    ///     გადასარიცხი თანხა
     /// </summary>
     public decimal SaAmountNet { get; set; }
 
     /// <summary>
-    /// დარიცხვის თვე
+    ///     დარიცხვის თვე
     /// </summary>
     public DateTime SaMonthDate { get; set; }
 
     /// <summary>
-    /// განაცემის სახე
+    ///     განაცემის სახე
     /// </summary>
     public short? RsQuoteTypeId { get; set; }
 
     /// <summary>
-    /// ინდივიდუალური საშემოსავლო
+    ///     ინდივიდუალური საშემოსავლო
     /// </summary>
     public decimal SaIndividualIncomeTax { get; set; }
 

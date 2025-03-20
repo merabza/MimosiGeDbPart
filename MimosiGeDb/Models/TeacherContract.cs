@@ -3,103 +3,101 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public partial class TeacherContract
+public class TeacherContract
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// კონტრაქტის ნომერი
+    ///     კონტრაქტის ნომერი
     /// </summary>
     public string ContractNumber { get; set; } = null!;
 
     /// <summary>
-    /// კონტრაქტის თარიღი
+    ///     კონტრაქტის თარიღი
     /// </summary>
     public DateTime ContractDate { get; set; }
 
     /// <summary>
-    /// მასწავლებელი
+    ///     მასწავლებელი
     /// </summary>
     public int TeacherHid { get; set; }
 
     /// <summary>
-    /// ანგარიშის ნომერი
+    ///     ანგარიშის ნომერი
     /// </summary>
     public string? BankAccount { get; set; }
 
     /// <summary>
-    /// ბანკის კოდი
+    ///     ბანკის კოდი
     /// </summary>
     public string? BankAccountCode { get; set; }
 
     /// <summary>
-    /// მონაწილეობს სახელფასო პროგრამაში
+    ///     მონაწილეობს სახელფასო პროგრამაში
     /// </summary>
     public bool SalaryProgram { get; set; }
 
     /// <summary>
-    /// მონაწილეობს საპენსიო სქემაში
+    ///     მონაწილეობს საპენსიო სქემაში
     /// </summary>
     public bool PensionScema { get; set; }
 
     /// <summary>
-    /// განაცემის სახე (საგადასახადოსათვის)
+    ///     განაცემის სახე (საგადასახადოსათვის)
     /// </summary>
     public short? RsQuoteId { get; set; }
 
     /// <summary>
-    /// ქვეყანა (საგადასახადოსათვის)
+    ///     ქვეყანა (საგადასახადოსათვის)
     /// </summary>
     public int RsCountryId { get; set; }
 
     /// <summary>
-    /// განაცემის ყოველთვიური ფიქსირებული რაოდენობა
+    ///     განაცემის ყოველთვიური ფიქსირებული რაოდენობა
     /// </summary>
     public decimal FixedAmount { get; set; }
 
     /// <summary>
-    /// კონტრაქტის დასრულების თარიღი
+    ///     კონტრაქტის დასრულების თარიღი
     /// </summary>
     public DateTime? ContractEndDate { get; set; }
 
     /// <summary>
-    /// განაცემი ეკუთვნის შემდეგ თვეს
+    ///     განაცემი ეკუთვნის შემდეგ თვეს
     /// </summary>
     public bool NextMonth { get; set; }
 
     /// <summary>
-    /// განაცემის შინაარსი (თუ ხელფასი არ არის)
+    ///     განაცემის შინაარსი (თუ ხელფასი არ არის)
     /// </summary>
     public string? Description { get; set; }
 
     /// <summary>
-    /// ხელფასის ძირითადი სქემა საათობრივი ანაზღაურებისათვის
+    ///     ხელფასის ძირითადი სქემა საათობრივი ანაზღაურებისათვის
     /// </summary>
     public int? SalarySchemaByHours { get; set; }
 
     /// <summary>
-    /// სამუშაო საათების ჯგუფი
+    ///     სამუშაო საათების ჯგუფი
     /// </summary>
     public int? WorkHourGroupId { get; set; }
 
     /// <summary>
-    /// სამუშაოს დაწყება
+    ///     სამუშაოს დაწყება
     /// </summary>
     public DateTime? WorkHoursStart { get; set; }
 
     /// <summary>
-    /// სამუშაოს დასრულება
+    ///     სამუშაოს დასრულება
     /// </summary>
     public DateTime? WorkHoursEnd { get; set; }
 
     public short? Line { get; set; }
 
     /// <summary>
-    /// ინდივიდუალური მეწარმე
+    ///     ინდივიდუალური მეწარმე
     /// </summary>
     public bool IndEnt { get; set; }
-
-    public virtual ICollection<FinancedStudies> FinancedStudies { get; set; } = new List<FinancedStudies>();
 
     public virtual ICollection<Lesson> LessonsSubstituteTeacherContract { get; set; } = new List<Lesson>();
 

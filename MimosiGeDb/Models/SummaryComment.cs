@@ -1,35 +1,35 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class SummaryComment
+public class SummaryComment
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// საგანი
+    ///     საგანი
     /// </summary>
     public int CourseId { get; set; }
 
     /// <summary>
-    /// მასწავლებელი
+    ///     მასწავლებელი
     /// </summary>
     public int TeacherContractId { get; set; }
 
     /// <summary>
-    /// მოსწავლე
+    ///     მოსწავლე
     /// </summary>
     public int StudentContractId { get; set; }
 
     /// <summary>
-    /// თვე
+    ///     თვე
     /// </summary>
     public int OperationMonthDateId { get; set; }
 
     /// <summary>
-    /// კომენტარი
+    ///     კომენტარი
     /// </summary>
     public string? CommentText { get; set; }
 
-    public virtual Courses Course { get; set; } = null!;
+    public virtual Course Course { get; set; } = null!;
 
     public virtual OperationMonth OperationMonthDate { get; set; } = null!;
 

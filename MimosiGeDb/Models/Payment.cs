@@ -2,42 +2,42 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class Payment
+public class Payment
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// კონტრაქტი
+    ///     კონტრაქტი
     /// </summary>
     public int StudentContractId { get; set; }
 
     /// <summary>
-    /// გადახდის თარიღი
+    ///     გადახდის თარიღი
     /// </summary>
     public DateTime PayDate { get; set; }
 
     /// <summary>
-    /// გადახდილი თანხა
+    ///     გადახდილი თანხა
     /// </summary>
     public double Amount { get; set; }
 
     /// <summary>
-    /// დოკუმენტი
+    ///     დოკუმენტი
     /// </summary>
     public string? Document { get; set; }
 
     /// <summary>
-    /// ბანკის ანგარიში, სადაც შეიტანეს თანხა
+    ///     ბანკის ანგარიში, სადაც შეიტანეს თანხა
     /// </summary>
     public int? BankAccountId { get; set; }
 
     /// <summary>
-    /// შემოწმებულია
+    ///     შემოწმებულია
     /// </summary>
     public bool Checked { get; set; }
 
     /// <summary>
-    /// მოქმედებს თარიღიდან
+    ///     მოქმედებს თარიღიდან
     /// </summary>
     public DateTime? ValidFromDate { get; set; }
 

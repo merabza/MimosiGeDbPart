@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public partial class SalaryHeader
+public class SalaryHeader
 {
     public int ShId { get; set; }
 
     /// <summary>
-    /// დარიცხვის თარიღი
+    ///     დარიცხვის თარიღი
     /// </summary>
     public DateTime ShChargeDate { get; set; }
 
     /// <summary>
-    /// გადარიცხვის თარიღი
+    ///     გადარიცხვის თარიღი
     /// </summary>
     public DateTime ShTransferDate { get; set; }
 

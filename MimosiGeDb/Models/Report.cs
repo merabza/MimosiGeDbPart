@@ -2,22 +2,22 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class Report
+public class Report
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// უწყისის სახელი
+    ///     უწყისის სახელი
     /// </summary>
     public string? Description { get; set; }
 
     /// <summary>
-    /// უწყისის სახელი აქსესში
+    ///     უწყისის სახელი აქსესში
     /// </summary>
     public string? ReportName { get; set; }
 
     /// <summary>
-    /// ფილტრები
+    ///     ფილტრები
     /// </summary>
     public string? RepFltNames { get; set; }
 

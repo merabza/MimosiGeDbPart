@@ -1,12 +1,12 @@
 //Created by DatabaseInstallerClassCreator at 2/15/2025 11:07:44 AM
 
 using System;
+using System.Collections.Generic;
+using CarcassDb;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
 using WebInstallers;
-using CarcassDb;
 
 namespace MimosiGeDb.Installers;
 
@@ -19,10 +19,7 @@ public sealed class MimosiGeDatabaseInstaller : IInstaller
     public bool InstallServices(WebApplicationBuilder builder, bool debugMode, string[] args,
         Dictionary<string, string> parameters)
     {
-        if (debugMode)
-        {
-            Console.WriteLine($"{GetType().Name}.{nameof(InstallServices)} Started");
-        }
+        if (debugMode) Console.WriteLine($"{GetType().Name}.{nameof(InstallServices)} Started");
 
         var connectionString = builder.Configuration["Data:MimosiGeDatabase:ConnectionString"];
 
@@ -34,10 +31,7 @@ public sealed class MimosiGeDatabaseInstaller : IInstaller
 
         builder.Services.AddDbContext<CarcassDbContext>(options => options.UseSqlServer(connectionString));
         builder.Services.AddDbContext<MimosiGeDbContext>(options => options.UseSqlServer(connectionString));
-        if (debugMode)
-        {
-            Console.WriteLine($"{GetType().Name}.{nameof(InstallServices)} Finished");
-        }
+        if (debugMode) Console.WriteLine($"{GetType().Name}.{nameof(InstallServices)} Finished");
 
         return true;
     }

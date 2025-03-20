@@ -2,22 +2,22 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class TeacherSalaryScheme
+public class TeacherSalaryScheme
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// სქემის სახელი
+    ///     სქემის სახელი
     /// </summary>
     public string? SchemaName { get; set; }
 
     /// <summary>
-    /// საათობრივი ხელფასი ხელზე
+    ///     საათობრივი ხელფასი ხელზე
     /// </summary>
     public double? HourSalaryNet { get; set; }
 
     /// <summary>
-    /// საათობრივი ხელფასი დარიცხული
+    ///     საათობრივი ხელფასი დარიცხული
     /// </summary>
     public double? HourSalaryGross { get; set; }
 

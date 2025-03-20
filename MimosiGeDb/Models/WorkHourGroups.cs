@@ -2,25 +2,25 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class WorkHourGroups
+public class WorkHourGroups
 {
     /// <summary>
-    /// იდენტიფიკატორი
+    ///     იდენტიფიკატორი
     /// </summary>
     public int WhgId { get; set; }
 
     /// <summary>
-    /// გასაღები
+    ///     გასაღები
     /// </summary>
     public string? WhgKey { get; set; }
 
     /// <summary>
-    /// სახელი
+    ///     სახელი
     /// </summary>
     public string? WhgName { get; set; }
 
     /// <summary>
-    /// ჯგუფის ხელფასი
+    ///     ჯგუფის ხელფასი
     /// </summary>
     public decimal? WhgSalaryNet { get; set; }
 

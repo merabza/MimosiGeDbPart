@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class RsBenefCategory
+public class RsBenefCategory
 {
     public short QtId { get; set; }
 

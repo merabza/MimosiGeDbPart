@@ -7,7 +7,7 @@ public class StudentStatus
     public int Id { get; set; }
 
     /// <summary>
-    /// მოსწავლის სტატუსის სახელი
+    ///     მოსწავლის სტატუსის სახელი
     /// </summary>
     public string StudentStatusName { get; set; }
 

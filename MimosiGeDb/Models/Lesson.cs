@@ -3,67 +3,67 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public partial class Lesson
+public class Lesson
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// ჯგუფი
+    ///     ჯგუფი
     /// </summary>
     public int GroupId { get; set; }
 
     /// <summary>
-    /// მასწავლებელი
+    ///     მასწავლებელი
     /// </summary>
     public int TeacherContractId { get; set; }
 
     /// <summary>
-    /// შემცვლელი მასწავლებელი
+    ///     შემცვლელი მასწავლებელი
     /// </summary>
     public int? SubstituteTeacherContractId { get; set; }
 
     /// <summary>
-    /// ჩატარების თარიღი და დრო
+    ///     ჩატარების თარიღი და დრო
     /// </summary>
     public DateTime LessonDt { get; set; }
 
     /// <summary>
-    /// ხელფასის სქემა
+    ///     ხელფასის სქემა
     /// </summary>
     public int SalarySchemaId { get; set; }
 
     /// <summary>
-    /// 4 კვირაში საათების რაოდენობა
+    ///     4 კვირაში საათების რაოდენობა
     /// </summary>
     public float FourWeekHours { get; set; }
 
     /// <summary>
-    /// გაკვეთილის ჩატარების სტატუსი
+    ///     გაკვეთილის ჩატარების სტატუსი
     /// </summary>
     public int Status { get; set; }
 
     /// <summary>
-    /// შენიშვნა
+    ///     შენიშვნა
     /// </summary>
     public string? Note { get; set; }
 
     /// <summary>
-    /// მასწავლებელმა დაიგვიანა წუთები
+    ///     მასწავლებელმა დაიგვიანა წუთები
     /// </summary>
     public int TeacherLateMinutes { get; set; }
 
     /// <summary>
-    /// აღდგენა
+    ///     აღდგენა
     /// </summary>
     public DateTime? RecoverDate { get; set; }
 
     /// <summary>
-    /// ჯგუფში დროების განაწილების მიხედვით თეორიულად მინმალური თარიღი იმ თვისთვის, როცა ეს გაკვეთილი ჩატარდა
+    ///     ჯგუფში დროების განაწილების მიხედვით თეორიულად მინმალური თარიღი იმ თვისთვის, როცა ეს გაკვეთილი ჩატარდა
     /// </summary>
     public DateTime TeoMinDate { get; set; }
 
     /// <summary>
-    /// ჯგუფში დროების განაწილების მიხედვით თეორიულად მაქსიმალური თარიღი იმ თვისთვის, როცა ეს გაკვეთილი ჩატარდა
+    ///     ჯგუფში დროების განაწილების მიხედვით თეორიულად მაქსიმალური თარიღი იმ თვისთვის, როცა ეს გაკვეთილი ჩატარდა
     /// </summary>
     public DateTime TeoMaxDate { get; set; }
 

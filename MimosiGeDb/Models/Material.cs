@@ -7,22 +7,22 @@ public class Material
     public int Id { get; set; }
 
     /// <summary>
-    /// ავტორები
+    ///     ავტორები
     /// </summary>
     public string MatAuthors { get; set; } = null!;
 
     /// <summary>
-    /// წიგნის ან სასწავლო მასალის დასახელება
+    ///     წიგნის ან სასწავლო მასალის დასახელება
     /// </summary>
     public string MatName { get; set; } = null!;
 
     /// <summary>
-    /// ტიპი
+    ///     ტიპი
     /// </summary>
     public int MatTypeId { get; set; }
 
     /// <summary>
-    /// გამოშვების წელი
+    ///     გამოშვების წელი
     /// </summary>
     public int MatYear { get; set; }
 

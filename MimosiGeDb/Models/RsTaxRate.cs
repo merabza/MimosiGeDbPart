@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class RsTaxRate
+public class RsTaxRate
 {
     public int Id { get; set; }
 

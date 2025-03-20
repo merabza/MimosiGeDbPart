@@ -5,59 +5,60 @@ namespace MimosiGeDb.Models;
 
 public class GroupByStudent
 {
+    private Group? _groupNavigation;
+
+    private StudentContract? _studentContractNavigation;
     public int GbsId { get; set; }
 
     /// <summary>
-    /// ჯგუფი
+    ///     ჯგუფი
     /// </summary>
     public int GroupId { get; set; }
 
     /// <summary>
-    /// მოსწავლე
+    ///     მოსწავლე
     /// </summary>
     public int StudentContractId { get; set; }
 
     /// <summary>
-    /// 4 კვირაში საათების რაოდენობა
+    ///     4 კვირაში საათების რაოდენობა
     /// </summary>
     public float FourWeekHours { get; set; }
 
     /// <summary>
-    /// 4 კვირაში გადასახადი
+    ///     4 კვირაში გადასახადი
     /// </summary>
     public decimal FourWeekFee { get; set; }
 
     /// <summary>
-    /// ერთი საათის ღირებულება
+    ///     ერთი საათის ღირებულება
     /// </summary>
     public decimal OneHourFee { get; set; }
 
     /// <summary>
-    /// საათის კოეფიციენტი
+    ///     საათის კოეფიციენტი
     /// </summary>
     public float HoursCoefficient { get; set; }
 
     /// <summary>
-    /// გააქტიურების თარიღი
+    ///     გააქტიურების თარიღი
     /// </summary>
     public DateTime StartDate { get; set; }
 
     /// <summary>
-    /// გაუქმების თარიღი
+    ///     გაუქმების თარიღი
     /// </summary>
     public DateTime? EndDate { get; set; }
 
     /// <summary>
-    /// შენიშვნა
+    ///     შენიშვნა
     /// </summary>
     public string? Note { get; set; }
 
     /// <summary>
-    /// საჭიროებს დარიცხვების დაზუსტებას
+    ///     საჭიროებს დარიცხვების დაზუსტებას
     /// </summary>
     public bool DirtyCharges { get; set; }
-
-    private Group? _groupNavigation;
 
     public Group GroupNavigation
     {
@@ -66,8 +67,6 @@ public class GroupByStudent
             throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
         set => _groupNavigation = value;
     }
-
-    private StudentContract? _studentContractNavigation;
 
     public StudentContract StudentContractNavigation
     {

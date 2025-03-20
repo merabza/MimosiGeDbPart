@@ -1,26 +1,26 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class SalaryPart
+public class SalaryPart
 {
     public int SpId { get; set; }
 
     /// <summary>
-    /// სათაურის იდენტიფიკატორი
+    ///     სათაურის იდენტიფიკატორი
     /// </summary>
     public int ShId { get; set; }
 
     /// <summary>
-    /// თანამშრომელი
+    ///     თანამშრომელი
     /// </summary>
     public int TeacherContractId { get; set; }
 
     /// <summary>
-    /// ხელფასის მდგენელის ტიპი
+    ///     ხელფასის მდგენელის ტიპი
     /// </summary>
     public int? SpSalaryPartType { get; set; }
 
     /// <summary>
-    /// თანხა (მინუსი ნიშნავს გამოკლებას)
+    ///     თანხა (მინუსი ნიშნავს გამოკლებას)
     /// </summary>
     public decimal? SpAmount { get; set; }
 

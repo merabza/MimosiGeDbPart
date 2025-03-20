@@ -1,16 +1,16 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class ReportByCategory
+public class ReportByCategory
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// უწყისის კატეგორია
+    ///     უწყისის კატეგორია
     /// </summary>
     public int? ReportCategoryId { get; set; }
 
     /// <summary>
-    /// უწყისი
+    ///     უწყისი
     /// </summary>
     public int? ReportId { get; set; }
 

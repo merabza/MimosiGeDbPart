@@ -2,22 +2,22 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class SalaryPartType
+public class SalaryPartType
 {
     public int SptId { get; set; }
 
     /// <summary>
-    /// სახელი
+    ///     სახელი
     /// </summary>
     public string? SptName { get; set; }
 
     /// <summary>
-    /// გამოთვლებში მონაწილეობის ადგილი
+    ///     გამოთვლებში მონაწილეობის ადგილი
     /// </summary>
     public int? SptCountPlaceId { get; set; }
 
     /// <summary>
-    /// განაცემის ტიპის იდენტიფიკატორი
+    ///     განაცემის ტიპის იდენტიფიკატორი
     /// </summary>
     public int? RsQuoteTypeId { get; set; }
 

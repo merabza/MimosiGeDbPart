@@ -1,16 +1,16 @@
 ﻿namespace MimosiGeDb.Models;
 
-public partial class ReportParameterNumber
+public class ReportParameterNumber
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// პარამეტრის სახელი
+    ///     პარამეტრის სახელი
     /// </summary>
     public string ParamName { get; set; } = null!;
 
     /// <summary>
-    /// პარამეტრის მნიშვნელობა (მთელი რიცხვი)
+    ///     პარამეტრის მნიშვნელობა (მთელი რიცხვი)
     /// </summary>
     public int ParamValue { get; set; }
 }

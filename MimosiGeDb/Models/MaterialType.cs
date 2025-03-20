@@ -7,7 +7,7 @@ public class MaterialType
     public int MtId { get; set; }
 
     /// <summary>
-    /// სასწავლო მასალის ტიპის დასახელება
+    ///     სასწავლო მასალის ტიპის დასახელება
     /// </summary>
     public string? MtName { get; set; }
 

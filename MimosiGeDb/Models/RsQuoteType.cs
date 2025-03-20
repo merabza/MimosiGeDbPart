@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class RsQuoteType
+public class RsQuoteType
 {
     public short QtId { get; set; }
 

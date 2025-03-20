@@ -2,37 +2,37 @@
 
 namespace MimosiGeDb.Models;
 
-public partial class LessonCheckCreateErrorLog
+public class LessonCheckCreateErrorLog
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// ლოგის შექმნის თარიღი და დრო
+    ///     ლოგის შექმნის თარიღი და დრო
     /// </summary>
     public DateTime CreatedDate { get; set; }
 
     /// <summary>
-    /// ჯგუფი
+    ///     ჯგუფი
     /// </summary>
     public int GroupId { get; set; }
 
     /// <summary>
-    /// გაკვეთილის თარიღი
+    ///     გაკვეთილის თარიღი
     /// </summary>
     public DateTime? LessonDate { get; set; }
 
     /// <summary>
-    /// გაკვეთილი
+    ///     გაკვეთილი
     /// </summary>
     public int? LessonId { get; set; }
 
     /// <summary>
-    /// შეცდომის კოდი
+    ///     შეცდომის კოდი
     /// </summary>
     public int ErrorId { get; set; }
 
     /// <summary>
-    /// დასაშვებია ავტომატური გასწორება
+    ///     დასაშვებია ავტომატური გასწორება
     /// </summary>
     public bool AllowUpdate { get; set; }
 
