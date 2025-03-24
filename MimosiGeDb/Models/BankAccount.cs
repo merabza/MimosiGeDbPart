@@ -19,7 +19,7 @@ public class BankAccount
     /// <summary>
     ///     ორგანიზაციის ანგარიშის ნომერი
     /// </summary>
-    public string? AccountNumber { get; set; }
+    public required string AccountNumber { get; set; }
 
     /// <summary>
     ///     უიმედო ვალი

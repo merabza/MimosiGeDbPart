@@ -9,12 +9,12 @@ public class Material
     /// <summary>
     ///     ავტორები
     /// </summary>
-    public string MatAuthors { get; set; } = null!;
+    public required string MatAuthors { get; set; }
 
     /// <summary>
     ///     წიგნის ან სასწავლო მასალის დასახელება
     /// </summary>
-    public string MatName { get; set; } = null!;
+    public required string MatName { get; set; }
 
     /// <summary>
     ///     ტიპი
