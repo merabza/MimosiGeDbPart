@@ -9,5 +9,5 @@
       "FieldName": "MengImage"
     }
   ],
-  "ReplaceFieldNames": []
+  "ReplaceFieldNames": [{"TableName": "AcademicYears", "OldFieldName": "AcademicyearName", "NewFieldName": "AcademicYearName"}]
 }
