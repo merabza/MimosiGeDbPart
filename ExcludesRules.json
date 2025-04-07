@@ -7,6 +7,10 @@
     {
       "TableName": "menuGroups",
       "FieldName": "MengImage"
+    },
+    {
+      "TableName": "BankAccounts",
+      "FieldName": "SsmaTimeStamp"
     }
   ],
   "ReplaceFieldNames": [
@@ -19,6 +23,11 @@
       "TableName": "AcademicYears",
       "OldFieldName": "Id",
       "NewFieldName": "AyId"
+    },
+    {
+      "TableName": "BankAccounts",
+      "OldFieldName": "Id",
+      "NewFieldName": "BaId"
     }
   ]
 }
