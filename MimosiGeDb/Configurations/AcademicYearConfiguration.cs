@@ -4,7 +4,7 @@ using MimosiGeDb.Models;
 
 namespace MimosiGeDb.Configurations;
 
-public class AcademicYearConfiguration : IEntityTypeConfiguration<AcademicYear>
+public sealed class AcademicYearConfiguration : IEntityTypeConfiguration<AcademicYear>
 {
     public void Configure(EntityTypeBuilder<AcademicYear> builder)
     {

@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class RsCountry
+public sealed class RsCountry
 {
     public int Id { get; set; }
 
@@ -10,5 +10,5 @@ public class RsCountry
 
     public string? CountryName { get; set; }
 
-    public virtual ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
+    public ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
 }

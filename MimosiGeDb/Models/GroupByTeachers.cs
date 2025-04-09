@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class GroupByTeachers
+public sealed class GroupByTeachers
 {
     public int Id { get; set; }
 
@@ -31,5 +31,5 @@ public class GroupByTeachers
     /// </summary>
     public DateTime? EndDate { get; set; }
 
-    public virtual Group Group { get; set; } = null!;
+    public Group Group { get; set; } = null!;
 }

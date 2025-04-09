@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public class OperationMonth
+public sealed class OperationMonth
 {
     public int Id { get; set; }
 
@@ -12,7 +12,7 @@ public class OperationMonth
     /// </summary>
     public DateTime? MonthDate { get; set; }
 
-    public virtual ICollection<SalaryCharge> SalaryCharges { get; set; } = new List<SalaryCharge>();
+    public ICollection<SalaryCharge> SalaryCharges { get; set; } = new List<SalaryCharge>();
 
-    public virtual ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
+    public ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public class Lesson
+public sealed class Lesson
 {
     public int Id { get; set; }
 
@@ -67,18 +67,18 @@ public class Lesson
     /// </summary>
     public DateTime TeoMaxDate { get; set; }
 
-    public virtual Group Group { get; set; } = null!;
+    public Group Group { get; set; } = null!;
 
-    public virtual ICollection<LessonMaterial> LessonBooksAndMaterials { get; set; } = new List<LessonMaterial>();
+    public ICollection<LessonMaterial> LessonBooksAndMaterials { get; set; } = new List<LessonMaterial>();
 
-    public virtual ICollection<LessonByStudent> LessonsByStudents { get; set; } = new List<LessonByStudent>();
+    public ICollection<LessonByStudent> LessonsByStudents { get; set; } = new List<LessonByStudent>();
 
-    public virtual ICollection<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; } =
+    public ICollection<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; } =
         new List<LessonCheckCreateErrorLog>();
 
-    public virtual LessonStatus StatusNavigation { get; set; } = null!;
+    public LessonStatus StatusNavigation { get; set; } = null!;
 
-    public virtual TeacherContract? SubstituteTeacherContract { get; set; }
+    public TeacherContract? SubstituteTeacherContract { get; set; }
 
-    public virtual TeacherContract TeacherContract { get; set; } = null!;
+    public TeacherContract TeacherContract { get; set; } = null!;
 }

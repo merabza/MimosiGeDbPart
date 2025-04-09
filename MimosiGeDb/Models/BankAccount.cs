@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class BankAccount
+public sealed class BankAccount
 {
     public int BaId { get; set; }
 

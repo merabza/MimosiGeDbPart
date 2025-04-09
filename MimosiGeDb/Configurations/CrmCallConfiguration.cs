@@ -4,7 +4,7 @@ using MimosiGeDb.Models;
 
 namespace MimosiGeDb.Configurations;
 
-public class CrmCallConfiguration : IEntityTypeConfiguration<CrmCall>
+public sealed class CrmCallConfiguration : IEntityTypeConfiguration<CrmCall>
 {
     public void Configure(EntityTypeBuilder<CrmCall> builder)
     {

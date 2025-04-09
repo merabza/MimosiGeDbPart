@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class StudentContractDetail
+public sealed class StudentContractDetail
 {
     public int Id { get; set; }
 
@@ -31,9 +31,9 @@ public class StudentContractDetail
     /// </summary>
     public decimal OneHourFee { get; set; }
 
-    public virtual Course Course { get; set; } = null!;
+    public Course Course { get; set; } = null!;
 
-    public virtual GroupSize GroupSize { get; set; } = null!;
+    public GroupSize GroupSize { get; set; } = null!;
 
-    public virtual StudentContract? StudentContract { get; set; }
+    public StudentContract? StudentContract { get; set; }
 }

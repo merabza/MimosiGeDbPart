@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class Stuff
+public sealed class Stuff
 {
     public int Id { get; set; }
 

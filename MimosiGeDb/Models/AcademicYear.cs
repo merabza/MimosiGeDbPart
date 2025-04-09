@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public class AcademicYear
+public sealed class AcademicYear
 {
     public int AyId { get; set; }
 

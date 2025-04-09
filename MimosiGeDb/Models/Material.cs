@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class Material
+public sealed class Material
 {
     public int Id { get; set; }
 
@@ -26,7 +26,7 @@ public class Material
     /// </summary>
     public int MatYear { get; set; }
 
-    public virtual MaterialType MatType { get; set; } = null!;
+    public MaterialType MatType { get; set; } = null!;
 
-    public virtual ICollection<LessonMaterial> LessonBooksAndMaterials { get; set; } = new List<LessonMaterial>();
+    public ICollection<LessonMaterial> LessonBooksAndMaterials { get; set; } = new List<LessonMaterial>();
 }

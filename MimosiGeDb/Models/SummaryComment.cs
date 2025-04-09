@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class SummaryComment
+public sealed class SummaryComment
 {
     public int Id { get; set; }
 
@@ -29,11 +29,11 @@ public class SummaryComment
     /// </summary>
     public string? CommentText { get; set; }
 
-    public virtual Course Course { get; set; } = null!;
+    public Course Course { get; set; } = null!;
 
-    public virtual OperationMonth OperationMonthDate { get; set; } = null!;
+    public OperationMonth OperationMonthDate { get; set; } = null!;
 
-    public virtual StudentContract StudentContract { get; set; } = null!;
+    public StudentContract StudentContract { get; set; } = null!;
 
-    public virtual TeacherContract TeacherContract { get; set; } = null!;
+    public TeacherContract TeacherContract { get; set; } = null!;
 }

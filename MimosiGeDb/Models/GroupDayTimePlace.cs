@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class GroupDayTimePlace
+public sealed class GroupDayTimePlace
 {
     private Group? _groupNavigation;
 

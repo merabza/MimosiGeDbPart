@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public class Human
+public sealed class Human
 {
     public int Id { get; set; }
 
@@ -57,9 +57,9 @@ public class Human
     /// </summary>
     public DateTime? BirthDate { get; set; }
 
-    public virtual ICollection<StudentContract> StudentContractsParentH { get; set; } = new List<StudentContract>();
+    public ICollection<StudentContract> StudentContractsParentH { get; set; } = new List<StudentContract>();
 
-    public virtual ICollection<StudentContract> StudentContractsStudentH { get; set; } = new List<StudentContract>();
+    public ICollection<StudentContract> StudentContractsStudentH { get; set; } = new List<StudentContract>();
 
-    public virtual ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
+    public ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
 }

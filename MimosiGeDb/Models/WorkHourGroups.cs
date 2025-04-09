@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class WorkHourGroups
+public sealed class WorkHourGroups
 {
     /// <summary>
     ///     იდენტიფიკატორი
@@ -24,5 +24,5 @@ public class WorkHourGroups
     /// </summary>
     public decimal? WhgSalaryNet { get; set; }
 
-    public virtual ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
+    public ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
 }

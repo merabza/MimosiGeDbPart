@@ -2,11 +2,11 @@
 
 namespace MimosiGeDb.Models;
 
-public class LessonStatus
+public sealed class LessonStatus
 {
     public int Id { get; set; }
 
     public string? StatusName { get; set; }
 
-    public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
+    public ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
 }

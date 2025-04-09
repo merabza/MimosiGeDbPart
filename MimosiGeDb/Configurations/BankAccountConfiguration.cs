@@ -4,7 +4,7 @@ using MimosiGeDb.Models;
 
 namespace MimosiGeDb.Configurations;
 
-public class BankAccountConfiguration : IEntityTypeConfiguration<BankAccount>
+public sealed class BankAccountConfiguration : IEntityTypeConfiguration<BankAccount>
 {
     public void Configure(EntityTypeBuilder<BankAccount> builder)
     {

@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class StudentStatus
+public sealed class StudentStatus
 {
     public int Id { get; set; }
 
@@ -13,7 +13,7 @@ public class StudentStatus
 
     public int? Rate { get; set; }
 
-    public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
+    public ICollection<Group> Groups { get; set; } = new List<Group>();
 
-    public virtual ICollection<StudentContract> StudentContracts { get; set; } = new List<StudentContract>();
+    public ICollection<StudentContract> StudentContracts { get; set; } = new List<StudentContract>();
 }

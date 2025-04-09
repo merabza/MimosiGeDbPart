@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class GroupMaterial
+public sealed class GroupMaterial
 {
     private Group? _groupNavigation;
 

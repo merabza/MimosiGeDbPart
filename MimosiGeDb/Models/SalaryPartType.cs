@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class SalaryPartType
+public sealed class SalaryPartType
 {
     public int SptId { get; set; }
 
@@ -21,5 +21,5 @@ public class SalaryPartType
     /// </summary>
     public int? RsQuoteTypeId { get; set; }
 
-    public virtual ICollection<SalaryPart> SalaryParts { get; set; } = new List<SalaryPart>();
+    public ICollection<SalaryPart> SalaryParts { get; set; } = new List<SalaryPart>();
 }

@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class WeekNumber
+public sealed class WeekNumber
 {
     public int Id { get; set; }
 

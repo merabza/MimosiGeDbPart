@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class CrmCallType
+public sealed class CrmCallType
 {
     public int CctId { get; set; }
 

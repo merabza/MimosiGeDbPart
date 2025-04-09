@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class WorkHours
+public sealed class WorkHours
 {
     public int WhId { get; set; }
 
@@ -21,5 +21,5 @@ public class WorkHours
     /// </summary>
     public DateTime? WhEnd { get; set; }
 
-    public virtual TeacherContract TeacherContract { get; set; } = null!;
+    public TeacherContract TeacherContract { get; set; } = null!;
 }

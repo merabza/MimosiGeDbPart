@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public class TeacherContract
+public sealed class TeacherContract
 {
     public int Id { get; set; }
 
@@ -99,27 +99,27 @@ public class TeacherContract
     /// </summary>
     public bool IndEnt { get; set; }
 
-    public virtual ICollection<Lesson> LessonsSubstituteTeacherContract { get; set; } = new List<Lesson>();
+    public ICollection<Lesson> LessonsSubstituteTeacherContract { get; set; } = new List<Lesson>();
 
-    public virtual ICollection<Lesson> LessonsTeacherContract { get; set; } = new List<Lesson>();
+    public ICollection<Lesson> LessonsTeacherContract { get; set; } = new List<Lesson>();
 
-    public virtual RsCountry RsCountry { get; set; } = null!;
+    public RsCountry RsCountry { get; set; } = null!;
 
-    public virtual RsQuoteType? RsQuote { get; set; }
+    public RsQuoteType? RsQuote { get; set; }
 
-    public virtual ICollection<SalaryCharge> SalaryCharges { get; set; } = new List<SalaryCharge>();
+    public ICollection<SalaryCharge> SalaryCharges { get; set; } = new List<SalaryCharge>();
 
-    public virtual ICollection<SalaryLine> SalaryLines { get; set; } = new List<SalaryLine>();
+    public ICollection<SalaryLine> SalaryLines { get; set; } = new List<SalaryLine>();
 
-    public virtual ICollection<SalaryPart> SalaryParts { get; set; } = new List<SalaryPart>();
+    public ICollection<SalaryPart> SalaryParts { get; set; } = new List<SalaryPart>();
 
-    public virtual TeacherSalaryScheme? SalarySchemaByHoursNavigation { get; set; }
+    public TeacherSalaryScheme? SalarySchemaByHoursNavigation { get; set; }
 
-    public virtual ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
+    public ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
 
-    public virtual Human TeacherH { get; set; } = null!;
+    public Human TeacherH { get; set; } = null!;
 
-    public virtual WorkHourGroups? WorkHourGroup { get; set; }
+    public WorkHourGroups? WorkHourGroup { get; set; }
 
-    public virtual ICollection<WorkHours> WorkHours { get; set; } = new List<WorkHours>();
+    public ICollection<WorkHours> WorkHours { get; set; } = new List<WorkHours>();
 }

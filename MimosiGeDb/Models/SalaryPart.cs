@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class SalaryPart
+public sealed class SalaryPart
 {
     public int SpId { get; set; }
 
@@ -24,9 +24,9 @@ public class SalaryPart
     /// </summary>
     public decimal? SpAmount { get; set; }
 
-    public virtual SalaryHeader Sh { get; set; } = null!;
+    public SalaryHeader Sh { get; set; } = null!;
 
-    public virtual SalaryPartType? SpSalaryPartTypeNavigation { get; set; }
+    public SalaryPartType? SpSalaryPartTypeNavigation { get; set; }
 
-    public virtual TeacherContract TeacherContract { get; set; } = null!;
+    public TeacherContract TeacherContract { get; set; } = null!;
 }

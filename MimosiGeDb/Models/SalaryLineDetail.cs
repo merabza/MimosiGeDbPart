@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class SalaryLineDetail
+public sealed class SalaryLineDetail
 {
     /// <summary>
     ///     სტრიქონის იდენტიფიკატორი
@@ -32,7 +32,7 @@ public class SalaryLineDetail
     /// </summary>
     public decimal SadHourCost { get; set; }
 
-    public virtual Group Group { get; set; } = null!;
+    public Group Group { get; set; } = null!;
 
-    public virtual SalaryLine Sa { get; set; } = null!;
+    public SalaryLine Sa { get; set; } = null!;
 }

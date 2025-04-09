@@ -4,7 +4,7 @@ using MimosiGeDb.Models;
 
 namespace MimosiGeDb.Configurations;
 
-public class GeoMonthConfiguration : IEntityTypeConfiguration<GeoMonth>
+public sealed class GeoMonthConfiguration : IEntityTypeConfiguration<GeoMonth>
 {
     public void Configure(EntityTypeBuilder<GeoMonth> builder)
     {

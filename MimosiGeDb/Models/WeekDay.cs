@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class WeekDay
+public sealed class WeekDay
 {
     public int Id { get; set; }
 
@@ -12,5 +12,5 @@ public class WeekDay
 
     public int WeekDeyNom { get; set; }
 
-    public virtual ICollection<GroupDayTimePlace> GroupDayTimePlace { get; set; } = new List<GroupDayTimePlace>();
+    public ICollection<GroupDayTimePlace> GroupDayTimePlace { get; set; } = new List<GroupDayTimePlace>();
 }

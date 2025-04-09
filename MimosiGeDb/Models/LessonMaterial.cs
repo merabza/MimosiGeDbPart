@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class LessonMaterial
+public sealed class LessonMaterial
 {
     private Lesson? _lessonsNavigation;
 

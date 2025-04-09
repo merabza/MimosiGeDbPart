@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class LessonByStudent
+public sealed class LessonByStudent
 {
     public int Id { get; set; }
 
@@ -59,7 +59,7 @@ public class LessonByStudent
     /// </summary>
     public decimal? PrepaidAmount { get; set; }
 
-    public virtual GroupByStudent? GroupByStudent { get; set; }
+    public GroupByStudent? GroupByStudent { get; set; }
 
-    public virtual Lesson Lesson { get; set; } = null!;
+    public Lesson Lesson { get; set; } = null!;
 }

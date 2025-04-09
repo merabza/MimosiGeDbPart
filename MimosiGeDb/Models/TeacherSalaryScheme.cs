@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class TeacherSalaryScheme
+public sealed class TeacherSalaryScheme
 {
     public int Id { get; set; }
 
@@ -21,5 +21,5 @@ public class TeacherSalaryScheme
     /// </summary>
     public double? HourSalaryGross { get; set; }
 
-    public virtual ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
+    public ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
 }

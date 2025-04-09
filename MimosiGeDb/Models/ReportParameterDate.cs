@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class ReportParameterDate
+public sealed class ReportParameterDate
 {
     public int Id { get; set; }
 

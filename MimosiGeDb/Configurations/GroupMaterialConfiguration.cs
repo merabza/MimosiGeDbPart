@@ -4,7 +4,7 @@ using MimosiGeDb.Models;
 
 namespace MimosiGeDb.Configurations;
 
-public class GroupMaterialConfiguration : IEntityTypeConfiguration<GroupMaterial>
+public sealed class GroupMaterialConfiguration : IEntityTypeConfiguration<GroupMaterial>
 {
     public void Configure(EntityTypeBuilder<GroupMaterial> builder)
     {

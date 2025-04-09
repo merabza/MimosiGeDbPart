@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class SalaryChargeChange
+public sealed class SalaryChargeChange
 {
     public int Id { get; set; }
 
@@ -14,5 +14,5 @@ public class SalaryChargeChange
     /// </summary>
     public double Amount { get; set; }
 
-    public virtual SalaryCharge SalaryCharge { get; set; } = null!;
+    public SalaryCharge SalaryCharge { get; set; } = null!;
 }

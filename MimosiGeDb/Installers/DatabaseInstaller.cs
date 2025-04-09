@@ -43,7 +43,7 @@ public sealed class MimosiGeDatabaseInstaller : IInstaller
 }
 
 /*
-public class YourDbContext : DbContext
+public sealed class YourDbContext : DbContext
    {
        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
        {

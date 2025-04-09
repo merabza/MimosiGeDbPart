@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class CrmCall
+public sealed class CrmCall
 {
     private CrmAnswerType? _answerTypeNavigation;
 
@@ -49,7 +49,7 @@ public class CrmCall
         set => _answerTypeNavigation = value;
     }
 
-    public virtual CrmCallType CallTypeNavigation
+    public CrmCallType CallTypeNavigation
     {
         get =>
             _callTypeNavigation ??
@@ -57,7 +57,7 @@ public class CrmCall
         set => _callTypeNavigation = value;
     }
 
-    public virtual StudentContract StudentContractNavigation
+    public StudentContract StudentContractNavigation
     {
         get =>
             _studentContractNavigation ??

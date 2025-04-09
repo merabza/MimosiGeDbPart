@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class ErrorLogText
+public sealed class ErrorLogText
 {
     public int EltId { get; set; }
 

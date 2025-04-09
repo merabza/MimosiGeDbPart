@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class Report
+public sealed class Report
 {
     public int Id { get; set; }
 
@@ -21,5 +21,5 @@ public class Report
     /// </summary>
     public string? RepFltNames { get; set; }
 
-    public virtual ICollection<ReportByCategory> ReportsByCategories { get; set; } = new List<ReportByCategory>();
+    public ICollection<ReportByCategory> ReportsByCategories { get; set; } = new List<ReportByCategory>();
 }

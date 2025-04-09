@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public class SalaryLine
+public sealed class SalaryLine
 {
     /// <summary>
     ///     სტრიქონის იდენტიფიკატორი
@@ -75,11 +75,11 @@ public class SalaryLine
     /// </summary>
     public decimal SaIndividualIncomeTax { get; set; }
 
-    public virtual RsQuoteType? RsQuoteType { get; set; }
+    public RsQuoteType? RsQuoteType { get; set; }
 
-    public virtual ICollection<SalaryLineDetail> SalaryLinesDetails { get; set; } = new List<SalaryLineDetail>();
+    public ICollection<SalaryLineDetail> SalaryLinesDetails { get; set; } = new List<SalaryLineDetail>();
 
-    public virtual SalaryHeader Sh { get; set; } = null!;
+    public SalaryHeader Sh { get; set; } = null!;
 
-    public virtual TeacherContract TeacherContract { get; set; } = null!;
+    public TeacherContract TeacherContract { get; set; } = null!;
 }

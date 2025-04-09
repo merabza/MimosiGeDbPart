@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class GeoMonth
+public sealed class GeoMonth
 {
     public int GmnId { get; set; }
 

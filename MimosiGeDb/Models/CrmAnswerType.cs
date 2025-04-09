@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class CrmAnswerType
+public sealed class CrmAnswerType
 {
     public int CatId { get; set; }
 

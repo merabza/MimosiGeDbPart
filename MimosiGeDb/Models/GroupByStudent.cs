@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public class GroupByStudent
+public sealed class GroupByStudent
 {
     private Group? _groupNavigation;
 

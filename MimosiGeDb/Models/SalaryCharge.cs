@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class SalaryCharge
+public sealed class SalaryCharge
 {
     public int Id { get; set; }
 
@@ -21,9 +21,9 @@ public class SalaryCharge
     /// </summary>
     public double Amount { get; set; }
 
-    public virtual OperationMonth OpMonthDate { get; set; } = null!;
+    public OperationMonth OpMonthDate { get; set; } = null!;
 
-    public virtual ICollection<SalaryChargeChange> SalaryChargesChanges { get; set; } = new List<SalaryChargeChange>();
+    public ICollection<SalaryChargeChange> SalaryChargesChanges { get; set; } = new List<SalaryChargeChange>();
 
-    public virtual TeacherContract? TeacherContract { get; set; }
+    public TeacherContract? TeacherContract { get; set; }
 }

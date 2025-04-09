@@ -4,7 +4,7 @@ using MimosiGeDb.Models;
 
 namespace MimosiGeDb.Configurations;
 
-public class CrmAnswerTypeConfiguration : IEntityTypeConfiguration<CrmAnswerType>
+public sealed class CrmAnswerTypeConfiguration : IEntityTypeConfiguration<CrmAnswerType>
 {
     public void Configure(EntityTypeBuilder<CrmAnswerType> builder)
     {

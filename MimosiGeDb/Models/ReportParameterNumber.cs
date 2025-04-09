@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class ReportParameterNumber
+public sealed class ReportParameterNumber
 {
     public int Id { get; set; }
 

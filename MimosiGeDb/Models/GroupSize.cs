@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class GroupSize
+public sealed class GroupSize
 {
     public int Id { get; set; }
 
@@ -10,8 +10,8 @@ public class GroupSize
 
     public string? Name { get; set; }
 
-    public virtual ICollection<Group> Groups { get; set; } = new List<Group>();
+    public ICollection<Group> Groups { get; set; } = new List<Group>();
 
-    public virtual ICollection<StudentContractDetail> StudentContractDetails { get; set; } =
+    public ICollection<StudentContractDetail> StudentContractDetails { get; set; } =
         new List<StudentContractDetail>();
 }

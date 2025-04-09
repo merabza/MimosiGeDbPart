@@ -1,6 +1,6 @@
 ﻿namespace MimosiGeDb.Models;
 
-public class RsTaxRate
+public sealed class RsTaxRate
 {
     public int Id { get; set; }
 
@@ -10,7 +10,7 @@ public class RsTaxRate
 
     public string? TaxRate { get; set; }
 
-    public virtual RsBenefCategory? BenefCategory { get; set; }
+    public RsBenefCategory? BenefCategory { get; set; }
 
-    public virtual RsQuoteType? QuoteType { get; set; }
+    public RsQuoteType? QuoteType { get; set; }
 }

@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class MaterialType
+public sealed class MaterialType
 {
     public int MtId { get; set; }
 
@@ -11,5 +11,5 @@ public class MaterialType
     /// </summary>
     public string? MtName { get; set; }
 
-    public virtual ICollection<Material> BooksAndMaterials { get; set; } = new List<Material>();
+    public ICollection<Material> BooksAndMaterials { get; set; } = new List<Material>();
 }

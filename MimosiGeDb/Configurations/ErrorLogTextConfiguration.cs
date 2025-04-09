@@ -4,7 +4,7 @@ using MimosiGeDb.Models;
 
 namespace MimosiGeDb.Configurations;
 
-public class ErrorLogTextConfiguration : IEntityTypeConfiguration<ErrorLogText>
+public sealed class ErrorLogTextConfiguration : IEntityTypeConfiguration<ErrorLogText>
 {
     public void Configure(EntityTypeBuilder<ErrorLogText> builder)
     {

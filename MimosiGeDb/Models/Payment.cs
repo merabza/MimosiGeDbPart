@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class Payment
+public sealed class Payment
 {
     public int Id { get; set; }
 
@@ -41,7 +41,7 @@ public class Payment
     /// </summary>
     public DateTime? ValidFromDate { get; set; }
 
-    public virtual BankAccount? BankAccount { get; set; }
+    public BankAccount? BankAccount { get; set; }
 
-    public virtual StudentContract StudentContract { get; set; } = null!;
+    public StudentContract StudentContract { get; set; } = null!;
 }

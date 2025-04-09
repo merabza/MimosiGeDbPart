@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class LessonCheckCreateErrorLog
+public sealed class LessonCheckCreateErrorLog
 {
     public int Id { get; set; }
 
@@ -36,9 +36,9 @@ public class LessonCheckCreateErrorLog
     /// </summary>
     public bool AllowUpdate { get; set; }
 
-    public virtual ErrorLogText Error { get; set; } = null!;
+    public ErrorLogText Error { get; set; } = null!;
 
-    public virtual Group Group { get; set; } = null!;
+    public Group Group { get; set; } = null!;
 
-    public virtual Lesson? Lesson { get; set; }
+    public Lesson? Lesson { get; set; }
 }

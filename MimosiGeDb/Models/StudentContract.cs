@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public class StudentContract
+public sealed class StudentContract
 {
     public int ScId { get; set; }
 
@@ -52,20 +52,20 @@ public class StudentContract
     /// </summary>
     public bool DirtyNextPayDate { get; set; }
 
-    public virtual AcademicYear AcademicYear { get; set; } = null!;
+    public AcademicYear AcademicYear { get; set; } = null!;
 
-    public virtual ICollection<CrmCall> CrmCalls { get; set; } = new List<CrmCall>();
+    public ICollection<CrmCall> CrmCalls { get; set; } = new List<CrmCall>();
 
-    public virtual Human ParentH { get; set; } = null!;
+    public Human ParentH { get; set; } = null!;
 
-    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+    public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
-    public virtual ICollection<StudentContractDetail> StudentContractDetails { get; set; } =
+    public ICollection<StudentContractDetail> StudentContractDetails { get; set; } =
         new List<StudentContractDetail>();
 
-    public virtual Human StudentH { get; set; } = null!;
+    public Human StudentH { get; set; } = null!;
 
-    public virtual StudentStatus? StudentStatus { get; set; }
+    public StudentStatus? StudentStatus { get; set; }
 
-    public virtual ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
+    public ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
 }

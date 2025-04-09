@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public class Course
+public sealed class Course
 {
     public int CrsId { get; set; }
 

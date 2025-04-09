@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public class SalaryHeader
+public sealed class SalaryHeader
 {
     public int ShId { get; set; }
 
@@ -17,7 +17,7 @@ public class SalaryHeader
     /// </summary>
     public DateTime ShTransferDate { get; set; }
 
-    public virtual ICollection<SalaryLine> SalaryLines { get; set; } = new List<SalaryLine>();
+    public ICollection<SalaryLine> SalaryLines { get; set; } = new List<SalaryLine>();
 
-    public virtual ICollection<SalaryPart> SalaryParts { get; set; } = new List<SalaryPart>();
+    public ICollection<SalaryPart> SalaryParts { get; set; } = new List<SalaryPart>();
 }
