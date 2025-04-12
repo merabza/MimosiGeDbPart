@@ -12,6 +12,5 @@ public sealed class GroupSize
 
     public ICollection<Group> Groups { get; set; } = new List<Group>();
 
-    public ICollection<StudentContractDetail> StudentContractDetails { get; set; } =
-        new List<StudentContractDetail>();
+    public ICollection<StudentContractDetail> StudentContractDetails { get; set; } = new List<StudentContractDetail>();
 }

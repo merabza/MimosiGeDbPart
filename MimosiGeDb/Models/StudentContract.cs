@@ -60,8 +60,7 @@ public sealed class StudentContract
 
     public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
-    public ICollection<StudentContractDetail> StudentContractDetails { get; set; } =
-        new List<StudentContractDetail>();
+    public ICollection<StudentContractDetail> StudentContractDetails { get; set; } = new List<StudentContractDetail>();
 
     public Human StudentH { get; set; } = null!;
 
