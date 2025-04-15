@@ -6,7 +6,9 @@
     "users",
     "AdStuffContract",
     "AdStuffRealWorkTime",
-    "AdStuffSubstituteScheme"
+    "AdStuffSubstituteScheme",
+    "AdStuffSubstituteTime",
+    "AdStuffWorkTimesPlan"
   ],
   "SingularityExceptions": {
     "menu": "menuItm"
