@@ -4,10 +4,10 @@
     "dataRights",
     "dataRightTypes",
     "users",
-    "AdStuffContract",
-    "AdStuffRealWorkTime",
+    "AdStuffContracts",
+    "AdStuffRealWorkTimes",
     "AdStuffSubstituteScheme",
-    "AdStuffSubstituteTime",
+    "AdStuffSubstituteTimes",
     "AdStuffWorkTimesPlan"
   ],
   "SingularityExceptions": {
