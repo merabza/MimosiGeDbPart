@@ -1,5 +1,13 @@
 {
-  "ExcludeTables": ["settingTypes", "dataRights", "dataRightTypes", "users"],
+  "ExcludeTables": [
+    "settingTypes",
+    "dataRights",
+    "dataRightTypes",
+    "users",
+    "AdStuffContract",
+    "AdStuffRealWorkTime",
+    "AdStuffSubstituteScheme"
+  ],
   "SingularityExceptions": {
     "menu": "menuItm"
   },
