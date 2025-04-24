@@ -11,5 +11,5 @@ public sealed class MaterialType
     /// </summary>
     public string? MtName { get; set; }
 
-    public ICollection<Material> BooksAndMaterials { get; set; } = new List<Material>();
+    public ICollection<Material> Materials { get; set; } = new List<Material>();
 }

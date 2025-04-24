@@ -52,19 +52,47 @@ public sealed class StudentContract
     /// </summary>
     public bool DirtyNextPayDate { get; set; }
 
-    public AcademicYear AcademicYear { get; set; } = null!;
+    private AcademicYear? _academicYearNavigation;
+    public AcademicYear AcademicYearNavigation
+    {
+        get =>
+            _academicYearNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(_academicYearNavigation));
+        set => _academicYearNavigation = value;
+    }
+
+    private Human? _parentHumanNavigation;
+    public Human ParentHumanNavigation
+    {
+        get =>
+            _parentHumanNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(_parentHumanNavigation));
+        set => _parentHumanNavigation = value;
+    }
+
+    private Human? _studentHumanNavigation;
+    public Human StudentHumanNavigation
+    {
+        get =>
+            _studentHumanNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(_studentHumanNavigation));
+        set => _studentHumanNavigation = value;
+    }
+
+    private StudentStatus? _studentStatusNavigation;
+    public StudentStatus StudentStatusNavigation
+    {
+        get =>
+            _studentStatusNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(_studentStatusNavigation));
+        set => _studentStatusNavigation = value;
+    }
 
     public ICollection<CrmCall> CrmCalls { get; set; } = new List<CrmCall>();
-
-    public Human ParentH { get; set; } = null!;
 
     public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
     public ICollection<StudentContractDetail> StudentContractDetails { get; set; } = new List<StudentContractDetail>();
-
-    public Human StudentH { get; set; } = null!;
-
-    public StudentStatus? StudentStatus { get; set; }
 
     public ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
 }

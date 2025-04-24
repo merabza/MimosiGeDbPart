@@ -36,9 +36,23 @@ public sealed class LessonCheckCreateErrorLog
     /// </summary>
     public bool AllowUpdate { get; set; }
 
-    public ErrorLogText Error { get; set; } = null!;
+    private ErrorLogText? _errorLogTextNavigation;
+    public ErrorLogText ErrorLogTextNavigation
+    {
+        get =>
+            _errorLogTextNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(_errorLogTextNavigation));
+        set => _errorLogTextNavigation = value;
+    }
 
-    public Group Group { get; set; } = null!;
+    private Group? _groupNavigation;
+    public Group GroupNavigation
+    {
+        get =>
+            _groupNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
+        set => _groupNavigation = value;
+    }
 
     public Lesson? Lesson { get; set; }
 }

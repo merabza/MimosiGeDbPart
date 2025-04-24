@@ -28,5 +28,5 @@ public sealed class Material
 
     public MaterialType MatType { get; set; } = null!;
 
-    public ICollection<LessonMaterial> LessonBooksAndMaterials { get; set; } = new List<LessonMaterial>();
+    public ICollection<LessonMaterial> LessonMaterials { get; set; } = new List<LessonMaterial>();
 }

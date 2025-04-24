@@ -1,4 +1,6 @@
-﻿namespace MimosiGeDb.Models;
+﻿using System;
+
+namespace MimosiGeDb.Models;
 
 public sealed class StudentContractDetail
 {
@@ -31,7 +33,14 @@ public sealed class StudentContractDetail
     /// </summary>
     public decimal OneHourFee { get; set; }
 
-    public Course Course { get; set; } = null!;
+    private Course? _courseNavigation;
+    public Course CourseNavigation
+    {
+        get =>
+            _courseNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(CourseNavigation));
+        set => _courseNavigation = value;
+    }
 
     public GroupSize GroupSize { get; set; } = null!;
 

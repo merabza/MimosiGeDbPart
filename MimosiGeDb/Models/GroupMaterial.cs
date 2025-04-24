@@ -4,7 +4,6 @@ namespace MimosiGeDb.Models;
 
 public sealed class GroupMaterial
 {
-    private Group? _groupNavigation;
 
     private Material? _materialNavigation;
     public int GmtId { get; set; }
@@ -29,6 +28,7 @@ public sealed class GroupMaterial
     /// </summary>
     public DateTime? EndDate { get; set; }
 
+    private Group? _groupNavigation;
     public Group GroupNavigation
     {
         get =>

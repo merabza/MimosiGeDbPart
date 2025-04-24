@@ -67,9 +67,16 @@ public sealed class Lesson
     /// </summary>
     public DateTime TeoMaxDate { get; set; }
 
-    public Group Group { get; set; } = null!;
+    private Group? _groupNavigation;
+    public Group GroupNavigation
+    {
+        get =>
+            _groupNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
+        set => _groupNavigation = value;
+    }
 
-    public ICollection<LessonMaterial> LessonBooksAndMaterials { get; set; } = new List<LessonMaterial>();
+    public ICollection<LessonMaterial> LessonMaterials { get; set; } = new List<LessonMaterial>();
 
     public ICollection<LessonByStudent> LessonsByStudents { get; set; } = new List<LessonByStudent>();
 

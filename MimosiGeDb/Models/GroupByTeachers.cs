@@ -31,5 +31,12 @@ public sealed class GroupByTeachers
     /// </summary>
     public DateTime? EndDate { get; set; }
 
-    public Group Group { get; set; } = null!;
+    private Group? _groupNavigation;
+    public Group GroupNavigation
+    {
+        get =>
+            _groupNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
+        set => _groupNavigation = value;
+    }
 }

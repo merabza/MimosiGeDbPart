@@ -1,4 +1,6 @@
-﻿namespace MimosiGeDb.Models;
+﻿using System;
+
+namespace MimosiGeDb.Models;
 
 public sealed class SummaryComment
 {
@@ -29,7 +31,14 @@ public sealed class SummaryComment
     /// </summary>
     public string? CommentText { get; set; }
 
-    public Course Course { get; set; } = null!;
+    private Course? _courseNavigation;
+    public Course CourseNavigation
+    {
+        get =>
+            _courseNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(CourseNavigation));
+        set => _courseNavigation = value;
+    }
 
     public OperationMonth OperationMonthDate { get; set; } = null!;
 

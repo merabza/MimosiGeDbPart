@@ -1,4 +1,6 @@
-﻿namespace MimosiGeDb.Models;
+﻿using System;
+
+namespace MimosiGeDb.Models;
 
 public sealed class SalaryLineDetail
 {
@@ -32,7 +34,14 @@ public sealed class SalaryLineDetail
     /// </summary>
     public decimal SadHourCost { get; set; }
 
-    public Group Group { get; set; } = null!;
+    private Group? _groupNavigation;
+    public Group GroupNavigation
+    {
+        get =>
+            _groupNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
+        set => _groupNavigation = value;
+    }
 
     public SalaryLine Sa { get; set; } = null!;
 }

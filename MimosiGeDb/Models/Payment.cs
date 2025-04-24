@@ -41,7 +41,14 @@ public sealed class Payment
     /// </summary>
     public DateTime? ValidFromDate { get; set; }
 
-    public BankAccount? BankAccount { get; set; }
+    private BankAccount? _bankAccountNavigation;
+    public BankAccount BankAccountNavigation
+    {
+        get =>
+            _bankAccountNavigation ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(_bankAccountNavigation));
+        set => _bankAccountNavigation = value;
+    }
 
     public StudentContract StudentContract { get; set; } = null!;
 }

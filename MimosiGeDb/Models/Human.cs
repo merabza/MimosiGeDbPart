@@ -57,9 +57,9 @@ public sealed class Human
     /// </summary>
     public DateTime? BirthDate { get; set; }
 
-    public ICollection<StudentContract> StudentContractsParentH { get; set; } = new List<StudentContract>();
+    public ICollection<StudentContract> StudentContractsParent { get; set; } = new List<StudentContract>();
 
-    public ICollection<StudentContract> StudentContractsStudentH { get; set; } = new List<StudentContract>();
+    public ICollection<StudentContract> StudentContractsStudent { get; set; } = new List<StudentContract>();
 
     public ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
 }

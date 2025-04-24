@@ -4,9 +4,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class CrmCall
 {
-    private CrmAnswerType? _answerTypeNavigation;
 
-    private CrmCallType? _callTypeNavigation;
 
     private StudentContract? _studentContractNavigation;
     public int CcId { get; set; }
@@ -41,6 +39,7 @@ public sealed class CrmCall
     /// </summary>
     public DateTime? MustPayDate { get; set; }
 
+    private CrmAnswerType? _answerTypeNavigation;
     public CrmAnswerType AnswerTypeNavigation
     {
         get =>
@@ -49,6 +48,7 @@ public sealed class CrmCall
         set => _answerTypeNavigation = value;
     }
 
+    private CrmCallType? _callTypeNavigation;
     public CrmCallType CallTypeNavigation
     {
         get =>
