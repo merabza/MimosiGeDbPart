@@ -10,9 +10,12 @@
     "AdStuffSubstituteTimes",
     "AdStuffWorkTimesPlan"
   ],
-  "SingularityExceptions": {
-    "menu": "menuItm"
-  },
+  "SingularityExceptions": [
+    { "TableName": "menu", "TableNameSingular": "menuItm" }
+  ],
+  "ReplaceTableNames": [
+    { "OldTableName": "BooksAndMaterials", "NewTableName": "Materials" }
+  ],
   "ExcludeFields": [
     {
       "TableName": "menuGroups",
