@@ -15,7 +15,11 @@
   ],
   "ReplaceTableNames": [
     { "OldTableName": "BooksAndMaterials", "NewTableName": "Materials" },
-    { "OldTableName": "BooksAndMaterialsTypes", "NewTableName": "MaterialTypes"}
+    {
+      "OldTableName": "BooksAndMaterialsTypes",
+      "NewTableName": "MaterialTypes"
+    },
+    { "OldTableName": "Cources", "NewTableName": "Courses" }
   ],
   "ExcludeFields": [
     {
