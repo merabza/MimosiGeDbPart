@@ -14,7 +14,8 @@
     { "TableName": "menu", "TableNameSingular": "menuItm" }
   ],
   "ReplaceTableNames": [
-    { "OldTableName": "BooksAndMaterials", "NewTableName": "Materials" }
+    { "OldTableName": "BooksAndMaterials", "NewTableName": "Materials" },
+    { "OldTableName": "BooksAndMaterialsTypes", "NewTableName": "MaterialTypes"}
   ],
   "ExcludeFields": [
     {
