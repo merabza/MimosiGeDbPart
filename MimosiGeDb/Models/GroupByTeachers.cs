@@ -32,6 +32,7 @@ public sealed class GroupByTeachers
     public DateTime? EndDate { get; set; }
 
     private Group? _groupNavigation;
+
     public Group GroupNavigation
     {
         get =>

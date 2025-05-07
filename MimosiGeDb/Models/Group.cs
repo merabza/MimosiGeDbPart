@@ -5,7 +5,6 @@ namespace MimosiGeDb.Models;
 
 public sealed class Group
 {
-
     private GroupSize? _groupSizeNavigation;
 
     private StudentStatus? _studentStatusNavigation;
@@ -42,6 +41,7 @@ public sealed class Group
     public DateTime? VoidDate { get; set; }
 
     private Course? _courseNavigation;
+
     public Course CourseNavigation
     {
         get =>

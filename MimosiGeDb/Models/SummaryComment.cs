@@ -32,6 +32,7 @@ public sealed class SummaryComment
     public string? CommentText { get; set; }
 
     private Course? _courseNavigation;
+
     public Course CourseNavigation
     {
         get =>

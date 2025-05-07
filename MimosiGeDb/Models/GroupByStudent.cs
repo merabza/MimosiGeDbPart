@@ -5,7 +5,6 @@ namespace MimosiGeDb.Models;
 
 public sealed class GroupByStudent
 {
-
     private StudentContract? _studentContractNavigation;
     public int GbsId { get; set; }
 
@@ -60,6 +59,7 @@ public sealed class GroupByStudent
     public bool DirtyCharges { get; set; }
 
     private Group? _groupNavigation;
+
     public Group GroupNavigation
     {
         get =>

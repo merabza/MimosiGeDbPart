@@ -68,6 +68,7 @@ public sealed class Lesson
     public DateTime TeoMaxDate { get; set; }
 
     private Group? _groupNavigation;
+
     public Group GroupNavigation
     {
         get =>

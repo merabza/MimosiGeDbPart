@@ -34,6 +34,7 @@ public sealed class StudentContractDetail
     public decimal OneHourFee { get; set; }
 
     private Course? _courseNavigation;
+
     public Course CourseNavigation
     {
         get =>

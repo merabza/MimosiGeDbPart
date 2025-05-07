@@ -35,6 +35,7 @@ public sealed class SalaryLineDetail
     public decimal SadHourCost { get; set; }
 
     private Group? _groupNavigation;
+
     public Group GroupNavigation
     {
         get =>

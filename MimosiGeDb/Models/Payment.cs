@@ -42,6 +42,7 @@ public sealed class Payment
     public DateTime? ValidFromDate { get; set; }
 
     private BankAccount? _bankAccountNavigation;
+
     public BankAccount BankAccountNavigation
     {
         get =>

@@ -4,7 +4,6 @@ namespace MimosiGeDb.Models;
 
 public sealed class GroupDayTimePlace
 {
-
     private Room? _roomNavigation;
 
     private Time? _timeNavigation;
@@ -48,6 +47,7 @@ public sealed class GroupDayTimePlace
     public DateTime? EndDate { get; set; }
 
     private Group? _groupNavigation;
+
     public Group GroupNavigation
     {
         get =>

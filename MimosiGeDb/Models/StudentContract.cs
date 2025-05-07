@@ -53,6 +53,7 @@ public sealed class StudentContract
     public bool DirtyNextPayDate { get; set; }
 
     private AcademicYear? _academicYearNavigation;
+
     public AcademicYear AcademicYearNavigation
     {
         get =>
@@ -62,6 +63,7 @@ public sealed class StudentContract
     }
 
     private Human? _parentHumanNavigation;
+
     public Human ParentHumanNavigation
     {
         get =>
@@ -71,6 +73,7 @@ public sealed class StudentContract
     }
 
     private Human? _studentHumanNavigation;
+
     public Human StudentHumanNavigation
     {
         get =>
@@ -80,6 +83,7 @@ public sealed class StudentContract
     }
 
     private StudentStatus? _studentStatusNavigation;
+
     public StudentStatus StudentStatusNavigation
     {
         get =>

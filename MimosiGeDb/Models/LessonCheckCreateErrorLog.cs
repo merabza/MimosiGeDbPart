@@ -37,6 +37,7 @@ public sealed class LessonCheckCreateErrorLog
     public bool AllowUpdate { get; set; }
 
     private ErrorLogText? _errorLogTextNavigation;
+
     public ErrorLogText ErrorLogTextNavigation
     {
         get =>
@@ -46,6 +47,7 @@ public sealed class LessonCheckCreateErrorLog
     }
 
     private Group? _groupNavigation;
+
     public Group GroupNavigation
     {
         get =>
