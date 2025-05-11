@@ -68,7 +68,7 @@
       "NewFieldName": "CrsId"
     },
     {
-      "TableName": "crmAnswerTypes",
+      "TableName": "CrmAnswerTypes",
       "OldFieldName": "Id",
       "NewFieldName": "CatId"
     },
