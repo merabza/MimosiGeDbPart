@@ -18,7 +18,7 @@ public sealed class LessonMaterial
     /// <summary>
     ///     მასალის იდენტიფიკატორი
     /// </summary>
-    public int MatId { get; set; }
+    public int MaterialId { get; set; }
 
     public Material MaterialNavigation
     {
