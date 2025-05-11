@@ -56,6 +56,16 @@
       "TableName": "Courses",
       "OldFieldName": "Id",
       "NewFieldName": "CrsId"
+    },
+    {
+      "TableName": "Cources",
+      "OldFieldName": "CourceName",
+      "NewFieldName": "CourseName"
+    },
+    {
+      "TableName": "Cources",
+      "OldFieldName": "Id",
+      "NewFieldName": "CrsId"
     }
   ]
 }
