@@ -121,5 +121,5 @@ public sealed class TeacherContract
 
     public WorkHourGroup? WorkHourGroup { get; set; }
 
-    public ICollection<WorkHours> WorkHours { get; set; } = new List<WorkHours>();
+    public ICollection<WorkHour> WorkHours { get; set; } = new List<WorkHour>();
 }

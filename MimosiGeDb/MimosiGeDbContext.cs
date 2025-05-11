@@ -135,7 +135,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<WorkHourGroup> WorkHourGroups { get; set; }
 
-    public DbSet<WorkHours> WorkHours { get; set; }
+    public DbSet<WorkHour> WorkHours { get; set; }
 
     private static DbContextOptions<T> ChangeOptionsType<T>(DbContextOptions options) where T : DbContext
     {

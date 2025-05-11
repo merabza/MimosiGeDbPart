@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public sealed class WorkHours
+public sealed class WorkHour
 {
     public int WhId { get; set; }
 
