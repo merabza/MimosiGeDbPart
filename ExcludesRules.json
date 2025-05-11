@@ -29,6 +29,10 @@
     {
       "TableName": "BankAccounts",
       "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "crmAnswerType",
+      "FieldName": "SsmaTimeStamp"
     }
   ],
   "ReplaceFieldNames": [
@@ -72,5 +76,20 @@
       "OldFieldName": "Id",
       "NewFieldName": "CatId"
     },
+    {
+      "TableName": "crmAnswerType",
+      "OldFieldName": "AnswerType",
+      "NewFieldName": "AnswerTypeId"
+    },
+    {
+      "TableName": "crmAnswerType",
+      "OldFieldName": "CallConv",
+      "NewFieldName": "CallConversation"
+    },
+    {
+      "TableName": "crmAnswerType",
+      "OldFieldName": "CallType",
+      "NewFieldName": "CallTypeId"
+    }
   ]
 }
