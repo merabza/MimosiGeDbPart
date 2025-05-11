@@ -5,6 +5,13 @@ namespace MimosiGeDb.Models;
 
 public sealed class StudentContract
 {
+    private AcademicYear? _academicYearNavigation;
+
+    private Human? _parentHumanNavigation;
+
+    private Human? _studentHumanNavigation;
+
+    private StudentStatus? _studentStatusNavigation;
     public int ScId { get; set; }
 
     /// <summary>
@@ -20,12 +27,12 @@ public sealed class StudentContract
     /// <summary>
     ///     მოსწავლე
     /// </summary>
-    public int StudentHid { get; set; }
+    public int StudentHumanId { get; set; }
 
     /// <summary>
     ///     მშობელი
     /// </summary>
-    public int ParentHid { get; set; }
+    public int ParentHumanId { get; set; }
 
     /// <summary>
     ///     სასწავლო წელი
@@ -52,8 +59,6 @@ public sealed class StudentContract
     /// </summary>
     public bool DirtyNextPayDate { get; set; }
 
-    private AcademicYear? _academicYearNavigation;
-
     public AcademicYear AcademicYearNavigation
     {
         get =>
@@ -61,8 +66,6 @@ public sealed class StudentContract
             throw new InvalidOperationException("Uninitialized property: " + nameof(_academicYearNavigation));
         set => _academicYearNavigation = value;
     }
-
-    private Human? _parentHumanNavigation;
 
     public Human ParentHumanNavigation
     {
@@ -72,8 +75,6 @@ public sealed class StudentContract
         set => _parentHumanNavigation = value;
     }
 
-    private Human? _studentHumanNavigation;
-
     public Human StudentHumanNavigation
     {
         get =>
@@ -81,8 +82,6 @@ public sealed class StudentContract
             throw new InvalidOperationException("Uninitialized property: " + nameof(_studentHumanNavigation));
         set => _studentHumanNavigation = value;
     }
-
-    private StudentStatus? _studentStatusNavigation;
 
     public StudentStatus StudentStatusNavigation
     {

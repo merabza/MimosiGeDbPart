@@ -5,7 +5,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class Human
 {
-    public int Id { get; set; }
+    public int humId { get; set; }
 
     /// <summary>
     ///     გვარი
@@ -57,9 +57,9 @@ public sealed class Human
     /// </summary>
     public DateTime? BirthDate { get; set; }
 
-    public ICollection<StudentContract> StudentContractsParent { get; set; } = new List<StudentContract>();
+    public ICollection<StudentContract> StudentContractsForParents { get; set; } = new List<StudentContract>();
 
-    public ICollection<StudentContract> StudentContractsStudent { get; set; } = new List<StudentContract>();
+    public ICollection<StudentContract> StudentContractsForStudents { get; set; } = new List<StudentContract>();
 
     public ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
 }
