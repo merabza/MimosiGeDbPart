@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace MimosiGeDb.Models;
 
-public sealed class Time
+public sealed class LessonStartTime
 {
-    public DateTime Tmid { get; set; }
+    public DateTime Lstid { get; set; }
 
     public ICollection<GroupDayTimePlace> GroupDayTimePlace { get; set; } = new List<GroupDayTimePlace>();
 }
