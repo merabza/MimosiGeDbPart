@@ -11,7 +11,8 @@
     "AdStuffWorkTimesPlan"
   ],
   "SingularityExceptions": [
-    { "TableName": "menu", "TableNameSingular": "menuItm" }
+    { "TableName": "menu", "TableNameSingular": "menuItm" },
+    { "TableName": "ReportsByCategories", "TableNameSingular": "ReportByCategory"}
   ],
   "ReplaceTableNames": [
     { "OldTableName": "BooksAndMaterials", "NewTableName": "Materials" },
