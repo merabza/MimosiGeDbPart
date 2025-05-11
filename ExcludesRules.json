@@ -66,6 +66,11 @@
       "TableName": "Cources",
       "OldFieldName": "Id",
       "NewFieldName": "CrsId"
-    }
+    },
+    {
+      "TableName": "crmAnswerTypes",
+      "OldFieldName": "Id",
+      "NewFieldName": "CatId"
+    },
   ]
 }
