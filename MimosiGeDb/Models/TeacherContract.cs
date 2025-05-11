@@ -119,7 +119,7 @@ public sealed class TeacherContract
 
     public Human TeacherH { get; set; } = null!;
 
-    public WorkHourGroups? WorkHourGroup { get; set; }
+    public WorkHourGroup? WorkHourGroup { get; set; }
 
     public ICollection<WorkHours> WorkHours { get; set; } = new List<WorkHours>();
 }

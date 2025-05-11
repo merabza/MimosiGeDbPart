@@ -133,7 +133,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<WeekNumber> WeekNumbers { get; set; }
 
-    public DbSet<WorkHourGroups> WorkHourGroups { get; set; }
+    public DbSet<WorkHourGroup> WorkHourGroups { get; set; }
 
     public DbSet<WorkHours> WorkHours { get; set; }
 

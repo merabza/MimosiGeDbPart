@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public sealed class WorkHourGroups
+public sealed class WorkHourGroup
 {
     /// <summary>
     ///     იდენტიფიკატორი
