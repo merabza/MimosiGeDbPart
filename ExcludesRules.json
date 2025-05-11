@@ -46,6 +46,16 @@
       "TableName": "BankAccounts",
       "OldFieldName": "Id",
       "NewFieldName": "BaId"
+    },
+    {
+      "TableName": "Courses",
+      "OldFieldName": "CourceName",
+      "NewFieldName": "CourseName"
+    },
+    {
+      "TableName": "Courses",
+      "OldFieldName": "Id",
+      "NewFieldName": "CrsId"
     }
   ]
 }
