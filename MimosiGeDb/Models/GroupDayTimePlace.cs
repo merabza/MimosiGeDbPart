@@ -6,7 +6,7 @@ public sealed class GroupDayTimePlace
 {
     private Room? _roomNavigation;
 
-    private Time? _timeNavigation;
+    private LessonStartTime? _lessonStartTime;
 
     private WeekDay? _weekDayNavigation;
     public int GdtpId { get; set; }
@@ -24,7 +24,7 @@ public sealed class GroupDayTimePlace
     /// <summary>
     ///     დრო
     /// </summary>
-    public DateTime Time { get; set; }
+    public DateTime LessonStarTime { get; set; }
 
     /// <summary>
     ///     საათები
@@ -63,11 +63,11 @@ public sealed class GroupDayTimePlace
         set => _roomNavigation = value;
     }
 
-    public Time TimeNavigation
+    public LessonStartTime LessonStartTimeNavigation
     {
         get =>
-            _timeNavigation ?? throw new InvalidOperationException("Uninitialized property: " + nameof(TimeNavigation));
-        set => _timeNavigation = value;
+            _lessonStartTime ?? throw new InvalidOperationException("Uninitialized property: " + nameof(LessonStartTimeNavigation));
+        set => _lessonStartTime = value;
     }
 
     public WeekDay WeekDayNavigation

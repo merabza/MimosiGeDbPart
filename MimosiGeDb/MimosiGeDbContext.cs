@@ -127,7 +127,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<TeacherSalaryScheme> TeacherSalarySchemes { get; set; }
 
-    public DbSet<Time> Times { get; set; }
+    public DbSet<LessonStartTime> LessonStartTimes { get; set; }
 
     public DbSet<WeekDay> WeekDaies { get; set; }
 
