@@ -32,7 +32,7 @@
       "FieldName": "SsmaTimeStamp"
     },
     {
-      "TableName": "crmAnswerType",
+      "TableName": "crmCalls",
       "FieldName": "SsmaTimeStamp"
     }
   ],
@@ -73,22 +73,22 @@
       "NewFieldName": "CrsId"
     },
     {
-      "TableName": "crmAnswerType",
+      "TableName": "crmCalls",
       "OldFieldName": "Id",
       "NewFieldName": "CatId"
     },
     {
-      "TableName": "crmAnswerType",
+      "TableName": "crmCalls",
       "OldFieldName": "AnswerType",
       "NewFieldName": "AnswerTypeId"
     },
     {
-      "TableName": "crmAnswerType",
+      "TableName": "crmCalls",
       "OldFieldName": "CallConv",
       "NewFieldName": "CallConversation"
     },
     {
-      "TableName": "crmAnswerType",
+      "TableName": "crmCalls",
       "OldFieldName": "CallType",
       "NewFieldName": "CallTypeId"
     }
