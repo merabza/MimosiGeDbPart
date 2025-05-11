@@ -19,7 +19,7 @@ public sealed record SalaryLineConfiguration : IEntityTypeConfiguration<SalaryLi
         entity.HasIndex(e => e.SaId);
 
         entity.Property(e => e.SaId).HasComment("სტრიქონის იდენტიფიკატორი");
-        entity.Property(e => e.RsQuoteTypeId).HasDefaultValue(1).HasComment("განაცემის სახე");
+        entity.Property(e => e.RsQuoteTypeId).HasDefaultValue((short)1).HasComment("განაცემის სახე");
         entity.Property(e => e.SaAmountGross).HasComment("დარიცხული თანხა").HasColumnType("money");
         entity.Property(e => e.SaAmountNet).HasComment("გადასარიცხი თანხა").HasColumnType("money");
         entity.Property(e => e.SaGamokvitva).HasComment("გამოქვითვა").HasColumnType("money");
