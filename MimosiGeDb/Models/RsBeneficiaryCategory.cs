@@ -2,11 +2,11 @@
 
 namespace MimosiGeDb.Models;
 
-public sealed class RsBenefCategory
+public sealed class RsBeneficiaryCategory
 {
-    public short QtId { get; set; }
+    public short RbfId { get; set; }
 
-    public string? QtName { get; set; }
+    public string? RbfName { get; set; }
 
     public ICollection<RsTaxRate> RsTaxRates { get; set; } = new List<RsTaxRate>();
 }

@@ -91,7 +91,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<Room> Rooms { get; set; }
 
-    public DbSet<RsBenefCategory> RsBenefCategories { get; set; }
+    public DbSet<RsBeneficiaryCategory> RsBenefCategories { get; set; }
 
     public DbSet<RsCountry> RsCountries { get; set; }
 

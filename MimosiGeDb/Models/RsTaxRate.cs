@@ -10,7 +10,7 @@ public sealed class RsTaxRate
 
     public string? TaxRate { get; set; }
 
-    public RsBenefCategory? BenefCategory { get; set; }
+    public RsBeneficiaryCategory? BenefCategory { get; set; }
 
     public RsQuoteType? QuoteType { get; set; }
 }
