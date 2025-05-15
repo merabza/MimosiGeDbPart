@@ -98,7 +98,7 @@
       "NewFieldName": "CallTypeId"
     },
     {
-      "TableName": "crmCallTypes",
+      "TableName": "crmCallType",
       "OldFieldName": "Id",
       "NewFieldName": "CctId"
     }
