@@ -101,6 +101,11 @@
       "TableName": "crmCallType",
       "OldFieldName": "Id",
       "NewFieldName": "CctId"
+    },
+    {
+      "TableName": "ErrorLogTexts",
+      "OldFieldName": "Id",
+      "NewFieldName": "EltId"
     }
   ]
 }
