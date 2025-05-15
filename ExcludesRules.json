@@ -11,7 +11,8 @@
     "AdStuffWorkTimesPlan",
     "FinancedStudies",
     "GeoPhrases",
-    "GroupLessonsCountByMonths"
+    "GroupLessonsCountByMonths",
+    "LessonsCheckCreateErrorLogs"
   ],
   "SingularityExceptions": [
     { "TableName": "menu", "TableNameSingular": "menuItm" },
@@ -30,7 +31,7 @@
     {
       "OldTableName": "GroupBooksAndMaterials",
       "NewTableName": "GroupMaterials"
-    }
+    }, { "OldTableName": "LessonBooksAndMaterials", "NewTableName": "LessonsMaterials" }
   ],
   "ExcludeFields": [
     {
@@ -48,6 +49,18 @@
     {
       "TableName": "GroupDayTimePlace",
       "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "Groups",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "Lessons",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "MonthDaies",
+      "FieldName": "MonthDays"
     }
   ],
   "ReplaceFieldNames": [
@@ -135,6 +148,56 @@
       "TableName": "GeoMonths",
       "OldFieldName": "GmName",
       "NewFieldName": "GmnName"
+    },
+    {
+      "TableName": "GroupDayTimePlace",
+      "OldFieldName": "Time",
+      "NewFieldName": "LessonStarTime"
+    },
+    {
+      "TableName": "GroupMaterials",
+      "OldFieldName": "BmId",
+      "NewFieldName": "MatId"
+    },
+    {
+      "TableName": "Groups",
+      "OldFieldName": "CourceId",
+      "NewFieldName": "CourseId"
+    },
+    {
+      "TableName": "Humans",
+      "OldFieldName": "Id",
+      "NewFieldName": "humId"
+    },
+    {
+      "TableName": "Materials",
+      "OldFieldName": "BmAuthors",
+      "NewFieldName": "MatAuthors"
+    },
+    {
+      "TableName": "Materials",
+      "OldFieldName": "BmName",
+      "NewFieldName": "MatName"
+    },
+    {
+      "TableName": "Materials",
+      "OldFieldName": "BmTypeId",
+      "NewFieldName": "MatTypeId"
+    },
+    {
+      "TableName": "Materials",
+      "OldFieldName": "BmYear",
+      "NewFieldName": "MatYear"
+    },
+    {
+      "TableName": "MaterialTypes",
+      "OldFieldName": "Id",
+      "NewFieldName": "MtId"
+    },
+    {
+      "TableName": "MaterialTypes",
+      "OldFieldName": "BmtName",
+      "NewFieldName": "MtName"
     }
   ]
 }
