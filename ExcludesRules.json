@@ -8,11 +8,17 @@
     "AdStuffRealWorkTimes",
     "AdStuffSubstituteScheme",
     "AdStuffSubstituteTimes",
-    "AdStuffWorkTimesPlan"
+    "AdStuffWorkTimesPlan",
+    "FinancedStudies",
+    "GeoPhrases",
+    "GroupLessonsCountByMonths"
   ],
   "SingularityExceptions": [
     { "TableName": "menu", "TableNameSingular": "menuItm" },
-    { "TableName": "ReportsByCategories", "TableNameSingular": "ReportByCategory"}
+    {
+      "TableName": "ReportsByCategories",
+      "TableNameSingular": "ReportByCategory"
+    }
   ],
   "ReplaceTableNames": [
     { "OldTableName": "BooksAndMaterials", "NewTableName": "Materials" },
@@ -20,7 +26,11 @@
       "OldTableName": "BooksAndMaterialsTypes",
       "NewTableName": "MaterialTypes"
     },
-    { "OldTableName": "Cources", "NewTableName": "Courses" }
+    { "OldTableName": "Cources", "NewTableName": "Courses" },
+    {
+      "OldTableName": "GroupBooksAndMaterials",
+      "NewTableName": "GroupMaterials"
+    }
   ],
   "ExcludeFields": [
     {
@@ -33,6 +43,10 @@
     },
     {
       "TableName": "crmCalls",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "GroupDayTimePlace",
       "FieldName": "SsmaTimeStamp"
     }
   ],
@@ -111,6 +125,16 @@
       "TableName": "ErrorLogTexts",
       "OldFieldName": "ErrorLogText",
       "NewFieldName": "Text"
+    },
+    {
+      "TableName": "GeoMonths",
+      "OldFieldName": "GmDative",
+      "NewFieldName": "GmnDative"
+    },
+    {
+      "TableName": "GeoMonths",
+      "OldFieldName": "GmName",
+      "NewFieldName": "GmnName"
     }
   ]
 }
