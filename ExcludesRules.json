@@ -12,13 +12,34 @@
     "FinancedStudies",
     "GeoPhrases",
     "GroupLessonsCountByMonths",
-    "LessonsCheckCreateErrorLogs"
+    "LessonsCheckCreateErrorLogs",
+    "SalaryChargesChanges"
   ],
   "SingularityExceptions": [
     { "TableName": "menu", "TableNameSingular": "menuItm" },
     {
       "TableName": "ReportsByCategories",
       "TableNameSingular": "ReportByCategory"
+    },
+    {
+      "TableName": "GroupsByStudents",
+      "TableNameSingular": "GroupByStudent"
+    },
+    {
+      "TableName": "GroupsByTeachers",
+      "TableNameSingular": "GroupByTeacher"
+    },
+    {
+      "TableName": "LessonsByStudents",
+      "TableNameSingular": "LessonByStudent"
+    },
+    {
+      "TableName": "LessonsMaterials",
+      "TableNameSingular": "LessonMaterial"
+    },
+    {
+      "TableName": "SalaryLinesDetails",
+      "TableNameSingular": "SalaryLineDetail"
     }
   ],
   "ReplaceTableNames": [
@@ -59,8 +80,36 @@
       "FieldName": "SsmaTimeStamp"
     },
     {
+      "TableName": "Payments",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "SalaryCharges",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "SummaryComments",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "StudentContractDetails",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "StudentContracts",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "Stuff",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
       "TableName": "MonthDaies",
       "FieldName": "MonthDays"
+    },
+    {
+      "TableName": "RsBenefCategories",
+      "FieldName": "RsBeneficiaryCategories"
     }
   ],
   "ReplaceFieldNames": [
@@ -165,6 +214,11 @@
       "NewFieldName": "CourseId"
     },
     {
+      "TableName": "Groups",
+      "OldFieldName": "Id",
+      "NewFieldName": "GrpId"
+    },
+    {
       "TableName": "Humans",
       "OldFieldName": "Id",
       "NewFieldName": "humId"
@@ -198,6 +252,36 @@
       "TableName": "MaterialTypes",
       "OldFieldName": "BmtName",
       "NewFieldName": "MtName"
+    },
+    {
+      "TableName": "GroupMaterials",
+      "OldFieldName": "BmId",
+      "NewFieldName": "GmtId"
+    },
+    {
+      "TableName": "StudentContractDetails",
+      "OldFieldName": "CourceId",
+      "NewFieldName": "CourseId"
+    },
+    {
+      "TableName": "StudentContracts",
+      "OldFieldName": "Id",
+      "NewFieldName": "ScId"
+    },
+    {
+      "TableName": "StudentContracts",
+      "OldFieldName": "ParentHid",
+      "NewFieldName": "ParentHumanId"
+    },
+    {
+      "TableName": "StudentContracts",
+      "OldFieldName": "StudentHid",
+      "NewFieldName": "StudentHumanId"
+    },
+    {
+      "TableName": "SummaryComments",
+      "OldFieldName": "CourceId",
+      "NewFieldName": "CourseId"
     }
   ]
 }
