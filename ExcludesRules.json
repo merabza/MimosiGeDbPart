@@ -254,11 +254,6 @@
       "NewFieldName": "MtName"
     },
     {
-      "TableName": "GroupMaterials",
-      "OldFieldName": "BmId",
-      "NewFieldName": "GmtId"
-    },
-    {
       "TableName": "StudentContractDetails",
       "OldFieldName": "CourceId",
       "NewFieldName": "CourseId"
