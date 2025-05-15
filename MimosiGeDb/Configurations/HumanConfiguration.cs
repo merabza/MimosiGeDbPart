@@ -22,4 +22,3 @@ public sealed class HumanConfiguration : IEntityTypeConfiguration<Human>
         builder.Property(e => e.PhoneNumber).HasMaxLength(9).HasComment("ტელეფონის ნომერი");
     }
 }
-

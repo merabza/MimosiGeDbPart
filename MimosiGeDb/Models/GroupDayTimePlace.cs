@@ -66,7 +66,8 @@ public sealed class GroupDayTimePlace
     public LessonStartTime LessonStartTimeNavigation
     {
         get =>
-            _lessonStartTime ?? throw new InvalidOperationException("Uninitialized property: " + nameof(LessonStartTimeNavigation));
+            _lessonStartTime ??
+            throw new InvalidOperationException("Uninitialized property: " + nameof(LessonStartTimeNavigation));
         set => _lessonStartTime = value;
     }
 
