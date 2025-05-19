@@ -11,7 +11,7 @@ public sealed class MimCrmAnswerTypeSeeder : CrmAnswerTypeSeeder
 {
     // ReSharper disable once ConvertToPrimaryConstructor
     public MimCrmAnswerTypeSeeder(string dataSeedFolder, IMimDataSeederRepository repo) : base(dataSeedFolder, repo,
-        ESeedDataType.RulesHasMorePriority, [nameof(CrmAnswerType.CatKey)])
+        ESeedDataType.OnlyRules, [nameof(CrmAnswerType.CatKey)])
     //რადგან SatKey ძველ ბაზაში არ არის, ამიტომ დროებით გასაღებად ვიღებთ SatName ველს.
     //თუმცა როცა რეალურზე მოხვდება SatKey ველი, მერე ის უნდა გახდეს გასაღები
     {
