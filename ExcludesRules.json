@@ -52,7 +52,19 @@
     {
       "OldTableName": "GroupBooksAndMaterials",
       "NewTableName": "GroupMaterials"
-    }, { "OldTableName": "LessonBooksAndMaterials", "NewTableName": "LessonsMaterials" }
+    },
+    {
+      "OldTableName": "LessonBooksAndMaterials",
+      "NewTableName": "LessonsMaterials"
+    },
+    {
+      "OldTableName": "Times",
+      "NewTableName": "LessonStartTimes"
+    },
+    {
+      "OldTableName": "WeekDaies",
+      "NewTableName": "WeekDays"
+    }
   ],
   "ExcludeFields": [
     {
