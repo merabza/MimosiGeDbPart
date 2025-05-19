@@ -277,6 +277,11 @@
       "TableName": "SummaryComments",
       "OldFieldName": "CourceId",
       "NewFieldName": "CourseId"
+    },
+    {
+      "TableName": "crmAnswerType",
+      "OldFieldName": "AnswerName",
+      "NewFieldName": "AnswerTypeName"
     }
   ]
 }

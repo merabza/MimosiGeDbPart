@@ -21,6 +21,4 @@ public sealed class MimNewDataSeedersFabric : MimDataSeedersFabric
     {
         return new MimCrmAnswerTypeSeeder(DataSeedFolder, Repo);
     }
-
-
 }
