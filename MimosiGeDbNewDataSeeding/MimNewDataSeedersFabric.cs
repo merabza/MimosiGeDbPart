@@ -1,7 +1,9 @@
 ﻿using CarcassDataSeeding;
 using CarcassMasterDataDom.Models;
+using DatabaseToolsShared;
 using Microsoft.AspNetCore.Identity;
 using MimosiGeDbDataSeeding;
+using MimosiGeDbNewDataSeeding.NewSeeders;
 
 namespace MimosiGeDbNewDataSeeding;
 
@@ -14,4 +16,11 @@ public sealed class MimNewDataSeedersFabric : MimDataSeedersFabric
         repo)
     {
     }
+
+    public override ITableDataSeeder CreateCrmAnswerTypeSeeder()
+    {
+        return new MimCrmAnswerTypeSeeder(DataSeedFolder, Repo);
+    }
+
+
 }

@@ -5,11 +5,12 @@ namespace MimosiGeDb.Models;
 public sealed class CrmAnswerType
 {
     public int CatId { get; set; }
+    public required string CatKey { get; set; }
 
     /// <summary>
     ///     პასუხის ტიპის სახელი
     /// </summary>
-    public required string AnswerName { get; set; }
+    public required string AnswerTypeName { get; set; }
 
     public ICollection<CrmCall> CrmCalls { get; set; } = new List<CrmCall>();
 }

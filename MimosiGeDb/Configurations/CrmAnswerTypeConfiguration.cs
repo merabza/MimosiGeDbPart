@@ -10,6 +10,7 @@ public sealed class CrmAnswerTypeConfiguration : IEntityTypeConfiguration<CrmAns
     {
         builder.HasKey(e => e.CatId);
 
-        builder.Property(e => e.AnswerName).HasMaxLength(255);
+        builder.Property(e => e.CatKey).HasMaxLength(50);
+        builder.Property(e => e.AnswerTypeName).HasMaxLength(255);
     }
 }
