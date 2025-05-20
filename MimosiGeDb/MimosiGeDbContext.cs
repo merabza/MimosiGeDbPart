@@ -59,7 +59,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<GroupByStudent> GroupsByStudents { get; set; }
 
-    public DbSet<GroupByTeachers> GroupsByTeachers { get; set; }
+    public DbSet<GroupByTeacher> GroupsByTeachers { get; set; }
 
     public DbSet<Human> Humans { get; set; }
 

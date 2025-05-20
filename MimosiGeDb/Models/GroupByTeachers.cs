@@ -2,7 +2,7 @@
 
 namespace MimosiGeDb.Models;
 
-public sealed class GroupByTeachers
+public sealed class GroupByTeacher
 {
     public int Id { get; set; }
 

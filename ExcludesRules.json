@@ -122,6 +122,10 @@
     {
       "TableName": "RsBenefCategories",
       "FieldName": "RsBeneficiaryCategories"
+    },
+    {
+      "TableName": "GroupsByStudents",
+      "FieldName": "SsmaTimeStamp"
     }
   ],
   "ReplaceFieldNames": [
@@ -294,6 +298,21 @@
       "TableName": "crmAnswerType",
       "OldFieldName": "AnswerName",
       "NewFieldName": "AnswerTypeName"
+    },
+    {
+      "TableName": "GroupMaterials",
+      "OldFieldName": "BmId",
+      "NewFieldName": "GmtId"
+    },
+    {
+      "TableName": "GroupsByStudents",
+      "OldFieldName": "Id",
+      "NewFieldName": "GbsId"
+    },
+    {
+      "TableName": "GroupsByStudents",
+      "OldFieldName": "HoursCoeficient",
+      "NewFieldName": "HoursCoefficient"
     }
   ]
 }

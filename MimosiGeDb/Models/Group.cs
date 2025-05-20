@@ -72,7 +72,7 @@ public sealed class Group
 
     public ICollection<GroupByStudent> GroupsByStudents { get; set; } = new List<GroupByStudent>();
 
-    public ICollection<GroupByTeachers> GroupsByTeachers { get; set; } = new List<GroupByTeachers>();
+    public ICollection<GroupByTeacher> GroupsByTeachers { get; set; } = new List<GroupByTeacher>();
 
     public ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
 
