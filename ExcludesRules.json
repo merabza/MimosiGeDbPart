@@ -300,11 +300,6 @@
       "NewFieldName": "AnswerTypeName"
     },
     {
-      "TableName": "GroupMaterials",
-      "OldFieldName": "BmId",
-      "NewFieldName": "GmtId"
-    },
-    {
       "TableName": "GroupsByStudents",
       "OldFieldName": "Id",
       "NewFieldName": "GbsId"
