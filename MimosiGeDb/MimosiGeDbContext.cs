@@ -73,7 +73,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext
 
     public DbSet<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; }
 
-    public DbSet<MonthDey> MonthDaies { get; set; }
+    public DbSet<MonthDay> MonthDays { get; set; }
 
     public DbSet<OperationMonth> OperationMonths { get; set; }
 
