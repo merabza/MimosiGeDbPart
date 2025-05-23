@@ -26,7 +26,7 @@ public sealed record SalaryLineConfiguration : IEntityTypeConfiguration<SalaryLi
         entity.Property(e => e.SaGrossMinusPension).HasComment("დარიცხვას გამოკლებული საპენსიო").HasColumnType("money");
         entity.Property(e => e.SaIncomeTax).HasComment("საშემოსავლო").HasColumnType("money");
         entity.Property(e => e.SaIndividualIncomeTax).HasComment("ინდივიდუალური საშემოსავლო").HasColumnType("money");
-        entity.Property(e => e.SaMonthDate).HasPrecision(0).HasComment("დარიცხვის თვე");
+        entity.Property(e => e.SaMonthDate).HasComment("დარიცხვის თვე");
         entity.Property(e => e.SaNetAmountRound).HasComment("მთლიანი ნამუშევარი დამრგვალებული 2 ლარზე")
             .HasColumnType("money");
         entity.Property(e => e.SaPension2).HasComment("საპენსიოს 2%").HasColumnType("money");

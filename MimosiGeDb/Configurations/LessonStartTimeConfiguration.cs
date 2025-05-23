@@ -10,6 +10,6 @@ public sealed class LessonStartTimeConfiguration : IEntityTypeConfiguration<Less
     {
         entity.HasKey(e => e.Lstid);
 
-        entity.Property(e => e.Lstid).HasPrecision(0);
+        entity.Property(e => e.Lstid);
     }
 }

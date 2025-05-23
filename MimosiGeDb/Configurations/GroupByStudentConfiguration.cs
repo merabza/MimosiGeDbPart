@@ -21,7 +21,7 @@ public sealed class GroupByStudentConfiguration : IEntityTypeConfiguration<Group
         entity.Property(e => e.GbsId);
 
         entity.Property(e => e.DirtyCharges).HasDefaultValue(true).HasComment("საჭიროებს დარიცხვების დაზუსტებას");
-        entity.Property(e => e.EndDate).HasPrecision(0).HasComment("გაუქმების თარიღი");
+        entity.Property(e => e.EndDate).HasComment("გაუქმების თარიღი");
         entity.Property(e => e.FourWeekFee).HasDefaultValue(48m).HasComment("4 კვირაში გადასახადი")
             .HasColumnType("money");
         entity.Property(e => e.FourWeekHours).HasDefaultValue(8f).HasComment("4 კვირაში საათების რაოდენობა");
@@ -30,7 +30,7 @@ public sealed class GroupByStudentConfiguration : IEntityTypeConfiguration<Group
         entity.Property(e => e.Note).HasMaxLength(255).HasComment("შენიშვნა");
         entity.Property(e => e.OneHourFee).HasDefaultValue(6m).HasComment("ერთი საათის ღირებულება")
             .HasColumnType("money");
-        entity.Property(e => e.StartDate).HasPrecision(0).HasDefaultValueSql("getdate()")
+        entity.Property(e => e.StartDate).HasDefaultValueSql("getdate()")
             .HasComment("გააქტიურების თარიღი");
         entity.Property(e => e.StudentContractId).HasComment("მოსწავლე");
 

@@ -13,7 +13,7 @@ public sealed class SalaryHeaderConfiguration : IEntityTypeConfiguration<SalaryH
         entity.HasIndex(e => e.ShId);
 
         entity.Property(e => e.ShId);
-        entity.Property(e => e.ShChargeDate).HasPrecision(0).HasComment("დარიცხვის თარიღი");
-        entity.Property(e => e.ShTransferDate).HasPrecision(0).HasComment("გადარიცხვის თარიღი");
+        entity.Property(e => e.ShChargeDate).HasComment("დარიცხვის თარიღი");
+        entity.Property(e => e.ShTransferDate).HasComment("გადარიცხვის თარიღი");
     }
 }

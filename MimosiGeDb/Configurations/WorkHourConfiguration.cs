@@ -16,8 +16,8 @@ public sealed class WorkHourConfiguration : IEntityTypeConfiguration<WorkHour>
 
         entity.Property(e => e.WhId);
         entity.Property(e => e.TeacherContractId).HasComment("თანამშრომელი");
-        entity.Property(e => e.WhEnd).HasPrecision(0).HasComment("მუშაობის დასრულების თარიღი და დრო");
-        entity.Property(e => e.WhStart).HasPrecision(0).HasComment("მუშაობის დაწყების თარიღი და დრო");
+        entity.Property(e => e.WhEnd).HasComment("მუშაობის დასრულების თარიღი და დრო");
+        entity.Property(e => e.WhStart).HasComment("მუშაობის დაწყების თარიღი და დრო");
 
         entity.HasOne(d => d.TeacherContract).WithMany(p => p.WorkHours).HasForeignKey(d => d.TeacherContractId)
             .OnDelete(DeleteBehavior.ClientSetNull);

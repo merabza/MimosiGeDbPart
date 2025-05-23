@@ -24,7 +24,7 @@ public sealed class GroupConfiguration : IEntityTypeConfiguration<Group>
         builder.Property(e => e.GroupCode).HasMaxLength(5).HasComment("ჯგუფის კოდი");
         builder.Property(e => e.GroupSizeId).HasDefaultValue(2).HasComment("ჯგუფის ზომა (ტიპი)");
         builder.Property(e => e.StudentStatusId).HasComment("მოსწავლის სტატუსი");
-        builder.Property(e => e.VoidDate).HasPrecision(0).HasComment("გაუქმების თარიღი");
+        builder.Property(e => e.VoidDate).HasComment("გაუქმების თარიღი");
 
         builder.HasOne(d => d.CourseNavigation).WithMany(p => p.Groups).HasForeignKey(d => d.CourseId)
             .OnDelete(DeleteBehavior.ClientSetNull);

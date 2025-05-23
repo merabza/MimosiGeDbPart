@@ -64,6 +64,14 @@
     {
       "OldTableName": "WeekDaies",
       "NewTableName": "WeekDays"
+    },
+    {
+      "OldTableName": "MonthDaies",
+      "NewTableName": "MonthDays"
+    },
+    {
+      "OldTableName": "RsBenefCategories",
+      "NewTableName": "RsBeneficiaryCategories"
     }
   ],
   "ExcludeFields": [
@@ -104,11 +112,31 @@
       "FieldName": "SsmaTimeStamp"
     },
     {
+      "TableName": "SalaryLinesDetails",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "TeacherContracts",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
       "TableName": "StudentContractDetails",
       "FieldName": "SsmaTimeStamp"
     },
     {
+      "TableName": "TeacherSalarySchemes",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "WeekDays",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
       "TableName": "StudentContracts",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "WeekNumbers",
       "FieldName": "SsmaTimeStamp"
     },
     {
@@ -125,6 +153,14 @@
     },
     {
       "TableName": "GroupsByStudents",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "LessonsByStudents",
+      "FieldName": "SsmaTimeStamp"
+    },
+    {
+      "TableName": "MonthDaies",
       "FieldName": "SsmaTimeStamp"
     }
   ],
@@ -222,7 +258,7 @@
     {
       "TableName": "GroupMaterials",
       "OldFieldName": "BmId",
-      "NewFieldName": "MatId"
+      "NewFieldName": "GmtId"
     },
     {
       "TableName": "Groups",
@@ -308,6 +344,31 @@
       "TableName": "GroupsByStudents",
       "OldFieldName": "HoursCoeficient",
       "NewFieldName": "HoursCoefficient"
+    },
+    {
+      "TableName": "Materials",
+      "OldFieldName": "BmAuthors",
+      "NewFieldName": "MatAuthors"
+    },
+    {
+      "TableName": "Materials",
+      "OldFieldName": "BmName",
+      "NewFieldName": "MatName"
+    },
+    {
+      "TableName": "Materials",
+      "OldFieldName": "BmTypeId",
+      "NewFieldName": "MatTypeId"
+    },
+    {
+      "TableName": "Materials",
+      "OldFieldName": "BmYear",
+      "NewFieldName": "MatYear"
+    },
+    {
+      "TableName": "WeekNumbers",
+      "OldFieldName": "WeekNumber",
+      "NewFieldName": "Number"
     }
   ]
 }

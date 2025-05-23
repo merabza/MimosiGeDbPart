@@ -15,13 +15,13 @@ public sealed class GroupDayTimePlaceConfiguration : IEntityTypeConfiguration<Gr
         entity.HasIndex(e => e.RoomId);
 
         entity.Property(e => e.GdtpId);
-        entity.Property(e => e.EndDate).HasPrecision(0).HasComment("გაუქმების თარიღი");
+        entity.Property(e => e.EndDate).HasComment("გაუქმების თარიღი");
         entity.Property(e => e.GroupId).HasComment("ჯგუფი");
         entity.Property(e => e.HoursCount).HasDefaultValue(1f).HasComment("საათები");
         entity.Property(e => e.RoomId).HasComment("ოთახი");
-        entity.Property(e => e.StartDate).HasPrecision(0).HasDefaultValueSql("getdate()")
+        entity.Property(e => e.StartDate).HasDefaultValueSql("getdate()")
             .HasComment("გააქტიურების თარიღი");
-        entity.Property(e => e.LessonStarTime).HasPrecision(0).HasComment("გაკვეთილის დაწყების დრო");
+        entity.Property(e => e.LessonStarTime).HasComment("გაკვეთილის დაწყების დრო");
         entity.Property(e => e.WeekDay).HasComment("კვირის დღე");
 
         entity.HasOne(d => d.GroupNavigation).WithMany(p => p.GroupDayTimePlace).HasForeignKey(d => d.GroupId)

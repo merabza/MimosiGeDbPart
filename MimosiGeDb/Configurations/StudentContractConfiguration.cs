@@ -19,12 +19,12 @@ public sealed class StudentContractConfiguration : IEntityTypeConfiguration<Stud
         builder.HasIndex(e => e.StudentStatusId);
 
         builder.Property(e => e.AcademicYearId).HasComment("სასწავლო წელი");
-        builder.Property(e => e.ContractDate).HasPrecision(0).HasComment("კონტრაქტის თარიღი");
+        builder.Property(e => e.ContractDate).HasComment("კონტრაქტის თარიღი");
         builder.Property(e => e.ContractNumber).HasMaxLength(5).HasComment("კონტრაქტის ნომერი");
         builder.Property(e => e.DesiredMonthlyPaymentDay).HasComment("გადახდის სასურველი დღე თვეში");
         builder.Property(e => e.DirtyNextPayDate).HasDefaultValue(true)
             .HasComment("შემდეგი გადახდის თარიღს სჭირდება გადაანგარიშება");
-        builder.Property(e => e.NextPayDate).HasPrecision(0).HasComment("შემდეგი გადახდის თარიღი");
+        builder.Property(e => e.NextPayDate).HasComment("შემდეგი გადახდის თარიღი");
         builder.Property(e => e.ParentHumanId).HasComment("მშობელი");
         builder.Property(e => e.StudentHumanId).HasComment("მოსწავლე");
         builder.Property(e => e.StudentStatusId).HasComment("მოსწავლის სტატუსი");
