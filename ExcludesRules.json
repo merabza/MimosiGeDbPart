@@ -346,16 +346,6 @@
       "NewFieldName": "HoursCoefficient"
     },
     {
-      "TableName": "Materials",
-      "OldFieldName": "BmTypeId",
-      "NewFieldName": "MatTypeId"
-    },
-    {
-      "TableName": "Materials",
-      "OldFieldName": "BmYear",
-      "NewFieldName": "MatYear"
-    },
-    {
       "TableName": "WeekNumbers",
       "OldFieldName": "WeekNumber",
       "NewFieldName": "Number"
