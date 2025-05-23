@@ -347,11 +347,6 @@
     },
     {
       "TableName": "Materials",
-      "OldFieldName": "BmName",
-      "NewFieldName": "MatName"
-    },
-    {
-      "TableName": "Materials",
       "OldFieldName": "BmTypeId",
       "NewFieldName": "MatTypeId"
     },
