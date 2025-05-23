@@ -30,8 +30,7 @@ public sealed class GroupByStudentConfiguration : IEntityTypeConfiguration<Group
         entity.Property(e => e.Note).HasMaxLength(255).HasComment("შენიშვნა");
         entity.Property(e => e.OneHourFee).HasDefaultValue(6m).HasComment("ერთი საათის ღირებულება")
             .HasColumnType("money");
-        entity.Property(e => e.StartDate).HasDefaultValueSql("getdate()")
-            .HasComment("გააქტიურების თარიღი");
+        entity.Property(e => e.StartDate).HasDefaultValueSql("getdate()").HasComment("გააქტიურების თარიღი");
         entity.Property(e => e.StudentContractId).HasComment("მოსწავლე");
 
         entity.HasOne(d => d.GroupNavigation).WithMany(p => p.GroupsByStudents).HasForeignKey(d => d.GroupId)

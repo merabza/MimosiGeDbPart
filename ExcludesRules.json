@@ -261,6 +261,11 @@
       "NewFieldName": "GmtId"
     },
     {
+      "TableName": "GroupBooksAndMaterials",
+      "OldFieldName": "BmId",
+      "NewFieldName": "GmtId"
+    },
+    {
       "TableName": "Groups",
       "OldFieldName": "CourceId",
       "NewFieldName": "CourseId"
