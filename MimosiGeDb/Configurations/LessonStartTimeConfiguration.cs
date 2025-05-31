@@ -8,8 +8,8 @@ public sealed class LessonStartTimeConfiguration : IEntityTypeConfiguration<Less
 {
     public void Configure(EntityTypeBuilder<LessonStartTime> entity)
     {
-        entity.HasKey(e => e.Lstid);
+        entity.HasKey(e => e.LstId);
 
-        entity.Property(e => e.Lstid);
+        entity.Property(e => e.LstId);
     }
 }
