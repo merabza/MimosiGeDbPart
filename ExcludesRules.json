@@ -383,6 +383,11 @@
       "TableName": "LessonsMaterials",
       "OldFieldName": "BmId",
       "NewFieldName": "LmId"
+    },
+    {
+      "TableName": "LessonStartTimes",
+      "OldFieldName": "Tmid",
+      "NewFieldName": "LstId"
     }
   ]
 }
