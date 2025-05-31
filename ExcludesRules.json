@@ -378,6 +378,11 @@
       "TableName": "RsBeneficiaryCategories",
       "OldFieldName": "QtId",
       "NewFieldName": "RbfId"
+    },
+    {
+      "TableName": "RsBeneficiaryCategories",
+      "OldFieldName": "QtName",
+      "NewFieldName": "RbfName"
     }
    ]
 }
