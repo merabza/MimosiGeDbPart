@@ -145,10 +145,6 @@
       "FieldName": "SsmaTimeStamp"
     },
     {
-      "TableName": "RsBenefCategories",
-      "FieldName": "RsBeneficiaryCategories"
-    },
-    {
       "TableName": "GroupsByStudents",
       "FieldName": "SsmaTimeStamp"
     },
@@ -377,6 +373,11 @@
       "TableName": "LessonStartTimes",
       "OldFieldName": "Tmid",
       "NewFieldName": "LstId"
+    },
+    {
+      "TableName": "RsBeneficiaryCategories",
+      "OldFieldName": "QtId",
+      "NewFieldName": "RbfId"
     }
    ]
 }
