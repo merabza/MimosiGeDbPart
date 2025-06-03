@@ -19,6 +19,6 @@ public sealed class MimNewDataSeedersFabric : MimDataSeedersFabric
 
     public override ITableDataSeeder CreateCrmAnswerTypeSeeder()
     {
-        return new MimCrmAnswerTypeSeeder(DataSeedFolder, Repo);
+        return new MimNewCrmAnswerTypeSeeder(DataSeedFolder, Repo);
     }
 }
