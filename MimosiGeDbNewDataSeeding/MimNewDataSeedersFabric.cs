@@ -21,4 +21,10 @@ public sealed class MimNewDataSeedersFabric : MimDataSeedersFabric
     {
         return new MimNewCrmAnswerTypeSeeder(DataSeedFolder, Repo);
     }
+
+    public override ITableDataSeeder CreateWeekDaysSeeder()
+    {
+        return new MimNewWeekDaysSeeder(DataSeedFolder, Repo);
+    }
+
 }

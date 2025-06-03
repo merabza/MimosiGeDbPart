@@ -14,7 +14,8 @@
     "GroupLessonsCountByMonths",
     "LessonsCheckCreateErrorLogs",
     "SalaryChargesChanges",
-    "MonthDaies"
+    "MonthDaies",
+    "WeekDays"
   ],
   "SingularityExceptions": [
     { "TableName": "menu", "TableNameSingular": "menuItm" },
