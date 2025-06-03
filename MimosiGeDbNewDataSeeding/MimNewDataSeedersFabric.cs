@@ -26,5 +26,4 @@ public sealed class MimNewDataSeedersFabric : MimDataSeedersFabric
     {
         return new MimNewWeekDaysSeeder(DataSeedFolder, Repo);
     }
-
 }
