@@ -22,81 +22,81 @@ public sealed class MimNewDataTypesSeeder : MimDataTypesSeeder
     {
     }
 
-    protected override bool SetParentDataTypes()
-    {
-        var tempData = DataSeederTempData.Instance;
+    //protected override bool SetParentDataTypes()
+    //{
+    //    var tempData = DataSeederTempData.Instance;
 
-        var dtdtdt = new Tuple<int, int, int>[]
-        {
-            new(tempData.GetIntIdByKey<DataType>(EMimosiGeDataTypeKeys.InflectionTypeToCrudType.ToDtKey()),
-                tempData.GetIntIdByKey<DataType>(EMimosiGeDataTypeKeys.InflectionType.ToDtKey()),
-                tempData.GetIntIdByKey<DataType>(ECarcassDataTypeKeys.CrudRightType.ToDtKey())),
-            new(tempData.GetIntIdByKey<DataType>(EMimosiGeDataTypeKeys.DerivationTypeToCrudType.ToDtKey()),
-                tempData.GetIntIdByKey<DataType>(EMimosiGeDataTypeKeys.DerivationType.ToDtKey()),
-                tempData.GetIntIdByKey<DataType>(ECarcassDataTypeKeys.CrudRightType.ToDtKey()))
-        };
+    //    var dtdtdt = new Tuple<int, int, int>[]
+    //    {
+    //        new(tempData.GetIntIdByKey<DataType>(EMimosiGeDataTypeKeys.InflectionTypeToCrudType.ToDtKey()),
+    //            tempData.GetIntIdByKey<DataType>(EMimosiGeDataTypeKeys.InflectionType.ToDtKey()),
+    //            tempData.GetIntIdByKey<DataType>(ECarcassDataTypeKeys.CrudRightType.ToDtKey())),
+    //        new(tempData.GetIntIdByKey<DataType>(EMimosiGeDataTypeKeys.DerivationTypeToCrudType.ToDtKey()),
+    //            tempData.GetIntIdByKey<DataType>(EMimosiGeDataTypeKeys.DerivationType.ToDtKey()),
+    //            tempData.GetIntIdByKey<DataType>(ECarcassDataTypeKeys.CrudRightType.ToDtKey()))
+    //    };
 
-        return CarcassRepo.SetManyToManyJoinParentChildDataTypes(dtdtdt) && base.SetParentDataTypes();
-    }
+    //    return CarcassRepo.SetManyToManyJoinParentChildDataTypes(dtdtdt) && base.SetParentDataTypes();
+    //}
 
-    protected override bool RemoveRedundantDataTypes()
-    {
-        string[] toRemoveTableNames = ["verbPersonMarkerCombinationFormulaDetails"];
-        return CarcassRepo.RemoveRedundantDataTypesByTableNames(toRemoveTableNames) && base.RemoveRedundantDataTypes();
-    }
+    //protected override bool RemoveRedundantDataTypes()
+    //{
+    //    string[] toRemoveTableNames = ["verbPersonMarkerCombinationFormulaDetails"];
+    //    return CarcassRepo.RemoveRedundantDataTypesByTableNames(toRemoveTableNames) && base.RemoveRedundantDataTypes();
+    //}
 
     protected override List<DataType> CreateListByRules()
     {
         var mn = base.CreateListByRules();
 
-        var classifierDKey = EMimosiGeDataTypeKeys.Classifier.ToDtKey();
-        var actantGrammarCaseDKey = EMimosiGeDataTypeKeys.ActantGrammarCase.ToDtKey();
-        var actantGroupDKey = EMimosiGeDataTypeKeys.ActantGroup.ToDtKey();
-        var actantPositionDKey = EMimosiGeDataTypeKeys.ActantPosition.ToDtKey();
-        var actantTypeDKey = EMimosiGeDataTypeKeys.ActantType.ToDtKey();
-        var grammarCaseDKey = EMimosiGeDataTypeKeys.GrammarCase.ToDtKey();
+        //var classifierDKey = EMimosiGeDataTypeKeys.Classifier.ToDtKey();
+        //var actantGrammarCaseDKey = EMimosiGeDataTypeKeys.ActantGrammarCase.ToDtKey();
+        //var actantGroupDKey = EMimosiGeDataTypeKeys.ActantGroup.ToDtKey();
+        //var actantPositionDKey = EMimosiGeDataTypeKeys.ActantPosition.ToDtKey();
+        //var actantTypeDKey = EMimosiGeDataTypeKeys.ActantType.ToDtKey();
+        //var grammarCaseDKey = EMimosiGeDataTypeKeys.GrammarCase.ToDtKey();
 
-        //IssueKind.DKey
-        var issueKindDKey = EMimosiGeDataTypeKeys.IssueKind.ToDtKey();
+        ////IssueKind.DKey
+        //var issueKindDKey = EMimosiGeDataTypeKeys.IssueKind.ToDtKey();
 
-        //IssuePriority.DKey
-        var issuePriorityDKey = EMimosiGeDataTypeKeys.IssuePriority.ToDtKey();
+        ////IssuePriority.DKey
+        //var issuePriorityDKey = EMimosiGeDataTypeKeys.IssuePriority.ToDtKey();
 
-        //IssueStatus.DKey
-        var issueStatusDKey = EMimosiGeDataTypeKeys.IssueStatus.ToDtKey();
+        ////IssueStatus.DKey
+        //var issueStatusDKey = EMimosiGeDataTypeKeys.IssueStatus.ToDtKey();
 
-        //NounNumber.DKey
-        var nounNumberDKey = EMimosiGeDataTypeKeys.NounNumber.ToDtKey();
+        ////NounNumber.DKey
+        //var nounNumberDKey = EMimosiGeDataTypeKeys.NounNumber.ToDtKey();
 
-        //NounParadigm.DKey
-        var nounParadigmDKey = EMimosiGeDataTypeKeys.NounParadigm.ToDtKey();
+        ////NounParadigm.DKey
+        //var nounParadigmDKey = EMimosiGeDataTypeKeys.NounParadigm.ToDtKey();
 
-        //RecordStatus.DKey
-        var recordStatusDKey = EMimosiGeDataTypeKeys.RecordStatus.ToDtKey();
+        ////RecordStatus.DKey
+        //var recordStatusDKey = EMimosiGeDataTypeKeys.RecordStatus.ToDtKey();
 
-        //VerbNumber.DKey
-        var verbNumberDKey = EMimosiGeDataTypeKeys.VerbNumber.ToDtKey();
+        ////VerbNumber.DKey
+        //var verbNumberDKey = EMimosiGeDataTypeKeys.VerbNumber.ToDtKey();
 
-        //VerbParadigm.DKey
-        var verbParadigmDKey = EMimosiGeDataTypeKeys.VerbParadigm.ToDtKey();
+        ////VerbParadigm.DKey
+        //var verbParadigmDKey = EMimosiGeDataTypeKeys.VerbParadigm.ToDtKey();
 
-        //VerbPerson.DKey
-        var verbPersonDKey = EMimosiGeDataTypeKeys.VerbPerson.ToDtKey();
+        ////VerbPerson.DKey
+        //var verbPersonDKey = EMimosiGeDataTypeKeys.VerbPerson.ToDtKey();
 
-        //VerbPluralityType.DKey
-        var verbPluralityTypeDKey = EMimosiGeDataTypeKeys.VerbPluralityType.ToDtKey();
+        ////VerbPluralityType.DKey
+        //var verbPluralityTypeDKey = EMimosiGeDataTypeKeys.VerbPluralityType.ToDtKey();
 
-        //VerbSeries.DKey
-        var verbSeriesDKey = EMimosiGeDataTypeKeys.VerbSeries.ToDtKey();
+        ////VerbSeries.DKey
+        //var verbSeriesDKey = EMimosiGeDataTypeKeys.VerbSeries.ToDtKey();
 
-        //VerbTransition.DKey
-        var verbTransitionDKey = EMimosiGeDataTypeKeys.VerbTransition.ToDtKey();
+        ////VerbTransition.DKey
+        //var verbTransitionDKey = EMimosiGeDataTypeKeys.VerbTransition.ToDtKey();
 
-        //Pronoun.DKey
-        var pronounDKey = EMimosiGeDataTypeKeys.Pronoun.ToDtKey();
+        ////Pronoun.DKey
+        //var pronounDKey = EMimosiGeDataTypeKeys.Pronoun.ToDtKey();
 
-        //VerbRowFilter.DKey
-        var verbRowFilterDKey = EMimosiGeDataTypeKeys.VerbRowFilter.ToDtKey();
+        ////VerbRowFilter.DKey
+        //var verbRowFilterDKey = EMimosiGeDataTypeKeys.VerbRowFilter.ToDtKey();
 
         var serializerSettings = new JsonSerializerSettings
         {
