@@ -10,6 +10,7 @@
         <ProjectReference Include="..\..\BackendCarcass\CarcassDataSeeding\CarcassDataSeeding.csproj" />
         <ProjectReference Include="..\..\BackendCarcass\CarcassDb\CarcassDb.csproj" />
         <ProjectReference Include="..\..\MimosiGeScaffoldSeeder\MimosiGeDbDataSeeding\MimosiGeDbDataSeeding.csproj" />
+        <ProjectReference Include="..\MimosiGeDbMasterDataDom\MimosiGeDbMasterDataDom.csproj" />
         <ProjectReference Include="..\MimosiGeDb\MimosiGeDb.csproj" />
     </ItemGroup>
 
