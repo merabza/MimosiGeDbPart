@@ -20,7 +20,7 @@ public sealed class AcademicYear
     /// <summary>
     ///     სასწავლო წლის დასასრული
     /// </summary>
-    public DateTime? FinishDate { get; set; }
+    public DateTime FinishDate { get; set; }
 
     public ICollection<StudentContract> StudentContracts { get; set; } = new List<StudentContract>();
 }

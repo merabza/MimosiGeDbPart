@@ -7,10 +7,10 @@ using MimosiGeDbNewDataSeeding.NewSeeders;
 
 namespace MimosiGeDbNewDataSeeding;
 
-public sealed class MimNewDataSeedersFabric : MimDataSeedersFabric
+public sealed class MimNewDataSeedersFactory : MimDataSeedersFactory
 {
     // ReSharper disable once ConvertToPrimaryConstructor
-    public MimNewDataSeedersFabric(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager,
+    public MimNewDataSeedersFactory(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager,
         string secretDataFolder, string dataSeedFolder, ICarcassDataSeederRepository carcassRepo,
         IMimDataSeederRepository repo) : base(userManager, roleManager, secretDataFolder, dataSeedFolder, carcassRepo,
         repo)

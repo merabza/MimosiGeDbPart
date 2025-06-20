@@ -4,11 +4,11 @@ namespace MimosiGeDb.Models;
 
 public sealed class GroupSize
 {
-    public int Id { get; set; }
+    public int GrsId { get; set; }
 
-    public short? Size { get; set; }
+    public short? GrsSize { get; set; }
 
-    public string? Name { get; set; }
+    public string? GrsName { get; set; }
 
     public ICollection<Group> Groups { get; set; } = new List<Group>();
 
