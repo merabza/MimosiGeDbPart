@@ -1,5 +1,4 @@
-﻿using System.Collections.Immutable;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MimosiGeDb.Models;
 
