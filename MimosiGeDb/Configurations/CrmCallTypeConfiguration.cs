@@ -9,6 +9,7 @@ public sealed class CrmCallTypeConfiguration : IEntityTypeConfiguration<CrmCallT
     public void Configure(EntityTypeBuilder<CrmCallType> builder)
     {
         builder.HasKey(e => e.CctId);
+        builder.HasIndex(e => e.CallTypeName).IsUnique();
 
         builder.Property(e => e.CallTypeName).HasMaxLength(255);
     }

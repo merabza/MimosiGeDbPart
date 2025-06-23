@@ -9,6 +9,7 @@ public sealed class AcademicYearConfiguration : IEntityTypeConfiguration<Academi
     public void Configure(EntityTypeBuilder<AcademicYear> builder)
     {
         builder.HasKey(e => e.AyId);
+        builder.HasIndex(e => e.AcademicYearName).IsUnique();
 
         builder.Property(e => e.AcademicYearName).HasMaxLength(9);
     }

@@ -9,6 +9,8 @@ public sealed class BankAccountConfiguration : IEntityTypeConfiguration<BankAcco
     public void Configure(EntityTypeBuilder<BankAccount> builder)
     {
         builder.HasKey(e => e.BaId);
+        builder.HasIndex(e => e.AccountNumber).IsUnique();
+
         builder.Property(e => e.AccountNumber).HasMaxLength(22);
         builder.Property(e => e.BankCode).HasMaxLength(8);
         builder.Property(e => e.BankName).HasMaxLength(255);
