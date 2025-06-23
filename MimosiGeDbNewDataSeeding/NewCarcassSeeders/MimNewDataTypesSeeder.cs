@@ -71,19 +71,14 @@ public sealed class MimNewDataTypesSeeder : MimDataTypesSeeder
                 nameof(Group.GrpId), nameof(Group.GroupCode), null,
                 GetMdComboCell(nameof(Group.CourseId), "საგანი", DataSeederRepo.GetTableName<Course>()),
                 GetMdComboCell(nameof(Group.GroupSizeId), "ჯგუფის ზომა", DataSeederRepo.GetTableName<GroupSize>()),
-                GetMdComboCell(nameof(Group.StudentStatusId), "მოსწავლის სტატუსი", DataSeederRepo.GetTableName<StudentStatus>()),
+                GetMdComboCell(nameof(Group.StudentStatusId), "მოსწავლის სტატუსი",
+                    DataSeederRepo.GetTableName<StudentStatus>()),
                 GetDateOnlyCell(nameof(Group.VoidDate), "ჯგუფის გაუქმების თარიღი")),
 
             //GroupSizes
             DataTypeFactory.Create("ჯგუფების ზომები", "ჯგუფის ზომა", "ჯგუფის ზომის",
                 DataSeederRepo.GetTableName<GroupSize>(), nameof(GroupSize.GrsId), nameof(GroupSize.GrsSize),
                 nameof(GroupSize.GrsName)),
-
-
-
-
-
-
         };
 
         mn.AddRange(newDataTypes);

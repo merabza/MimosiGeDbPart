@@ -383,6 +383,22 @@
       "TableName": "RsBeneficiaryCategories",
       "OldFieldName": "QtName",
       "NewFieldName": "RbfName"
+    },
+    {
+      "TableName": "GroupSizes",
+      "OldFieldName": "Id",
+      "NewFieldName": "GrsId"
+    },
+    {
+      "TableName": "GroupSizes",
+      "OldFieldName": "Size",
+      "NewFieldName": "GrsSize"
+    },
+    {
+      "TableName": "GroupSizes",
+      "OldFieldName": "Name",
+      "NewFieldName": "GrsName"
     }
+    
    ]
 }
