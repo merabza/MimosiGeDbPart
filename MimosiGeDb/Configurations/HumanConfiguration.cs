@@ -9,7 +9,7 @@ public sealed class HumanConfiguration : IEntityTypeConfiguration<Human>
     public void Configure(EntityTypeBuilder<Human> builder)
     {
         builder.HasKey(e => e.humId);
-
+        builder.HasIndex(e => e.PersonalId).IsUnique();
         builder.Property(e => e.ActualAddress).HasMaxLength(255).HasComment("ფაქტიური მისამართი");
         builder.Property(e => e.BirthDate).HasComment("დაბადების თარიღი");
         builder.Property(e => e.Email).HasMaxLength(255);
