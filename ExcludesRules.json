@@ -14,7 +14,11 @@
     "GroupLessonsCountByMonths",
     "LessonsCheckCreateErrorLogs",
     "SalaryChargesChanges",
-    "MonthDaies"
+    "MonthDaies",
+    "BooksAndMaterials",
+    "BooksAndMaterialsTypes",
+    "LessonBooksAndMaterials",
+    "GroupBooksAndMaterials"
   ],
   "SingularityExceptions": [
     { "TableName": "menu", "TableNameSingular": "menuItm" },
@@ -35,29 +39,12 @@
       "TableNameSingular": "LessonByStudent"
     },
     {
-      "TableName": "LessonsMaterials",
-      "TableNameSingular": "LessonMaterial"
-    },
-    {
       "TableName": "SalaryLinesDetails",
       "TableNameSingular": "SalaryLineDetail"
     }
   ],
   "ReplaceTableNames": [
-    { "OldTableName": "BooksAndMaterials", "NewTableName": "Materials" },
-    {
-      "OldTableName": "BooksAndMaterialsTypes",
-      "NewTableName": "MaterialTypes"
-    },
     { "OldTableName": "Cources", "NewTableName": "Courses" },
-    {
-      "OldTableName": "GroupBooksAndMaterials",
-      "NewTableName": "GroupMaterials"
-    },
-    {
-      "OldTableName": "LessonBooksAndMaterials",
-      "NewTableName": "LessonsMaterials"
-    },
     {
       "OldTableName": "Times",
       "NewTableName": "LessonStartTimes"
@@ -245,16 +232,6 @@
       "NewFieldName": "LessonStarTime"
     },
     {
-      "TableName": "GroupMaterials",
-      "OldFieldName": "BmId",
-      "NewFieldName": "GmtId"
-    },
-    {
-      "TableName": "GroupBooksAndMaterials",
-      "OldFieldName": "BmId",
-      "NewFieldName": "GmtId"
-    },
-    {
       "TableName": "Groups",
       "OldFieldName": "CourceId",
       "NewFieldName": "CourseId"
@@ -268,56 +245,6 @@
       "TableName": "Humans",
       "OldFieldName": "Id",
       "NewFieldName": "humId"
-    },
-    {
-      "TableName": "Materials",
-      "OldFieldName": "BmAuthors",
-      "NewFieldName": "MatAuthors"
-    },
-    {
-      "TableName": "Materials",
-      "OldFieldName": "BmName",
-      "NewFieldName": "MatName"
-    },
-    {
-      "TableName": "Materials",
-      "OldFieldName": "BmTypeId",
-      "NewFieldName": "MatTypeId"
-    },
-    {
-      "TableName": "Materials",
-      "OldFieldName": "BmYear",
-      "NewFieldName": "MatYear"
-    },
-    {
-      "TableName": "BooksAndMaterials",
-      "OldFieldName": "BmAuthors",
-      "NewFieldName": "MatAuthors"
-    },
-    {
-      "TableName": "BooksAndMaterials",
-      "OldFieldName": "BmName",
-      "NewFieldName": "MatName"
-    },
-    {
-      "TableName": "BooksAndMaterials",
-      "OldFieldName": "BmTypeId",
-      "NewFieldName": "MatTypeId"
-    },
-    {
-      "TableName": "BooksAndMaterials",
-      "OldFieldName": "BmYear",
-      "NewFieldName": "MatYear"
-    },
-    {
-      "TableName": "MaterialTypes",
-      "OldFieldName": "Id",
-      "NewFieldName": "MtId"
-    },
-    {
-      "TableName": "MaterialTypes",
-      "OldFieldName": "BmtName",
-      "NewFieldName": "MtName"
     },
     {
       "TableName": "StudentContractDetails",
@@ -363,11 +290,6 @@
       "TableName": "WeekNumbers",
       "OldFieldName": "WeekNumber",
       "NewFieldName": "Number"
-    },
-    {
-      "TableName": "LessonsMaterials",
-      "OldFieldName": "BmId",
-      "NewFieldName": "LmId"
     },
     {
       "TableName": "LessonStartTimes",
