@@ -9,8 +9,7 @@ public sealed class RsQuoteTypeConfiguration : IEntityTypeConfiguration<RsQuoteT
     public void Configure(EntityTypeBuilder<RsQuoteType> entity)
     {
         entity.HasKey(e => e.QtId);
-
-        entity.HasIndex(e => e.QtId);
+        entity.HasIndex(e => e.QtName).IsUnique();
 
         entity.Property(e => e.QtId);
         entity.Property(e => e.QtName).HasMaxLength(255);

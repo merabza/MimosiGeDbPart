@@ -25,7 +25,7 @@ public sealed class Human
     /// <summary>
     ///     პირადი ნომერი
     /// </summary>
-    public string PersonalId { get; set; } = null!;
+    public required string PersonalId { get; set; } = null!;
 
     /// <summary>
     ///     ტელეფონის ნომერი

@@ -6,7 +6,7 @@ public sealed class RsQuoteType
 {
     public short QtId { get; set; }
 
-    public string? QtName { get; set; }
+    public required string QtName { get; set; }
 
     public ICollection<RsTaxRate> RsTaxRates { get; set; } = new List<RsTaxRate>();
 

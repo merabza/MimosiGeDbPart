@@ -5,7 +5,7 @@ namespace MimosiGeDb.Models;
 public sealed class CrmAnswerType
 {
     public int CatId { get; set; }
-    public string CatKey { get; set; }
+    public required string CatKey { get; set; }
 
     /// <summary>
     ///     პასუხის ტიპის სახელი

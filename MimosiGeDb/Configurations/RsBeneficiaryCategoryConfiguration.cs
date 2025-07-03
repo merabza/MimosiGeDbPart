@@ -10,7 +10,7 @@ public sealed class RsBeneficiaryCategoryConfiguration : IEntityTypeConfiguratio
     {
         entity.HasKey(e => e.RbfId);
 
-        entity.HasIndex(e => e.RbfId);
+        entity.HasIndex(e => e.RbfName).IsUnique();
 
         entity.Property(e => e.RbfId);
         entity.Property(e => e.RbfName).HasMaxLength(255);
