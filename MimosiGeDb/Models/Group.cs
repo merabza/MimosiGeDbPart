@@ -5,6 +5,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class Group
 {
+    private Course? _courseNavigation;
     private GroupSize? _groupSizeNavigation;
 
     private StudentStatus? _studentStatusNavigation;
@@ -40,8 +41,6 @@ public sealed class Group
     /// </summary>
     public DateTime? VoidDate { get; set; }
 
-    private Course? _courseNavigation;
-
     public Course CourseNavigation
     {
         get =>
@@ -66,14 +65,9 @@ public sealed class Group
         set => _studentStatusNavigation = value;
     }
 
-    public ICollection<GroupMaterial> GroupMaterials { get; set; } = new List<GroupMaterial>();
-
     public ICollection<GroupDayTimePlace> GroupDayTimePlace { get; set; } = new List<GroupDayTimePlace>();
-
     public ICollection<GroupByStudent> GroupsByStudents { get; set; } = new List<GroupByStudent>();
-
     public ICollection<GroupByTeacher> GroupsByTeachers { get; set; } = new List<GroupByTeacher>();
-
     public ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
 
     public ICollection<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; } =

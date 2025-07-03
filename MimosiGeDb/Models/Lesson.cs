@@ -5,6 +5,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class Lesson
 {
+    private Group? _groupNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -67,8 +68,6 @@ public sealed class Lesson
     /// </summary>
     public DateTime TeoMaxDate { get; set; }
 
-    private Group? _groupNavigation;
-
     public Group GroupNavigation
     {
         get =>
@@ -77,16 +76,12 @@ public sealed class Lesson
         set => _groupNavigation = value;
     }
 
-    public ICollection<LessonMaterial> LessonMaterials { get; set; } = new List<LessonMaterial>();
-
     public ICollection<LessonByStudent> LessonsByStudents { get; set; } = new List<LessonByStudent>();
 
     public ICollection<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; } =
         new List<LessonCheckCreateErrorLog>();
 
     public LessonStatus StatusNavigation { get; set; } = null!;
-
     public TeacherContract? SubstituteTeacherContract { get; set; }
-
     public TeacherContract TeacherContract { get; set; } = null!;
 }
