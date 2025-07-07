@@ -12,8 +12,8 @@ public sealed class RsTaxRateConfiguration : IEntityTypeConfiguration<RsTaxRate>
 
         entity.HasIndex(e => e.Code).IsUnique();
 
-        //entity.HasOne(d => d.BenefCategory).WithMany(p => p.RsTaxRates).HasForeignKey(d => d.BenefCategoryId);
+        entity.HasOne(d => d.BenefCategory).WithMany(p => p.RsTaxRates).HasForeignKey(d => d.BenefCategoryId);
 
-        //entity.HasOne(d => d.QuoteType).WithMany(p => p.RsTaxRates).HasForeignKey(d => d.QuoteTypeId);
+        entity.HasOne(d => d.QuoteType).WithMany(p => p.RsTaxRates).HasForeignKey(d => d.QuoteTypeId);
     }
 }
