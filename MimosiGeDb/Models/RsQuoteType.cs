@@ -4,7 +4,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class RsQuoteType
 {
-    public short QtId { get; set; }
+    public int QtId { get; set; }
 
     public required string QtName { get; set; }
 
