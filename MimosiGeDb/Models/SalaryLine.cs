@@ -68,7 +68,7 @@ public sealed class SalaryLine
     /// <summary>
     ///     განაცემის სახე
     /// </summary>
-    public short? RsQuoteTypeId { get; set; }
+    public int? RsQuoteTypeId { get; set; }
 
     /// <summary>
     ///     ინდივიდუალური საშემოსავლო

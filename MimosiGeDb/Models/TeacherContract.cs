@@ -45,7 +45,7 @@ public sealed class TeacherContract
     /// <summary>
     ///     განაცემის სახე (საგადასახადოსათვის)
     /// </summary>
-    public short? RsQuoteId { get; set; }
+    public int? RsQuoteId { get; set; }
 
     /// <summary>
     ///     ქვეყანა (საგადასახადოსათვის)
@@ -92,7 +92,7 @@ public sealed class TeacherContract
     /// </summary>
     public DateTime? WorkHoursEnd { get; set; }
 
-    public short? Line { get; set; }
+    public int? Line { get; set; }
 
     /// <summary>
     ///     ინდივიდუალური მეწარმე
