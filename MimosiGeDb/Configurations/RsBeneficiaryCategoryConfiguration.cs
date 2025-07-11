@@ -9,6 +9,7 @@ public sealed class RsBeneficiaryCategoryConfiguration : IEntityTypeConfiguratio
     public void Configure(EntityTypeBuilder<RsBeneficiaryCategory> entity)
     {
         entity.HasKey(e => e.RbfId);
+        entity.ToTable("RsBeneficiaryCategories");
 
         entity.HasIndex(e => e.RbfName).IsUnique();
 
