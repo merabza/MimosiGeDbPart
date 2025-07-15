@@ -14,9 +14,9 @@ public sealed class CrmCallConfiguration : IEntityTypeConfiguration<CrmCall>
         entity.Property(e => e.CcId);
         entity.Property(e => e.AnswerTypeId).HasComment("შედეგი");
         entity.Property(e => e.CallConversation).HasComment("საუბრის შინაარსი").HasMaxLength(512);
-        entity.Property(e => e.CallDate).HasPrecision(0).HasDefaultValueSql("(getdate())").HasComment("თარიღი");
+        entity.Property(e => e.CallDate).HasDefaultValueSql("(getdate())").HasComment("თარიღი");
         entity.Property(e => e.CallTypeId).HasDefaultValue(1).HasComment("დარეკვის მიზეზი");
-        entity.Property(e => e.MustPayDate).HasPrecision(0).HasComment("უნდა გადაიხადოს თარიღამდე");
+        entity.Property(e => e.MustPayDate).HasComment("უნდა გადაიხადოს თარიღამდე");
         entity.Property(e => e.StudentContractId).HasComment("მოსწავლე");
 
         entity.HasOne(d => d.AnswerTypeNavigation).WithMany(p => p.CrmCalls).HasForeignKey(d => d.AnswerTypeId);

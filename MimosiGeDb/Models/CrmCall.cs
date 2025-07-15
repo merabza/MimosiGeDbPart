@@ -37,6 +37,7 @@ public sealed class CrmCall
     public DateTime? MustPayDate { get; set; }
 
     private CrmAnswerType? _answerTypeNavigation;
+
     public CrmAnswerType AnswerTypeNavigation
     {
         get =>
@@ -46,6 +47,7 @@ public sealed class CrmCall
     }
 
     private CrmCallType? _callTypeNavigation;
+
     public CrmCallType CallTypeNavigation
     {
         get =>
@@ -55,6 +57,7 @@ public sealed class CrmCall
     }
 
     private StudentContract? _studentContractNavigation;
+
     public StudentContract StudentContractNavigation
     {
         get =>
