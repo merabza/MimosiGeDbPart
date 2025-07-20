@@ -4,6 +4,8 @@ namespace MimosiGeDb.Models;
 
 public sealed class SalaryLineDetail
 {
+    private Group? _groupNavigation;
+
     /// <summary>
     ///     სტრიქონის იდენტიფიკატორი
     /// </summary>
@@ -33,8 +35,6 @@ public sealed class SalaryLineDetail
     ///     ერთი საათის ღირებულება
     /// </summary>
     public decimal SadHourCost { get; set; }
-
-    private Group? _groupNavigation;
 
     public Group GroupNavigation
     {

@@ -4,6 +4,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class SummaryComment
 {
+    private Course? _courseNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -30,8 +31,6 @@ public sealed class SummaryComment
     ///     კომენტარი
     /// </summary>
     public string? CommentText { get; set; }
-
-    private Course? _courseNavigation;
 
     public Course CourseNavigation
     {

@@ -4,9 +4,10 @@ namespace MimosiGeDb.Models;
 
 public sealed class GroupDayTimePlace
 {
-    private Room? _roomNavigation;
+    private Group? _groupNavigation;
 
     private LessonStartTime? _lessonStartTime;
+    private Room? _roomNavigation;
 
     private WeekDay? _weekDayNavigation;
     public int GdtpId { get; set; }
@@ -45,8 +46,6 @@ public sealed class GroupDayTimePlace
     ///     გაუქმების თარიღი
     /// </summary>
     public DateTime? EndDate { get; set; }
-
-    private Group? _groupNavigation;
 
     public Group GroupNavigation
     {

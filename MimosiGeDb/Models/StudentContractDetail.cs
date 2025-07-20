@@ -4,6 +4,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class StudentContractDetail
 {
+    private Course? _courseNavigation;
     public int Id { get; set; }
 
     public int? StudentContractId { get; set; }
@@ -32,8 +33,6 @@ public sealed class StudentContractDetail
     ///     ერთი საათის ღირებულება
     /// </summary>
     public decimal OneHourFee { get; set; }
-
-    private Course? _courseNavigation;
 
     public Course CourseNavigation
     {

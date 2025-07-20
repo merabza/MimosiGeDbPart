@@ -4,6 +4,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class GroupByTeacher
 {
+    private Group? _groupNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -30,8 +31,6 @@ public sealed class GroupByTeacher
     ///     გაუქმების თარიღი
     /// </summary>
     public DateTime? EndDate { get; set; }
-
-    private Group? _groupNavigation;
 
     public Group GroupNavigation
     {

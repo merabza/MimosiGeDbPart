@@ -1,9 +1,8 @@
-﻿using System;
-
-namespace MimosiGeDb.Models;
+﻿namespace MimosiGeDb.Models;
 
 public sealed class LessonByStudent
 {
+    public GroupByStudent? GroupByStudentNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -60,8 +59,6 @@ public sealed class LessonByStudent
     ///     წინასწარ გადახდილი თანხა (ბოლო თვის თანხის შესაბამისი)
     /// </summary>
     public decimal? PrepaidAmount { get; set; }
-
-    public GroupByStudent? GroupByStudentNavigation;
 
     public Lesson Lesson { get; set; } = null!;
 }

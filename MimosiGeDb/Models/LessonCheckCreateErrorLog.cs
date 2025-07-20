@@ -4,6 +4,9 @@ namespace MimosiGeDb.Models;
 
 public sealed class LessonCheckCreateErrorLog
 {
+    private ErrorLogText? _errorLogTextNavigation;
+
+    private Group? _groupNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -36,8 +39,6 @@ public sealed class LessonCheckCreateErrorLog
     /// </summary>
     public bool AllowUpdate { get; set; }
 
-    private ErrorLogText? _errorLogTextNavigation;
-
     public ErrorLogText ErrorLogTextNavigation
     {
         get =>
@@ -45,8 +46,6 @@ public sealed class LessonCheckCreateErrorLog
             throw new InvalidOperationException("Uninitialized property: " + nameof(_errorLogTextNavigation));
         set => _errorLogTextNavigation = value;
     }
-
-    private Group? _groupNavigation;
 
     public Group GroupNavigation
     {

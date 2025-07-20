@@ -4,6 +4,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class Payment
 {
+    private BankAccount? _bankAccountNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -40,8 +41,6 @@ public sealed class Payment
     ///     მოქმედებს თარიღიდან
     /// </summary>
     public DateTime? ValidFromDate { get; set; }
-
-    private BankAccount? _bankAccountNavigation;
 
     public BankAccount BankAccountNavigation
     {
