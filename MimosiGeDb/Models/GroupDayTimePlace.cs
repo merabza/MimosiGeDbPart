@@ -25,7 +25,7 @@ public sealed class GroupDayTimePlace
     /// <summary>
     ///     დრო
     /// </summary>
-    public DateTime LessonStarTime { get; set; }
+    public int LessonStarTimeId { get; set; }
 
     /// <summary>
     ///     საათები

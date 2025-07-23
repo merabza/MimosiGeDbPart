@@ -20,7 +20,7 @@ public sealed class GroupDayTimePlaceConfiguration : IEntityTypeConfiguration<Gr
         entity.Property(e => e.HoursCount).HasDefaultValue(1f).HasComment("საათები");
         entity.Property(e => e.RoomId).HasComment("ოთახი");
         entity.Property(e => e.StartDate).HasDefaultValueSql("getdate()").HasComment("გააქტიურების თარიღი");
-        entity.Property(e => e.LessonStarTime).HasComment("გაკვეთილის დაწყების დრო");
+        entity.Property(e => e.LessonStarTimeId).HasComment("გაკვეთილის დაწყების დრო");
         entity.Property(e => e.WeekDay).HasComment("კვირის დღე");
 
         entity.HasOne(d => d.GroupNavigation).WithMany(p => p.GroupDayTimePlace).HasForeignKey(d => d.GroupId)
@@ -29,8 +29,8 @@ public sealed class GroupDayTimePlaceConfiguration : IEntityTypeConfiguration<Gr
         entity.HasOne(d => d.RoomNavigation).WithMany(p => p.GroupDayTimePlace).HasForeignKey(d => d.RoomId)
             .OnDelete(DeleteBehavior.ClientSetNull);
 
-        entity.HasOne(d => d.LessonStartTimeNavigation).WithMany(p => p.GroupDayTimePlace)
-            .HasForeignKey(d => d.LessonStarTime).OnDelete(DeleteBehavior.ClientSetNull);
+        entity.HasOne(d => d.LessonStartTimeNavigation).WithMany(p => p.GroupDayTimePlaces)
+            .HasForeignKey(d => d.LessonStarTimeId).OnDelete(DeleteBehavior.ClientSetNull);
 
         entity.HasOne(d => d.WeekDayNavigation).WithMany(p => p.GroupDayTimePlace).HasForeignKey(d => d.WeekDay)
             .OnDelete(DeleteBehavior.ClientSetNull);

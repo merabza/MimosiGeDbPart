@@ -26,4 +26,9 @@ public sealed class MimNewDataSeedersFactory : MimDataSeedersFactory
     {
         return new MimNewWeekDaysSeeder(DataSeedFolder, Repo);
     }
+
+    public override ITableDataSeeder CreateLessonStartTimesSeeder()
+    {
+        return new MimLessonStartTimesSeeder(DataSeedFolder, Repo);
+    }
 }

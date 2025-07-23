@@ -5,7 +5,8 @@ namespace MimosiGeDb.Models;
 
 public sealed class LessonStartTime
 {
-    public DateTime LstId { get; set; }
+    public int LstId { get; set; }
+    public DateTime LstTime { get; set; }
 
-    public ICollection<GroupDayTimePlace> GroupDayTimePlace { get; set; } = new List<GroupDayTimePlace>();
+    public ICollection<GroupDayTimePlace> GroupDayTimePlaces { get; set; } = new List<GroupDayTimePlace>();
 }
