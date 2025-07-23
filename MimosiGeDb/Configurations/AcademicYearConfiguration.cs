@@ -11,6 +11,8 @@ public sealed class AcademicYearConfiguration : IEntityTypeConfiguration<Academi
         builder.HasKey(e => e.AyId);
         builder.HasIndex(e => e.AcademicYearName).IsUnique();
 
-        builder.Property(e => e.AcademicYearName).HasMaxLength(9);
+        builder.Property(e => e.AcademicYearName).HasMaxLength(9).HasComment("სასწავლო წლის დასახელება");
+        builder.Property(e => e.FinishDate).HasComment("სასწავლო წლის დასასრული");
+        builder.Property(e => e.StartDate).HasComment("სასწავლო წლის დასაწყისი");
     }
 }

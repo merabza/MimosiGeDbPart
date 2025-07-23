@@ -18,7 +18,7 @@ public sealed class HumanConfiguration : IEntityTypeConfiguration<Human>
         builder.Property(e => e.LastName).HasMaxLength(255).HasComment("გვარი");
         builder.Property(e => e.LegalAddress).HasMaxLength(255).HasComment("იურიდიული მისამართი");
         builder.Property(e => e.LegalName).HasMaxLength(255).HasComment("ნამდვილი სახელი");
-        builder.Property(e => e.PersonalId).HasMaxLength(11).HasComment("პირადი ნომერი").HasColumnName("PersonalID");
+        builder.Property(e => e.PersonalId).HasMaxLength(11).HasComment("პირადი ნომერი");
         builder.Property(e => e.PhoneNumber).HasMaxLength(9).HasComment("ტელეფონის ნომერი");
     }
 }

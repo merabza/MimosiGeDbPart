@@ -13,7 +13,7 @@ public sealed class GroupSizeConfiguration : IEntityTypeConfiguration<GroupSize>
         builder.HasIndex(e => e.GrsSize).IsUnique();
         builder.HasIndex(e => e.GrsName).IsUnique();
 
-        builder.Property(e => e.GrsSize).HasMaxLength(22);
+        builder.Property(e => e.GrsSize);
         builder.Property(e => e.GrsName).HasMaxLength(25);
     }
 }

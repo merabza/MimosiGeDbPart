@@ -15,5 +15,6 @@ public sealed class BankAccountConfiguration : IEntityTypeConfiguration<BankAcco
         builder.Property(e => e.AccountNumber).HasMaxLength(22);
         builder.Property(e => e.BankCode).HasMaxLength(8);
         builder.Property(e => e.BankName).HasMaxLength(255);
+        builder.Property(e => e.DesperateDebt).HasDefaultValue(false).HasComment("უიმედო ვალი");
     }
 }

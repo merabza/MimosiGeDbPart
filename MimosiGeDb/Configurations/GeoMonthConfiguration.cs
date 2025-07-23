@@ -11,7 +11,7 @@ public sealed class GeoMonthConfiguration : IEntityTypeConfiguration<GeoMonth>
         builder.HasKey(e => e.GmnId);
         builder.HasIndex(e => e.GmnName).IsUnique();
 
-        builder.Property(e => e.GmnDative).HasMaxLength(255);
-        builder.Property(e => e.GmnName).HasMaxLength(255);
+        builder.Property(e => e.GmnDative).HasMaxLength(255).HasComment("მიცემით ბრუნვაში");
+        builder.Property(e => e.GmnName).HasMaxLength(255).HasComment("თვის სახელი");
     }
 }

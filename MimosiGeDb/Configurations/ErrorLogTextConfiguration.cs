@@ -11,6 +11,6 @@ public sealed class ErrorLogTextConfiguration : IEntityTypeConfiguration<ErrorLo
         builder.HasKey(e => e.EltId);
         builder.HasIndex(e => e.Text).IsUnique();
 
-        builder.Property(e => e.Text).HasMaxLength(255);
+        builder.Property(e => e.Text).HasMaxLength(255).HasComment("შეცდომის ტექსტი");
     }
 }

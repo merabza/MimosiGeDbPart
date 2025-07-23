@@ -20,8 +20,10 @@ public sealed class CrmCallConfiguration : IEntityTypeConfiguration<CrmCall>
         entity.Property(e => e.StudentContractId).HasComment("მოსწავლე");
 
         entity.HasOne(d => d.AnswerTypeNavigation).WithMany(p => p.CrmCalls).HasForeignKey(d => d.AnswerTypeId);
+
         entity.HasOne(d => d.CallTypeNavigation).WithMany(p => p.CrmCalls).HasForeignKey(d => d.CallTypeId);
+
         entity.HasOne(d => d.StudentContractNavigation).WithMany(p => p.CrmCalls)
-            .HasForeignKey(d => d.StudentContractId);
+            .HasForeignKey(d => d.StudentContractId).OnDelete(DeleteBehavior.ClientSetNull);
     }
 }
