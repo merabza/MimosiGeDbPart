@@ -19,7 +19,7 @@ public sealed class MimNewDataTypesSeeder : MimDataTypesSeeder
     {
     }
 
-    protected override List<DataType> CreateListByRules()
+    public override List<DataType> CreateListByRules()
     {
         var mn = base.CreateListByRules();
 
@@ -78,7 +78,7 @@ public sealed class MimNewDataTypesSeeder : MimDataTypesSeeder
             //GroupSizes
             DataTypeFactory.Create("ჯგუფების ზომები", "ჯგუფის ზომა", "ჯგუფის ზომის",
                 DataSeederRepo.GetTableName<GroupSize>(), nameof(GroupSize.GrsId), nameof(GroupSize.GrsSize),
-                nameof(GroupSize.GrsName)),
+                nameof(GroupSize.GrsName))
         };
 
         mn.AddRange(newDataTypes);

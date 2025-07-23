@@ -15,7 +15,7 @@ public sealed class MimNewWeekDaysSeeder : WeekDaysSeeder
     {
     }
 
-    protected override List<WeekDay> CreateListByRules()
+    public override List<WeekDay> CreateListByRules()
     {
         WeekDay[] recordStatuses =
         [
@@ -25,7 +25,7 @@ public sealed class MimNewWeekDaysSeeder : WeekDaysSeeder
             new() { ShortName = "4-ხუთ", Name = "ხუთშაბათი" },
             new() { ShortName = "5-პარ", Name = "პარასკევი" },
             new() { ShortName = "6-შაბ", Name = "შაბათი" },
-            new() { ShortName = "7-კვ", Name = "კვირა" },
+            new() { ShortName = "7-კვ", Name = "კვირა" }
         ];
         return recordStatuses.ToList();
     }

@@ -17,13 +17,13 @@ public sealed class MimNewCrmAnswerTypeSeeder : CrmAnswerTypeSeeder
     {
     }
 
-    protected override List<CrmAnswerType> CreateListByRules()
+    public override List<CrmAnswerType> CreateListByRules()
     {
         CrmAnswerType[] recordStatuses =
         [
             new() { CatKey = "ThePhoneIsTurnedOff", AnswerTypeName = "ტელეფონი გათიშული აქვს" },
             new() { CatKey = "DidNotAnswered", AnswerTypeName = "არ გვიპასუხა" },
-            new() { CatKey = "Answered", AnswerTypeName = "გვიპასუხა" },
+            new() { CatKey = "Answered", AnswerTypeName = "გვიპასუხა" }
         ];
         return recordStatuses.ToList();
     }
