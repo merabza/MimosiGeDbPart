@@ -290,11 +290,6 @@
     },
     {
       "TableName": "GroupsByStudents",
-      "OldFieldName": "Id",
-      "NewFieldName": "GbsId"
-    },
-    {
-      "TableName": "GroupsByStudents",
       "OldFieldName": "HoursCoeficient",
       "NewFieldName": "HoursCoefficient"
     },
