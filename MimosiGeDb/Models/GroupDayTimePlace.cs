@@ -24,7 +24,8 @@ public sealed class GroupDayTimePlace
     /// <summary>
     ///     დრო
     /// </summary>
-    public int LessonStarTimeId { get; set; }
+    //ეს ველი დროებით არის Nullable, უნდა შეიცვალოს, მას მერე, რაც მოხდება ბაზის განახლება
+    public int? LessonStarTimeId { get; set; }
 
     //ეს დროებითი ველია, რომელიც უნდა გაუქმდეს, მას მერე, რაც მოხდება ბაზის განახლება
     public DateTime LessonStarTime { get; set; }
