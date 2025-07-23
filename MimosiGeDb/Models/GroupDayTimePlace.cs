@@ -27,6 +27,9 @@ public sealed class GroupDayTimePlace
     /// </summary>
     public int LessonStarTimeId { get; set; }
 
+    //ეს დროებითი ველია, რომელიც უნდა გაუქმდეს, მას მერე, რაც მოხდება ბაზის განახლება
+    public DateTime LessonStarTime { get; set; }
+
     /// <summary>
     ///     საათები
     /// </summary>
