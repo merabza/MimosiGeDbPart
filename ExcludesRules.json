@@ -18,7 +18,8 @@
     "BooksAndMaterials",
     "BooksAndMaterialsTypes",
     "LessonBooksAndMaterials",
-    "GroupBooksAndMaterials"
+    "GroupBooksAndMaterials",
+    "LessonStartTimes"
   ],
   "SingularityExceptions": [
     { "TableName": "menu", "TableNameSingular": "menuItm" },
