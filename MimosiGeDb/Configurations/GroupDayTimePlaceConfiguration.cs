@@ -21,6 +21,7 @@ public sealed class GroupDayTimePlaceConfiguration : IEntityTypeConfiguration<Gr
         entity.Property(e => e.RoomId).HasComment("ოთახი");
         entity.Property(e => e.StartDate).HasDefaultValueSql("getdate()").HasComment("გააქტიურების თარიღი");
         entity.Property(e => e.LessonStarTimeId).HasComment("გაკვეთილის დაწყების დრო");
+        entity.Property(e => e.LessonStarTime).HasComment("გაკვეთილის დაწყების დრო (დროებითი ველი)");
         entity.Property(e => e.WeekDay).HasComment("კვირის დღე");
 
         entity.HasOne(d => d.GroupNavigation).WithMany(p => p.GroupDayTimePlace).HasForeignKey(d => d.GroupId)

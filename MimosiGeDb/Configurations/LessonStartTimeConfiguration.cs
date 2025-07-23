@@ -11,5 +11,7 @@ public sealed class LessonStartTimeConfiguration : IEntityTypeConfiguration<Less
         entity.HasKey(e => e.LstId);
 
         entity.Property(e => e.LstId);
+        entity.Property(e => e.LstTime).HasComment("გაკვეთილის დაწყების დრო");
+
     }
 }

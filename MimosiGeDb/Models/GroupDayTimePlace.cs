@@ -6,7 +6,6 @@ public sealed class GroupDayTimePlace
 {
     private Group? _groupNavigation;
 
-    private LessonStartTime? _lessonStartTime;
     private Room? _roomNavigation;
 
     private WeekDay? _weekDayNavigation;
@@ -65,13 +64,7 @@ public sealed class GroupDayTimePlace
         set => _roomNavigation = value;
     }
 
-    public LessonStartTime LessonStartTimeNavigation
-    {
-        get =>
-            _lessonStartTime ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(LessonStartTimeNavigation));
-        set => _lessonStartTime = value;
-    }
+    public LessonStartTime? LessonStartTimeNavigation { get; set; }
 
     public WeekDay WeekDayNavigation
     {
