@@ -234,6 +234,11 @@
       "NewFieldName": "LessonStarTime"
     },
     {
+      "TableName": "GroupDayTimePlace",
+      "OldFieldName": "Id",
+      "NewFieldName": "GdtpId"
+    },
+    {
       "TableName": "GroupsByStudents",
       "OldFieldName": "Id",
       "NewFieldName": "GbsId"
