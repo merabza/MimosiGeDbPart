@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using DatabaseToolsShared;
 using MimosiGeDb.Models;
 using MimosiGeDbDataSeeding;
-using MimosiGeDbDataSeeding.MimosiGeSeeders;
+using MimosiGeDbDataSeeding.Models;
 
 namespace MimosiGeDbNewDataSeeding.NewSeeders;
 
-public sealed class MimLessonStartTimesSeeder : LessonStartTimesSeeder
+public sealed class MimLessonStartTimesSeeder : MimDataSeeder<LessonStartTime, LessonStartTimeSeederModel>
 {
     // ReSharper disable once ConvertToPrimaryConstructor
     public MimLessonStartTimesSeeder(string dataSeedFolder, IMimDataSeederRepository repo) : base(dataSeedFolder, repo,
-        ESeedDataType.OnlyRules, [nameof(WeekDay.ShortName)])
+        ESeedDataType.OnlyRules, [nameof(LessonStartTime.LstId)])
     {
     }
 
