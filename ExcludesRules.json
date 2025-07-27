@@ -136,6 +136,10 @@
       "FieldName": "SsmaTimeStamp"
     },
     {
+      "TableName": "GroupsByStudents",
+      "FieldName": "Id"
+    },
+    {
       "TableName": "LessonsByStudents",
       "FieldName": "SsmaTimeStamp"
     }
@@ -235,11 +239,6 @@
       "TableName": "GroupDayTimePlace",
       "OldFieldName": "Id",
       "NewFieldName": "GdtpId"
-    },
-    {
-      "TableName": "GroupsByStudents",
-      "OldFieldName": "Id",
-      "NewFieldName": "GbsId"
     },
     {
       "TableName": "Groups",
