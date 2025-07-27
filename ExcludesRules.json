@@ -288,7 +288,7 @@
     },
     {
       "TableName": "GroupsByStudents",
-      "OldFieldName": "ID",
+      "OldFieldName": "Id",
       "NewFieldName": "GbsId"
     },
     {
