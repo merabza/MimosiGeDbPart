@@ -136,10 +136,6 @@
       "FieldName": "SsmaTimeStamp"
     },
     {
-      "TableName": "GroupsByStudents",
-      "FieldName": "Id"
-    },
-    {
       "TableName": "LessonsByStudents",
       "FieldName": "SsmaTimeStamp"
     }
@@ -289,6 +285,11 @@
       "TableName": "GroupsByStudents",
       "OldFieldName": "HoursCoeficient",
       "NewFieldName": "HoursCoefficient"
+    },
+    {
+      "TableName": "GroupsByStudents",
+      "OldFieldName": "ID",
+      "NewFieldName": "GbsId"
     },
     {
       "TableName": "WeekNumbers",
