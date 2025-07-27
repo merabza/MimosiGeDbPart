@@ -299,7 +299,7 @@
     {
       "TableName": "LessonStartTimes",
       "OldFieldName": "Tmid",
-      "NewFieldName": "LstId"
+      "NewFieldName": "LstTime"
     },
     {
       "TableName": "RsBeneficiaryCategories",
