@@ -7,15 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Domains\**" />
+      <Compile Remove="Models\**" />
+      <EmbeddedResource Remove="Domains\**" />
+      <EmbeddedResource Remove="Models\**" />
+      <None Remove="Domains\**" />
+      <None Remove="Models\**" />
+    </ItemGroup>
+
+    <ItemGroup>
         <ProjectReference Include="..\..\BackendCarcass\CarcassDataSeeding\CarcassDataSeeding.csproj" />
         <ProjectReference Include="..\..\BackendCarcass\CarcassDb\CarcassDb.csproj" />
         <ProjectReference Include="..\..\MimosiGeScaffoldSeeder\MimosiGeDbDataSeeding\MimosiGeDbDataSeeding.csproj" />
         <ProjectReference Include="..\MimosiGeDb\MimosiGeDb.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Domains\" />
-        <Folder Include="Models\" />
     </ItemGroup>
 
 </Project>
