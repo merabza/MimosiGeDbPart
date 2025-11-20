@@ -7,12 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Domains\**" />
-      <Compile Remove="Models\**" />
-      <EmbeddedResource Remove="Domains\**" />
-      <EmbeddedResource Remove="Models\**" />
-      <None Remove="Domains\**" />
-      <None Remove="Models\**" />
+        <Compile Remove="Domains\**" />
+        <Compile Remove="Models\**" />
+        <EmbeddedResource Remove="Domains\**" />
+        <EmbeddedResource Remove="Models\**" />
+        <None Remove="Domains\**" />
+        <None Remove="Models\**" />
     </ItemGroup>
 
     <ItemGroup>
