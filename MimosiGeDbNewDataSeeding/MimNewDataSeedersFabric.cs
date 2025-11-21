@@ -3,6 +3,7 @@ using CarcassMasterDataDom.Models;
 using DatabaseToolsShared;
 using Microsoft.AspNetCore.Identity;
 using MimosiGeDbDataSeeding;
+using MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 using MimosiGeDbNewDataSeeding.NewSeeders;
 
 namespace MimosiGeDbNewDataSeeding;
@@ -27,8 +28,19 @@ public sealed class MimNewDataSeedersFactory : MimDataSeedersFactory
         return new MimNewWeekDaysSeeder(DataSeedFolder, Repo);
     }
 
-    //public ITableDataSeeder CreateLessonStartTimesSeeder()
-    //{
-    //    return new MimLessonStartTimesSeeder(DataSeedFolder, Repo);
-    //}
+    public override ITableDataSeeder CreateCrudRightTypesSeeder()
+    {
+        return new MimNewCrudRightTypesSeeder(DataSeedFolder, Repo);
+    }
+
+    public override ITableDataSeeder CreateDataTypesSeeder()
+    {
+        return new MimNewDataTypesSeeder(DataSeedFolder, CarcassRepo, Repo);
+    }
+
+    public override ITableDataSeeder CreateMenuGroupsSeeder()
+    {
+        return new MimNewMenuGroupsSeeder(DataSeedFolder, Repo);
+    }
+
 }
