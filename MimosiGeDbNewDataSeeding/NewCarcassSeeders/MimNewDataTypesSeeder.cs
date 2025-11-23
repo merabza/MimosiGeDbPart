@@ -6,8 +6,6 @@ using DatabaseToolsShared;
 using MimosiGeDb.Models;
 using MimosiGeDbDataSeeding;
 using MimosiGeDbDataSeeding.CarcassSeeders;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 
@@ -22,11 +20,6 @@ public sealed class MimNewDataTypesSeeder : MimDataTypesSeeder
     public override List<DataType> CreateListByRules()
     {
         var mn = base.CreateListByRules();
-
-        var serializerSettings = new JsonSerializerSettings
-        {
-            ContractResolver = new CamelCasePropertyNamesContractResolver()
-        };
 
         var newDataTypes = new[]
         {

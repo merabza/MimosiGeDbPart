@@ -96,9 +96,9 @@ public sealed class MimNewManyToManyJoinSeeder : MimManyToManyJoinsSeeder
         //რადგან ყველა ელემენტზე ეძლევა უფლება ერთად
         string[] menKeysLing =
         [
-            "humans", "studentContracts", "teacherContracts", "groups",
-            "lessons", "crmCalls", "chargesAndPayments", "deposits", "payments",
-            "salary", "workHours"
+            "Humans", "StudentContracts", "TeacherContracts", "Groups",
+            "Lessons", "CrmCalls", "ChargesAndPayments", "Deposits", "Payments",
+            "Salary", "WorkHours"
         ];
         manyToManyJoinsList.AddRange(menKeysLing.Select(s => new ManyToManyJoin
         {
