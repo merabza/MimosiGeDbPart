@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using CarcassDataSeeding;
+﻿using CarcassDataSeeding;
+using CarcassDataSeeding.Comparers;
 using CarcassDb.Models;
 using DatabaseToolsShared;
 using MimosiGeDbDataSeeding;
 using MimosiGeDbDataSeeding.CarcassSeeders;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 
@@ -111,6 +112,6 @@ public sealed class MimNewManyToManyJoinSeeder : MimManyToManyJoinsSeeder
         //    PtId = roleDataTypeId, PKey = specRoleKey, CtId = menuDataTypeId, CKey = s
         //}));
 
-        return manyToManyJoinsList;
+        return manyToManyJoinsList.Distinct(new ManyToManyJoinComparer()).ToList();
     }
 }
