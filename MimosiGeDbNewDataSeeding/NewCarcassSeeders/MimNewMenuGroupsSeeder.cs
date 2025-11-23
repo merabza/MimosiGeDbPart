@@ -20,7 +20,10 @@ public sealed class MimNewMenuGroupsSeeder : MimMenuGroupsSeeder
         MenuGroup[] menuGroups =
         [
             //GeoModel
-            new() { MengKey = "HumansAndContracts", MengName = "ადამიანები და კონტრაქტები", SortId = 1, Hidden = false },
+            new()
+            {
+                MengKey = "HumansAndContracts", MengName = "ადამიანები და კონტრაქტები", SortId = 1, Hidden = false
+            },
             new() { MengKey = "GroupsAndLessons", MengName = "ჯგუფები და გაკვეთილები", SortId = 2, Hidden = false },
             new() { MengKey = "CRM", MengName = "მომხმარებელთან ურთიერთობის მართვა", SortId = 3, Hidden = false },
             new() { MengKey = "Accounting", MengName = "ბუღალტერია", SortId = 4, Hidden = false },
