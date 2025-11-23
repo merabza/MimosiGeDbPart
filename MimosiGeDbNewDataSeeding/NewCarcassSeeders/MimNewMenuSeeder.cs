@@ -1,11 +1,10 @@
-﻿using CarcassDataSeeding;
+﻿using System.Collections.Generic;
+using CarcassDataSeeding;
 using CarcassDb.Models;
 using DatabaseToolsShared;
-using LanguageExt.ClassInstances.Const;
 using MimosiGeDb.Models;
 using MimosiGeDbDataSeeding;
 using MimosiGeDbDataSeeding.CarcassSeeders;
-using System.Collections.Generic;
 
 namespace MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 
@@ -170,7 +169,6 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
         return mn;
     }
 }
-
 
 //რეპორტების კატეგორიები
 //ID ReportCategoryName
