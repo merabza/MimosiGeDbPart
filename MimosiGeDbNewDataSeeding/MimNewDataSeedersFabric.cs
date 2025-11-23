@@ -43,6 +43,11 @@ public sealed class MimNewDataSeedersFactory : MimDataSeedersFactory
         return new MimNewMenuGroupsSeeder(DataSeedFolder, Repo);
     }
 
+    public override ITableDataSeeder CreateMenuSeeder()
+    {
+        return new MimNewMenuSeeder(DataSeedFolder, Repo);
+    }
+
     public override ITableDataSeeder CreateManyToManyJoinsSeeder()
     {
         return new MimNewManyToManyJoinSeeder(SecretDataFolder, DataSeedFolder, CarcassRepo, Repo);
