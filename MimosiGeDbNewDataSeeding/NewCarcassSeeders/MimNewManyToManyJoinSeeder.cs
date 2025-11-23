@@ -31,7 +31,7 @@ public sealed class MimNewManyToManyJoinSeeder : MimManyToManyJoinsSeeder
         var tempData = DataSeederTempData.Instance;
 
         var roleTableName = DataSeederRepo.GetTableName<Role>();
-        var appClaimTableName = DataSeederRepo.GetTableName<AppClaim>();
+        //var appClaimTableName = DataSeederRepo.GetTableName<AppClaim>();
 
         //როლის დატატიპის იდენტიფიკატორი
         var roleDataTypeId = tempData.GetIntIdByKey<DataType>(roleTableName);
@@ -40,55 +40,53 @@ public sealed class MimNewManyToManyJoinSeeder : MimManyToManyJoinsSeeder
         //მენიუს ელემენტების დატატიპის იდენტიფიკატორი
         var menuDataTypeId = tempData.GetIntIdByKey<DataType>(DataSeederRepo.GetTableName<MenuItm>());
         //თვითონ დატატიპის დატატიპის იდენტიფიკატორი
-        var dataTypeDataTypeId = tempData.GetIntIdByKey<DataType>(DataSeederRepo.GetTableName<DataType>());
+        //var dataTypeDataTypeId = tempData.GetIntIdByKey<DataType>(DataSeederRepo.GetTableName<DataType>());
         //განსაკუთრებული უფლების დატატიპის იდენტიფიკატორი
-        var appClaimDataTypeId = tempData.GetIntIdByKey<DataType>(appClaimTableName);
+        //var appClaimDataTypeId = tempData.GetIntIdByKey<DataType>(appClaimTableName);
 
         //ადმინისტრატორის როლის სახელი
         //const string adminRoleKey = "Admin";
         //ლინგვისტის როლის სახელი
-        const string lingRoleKey = "Ling";
-        //სპეციალისტის როლის სახელი
-        const string specRoleKey = "Spec";
+        const string managerRoleKey = "Manager";
 
         //dt rol dt AppClaim როლის დატატიპზე მიბმული განსაკუთრებული უფლების დატატიპი
-        manyToManyJoinsList.Add(new ManyToManyJoin
-        {
-            PtId = dataTypeDataTypeId, PKey = roleTableName, CtId = dataTypeDataTypeId, CKey = appClaimTableName
-        });
+        //manyToManyJoinsList.Add(new ManyToManyJoin
+        //{
+        //    PtId = dataTypeDataTypeId, PKey = roleTableName, CtId = dataTypeDataTypeId, CKey = appClaimTableName
+        //});
 
         //განსაკუთრებული უფლებების დარიგება
 
         //admin AppClaim ადმინისტრატორის როლისათვის განსაკუთრებული უფლებების განსაზღვრა
-        string[] appClaimKeysAdmin = ["Confirm", "SaveSamples", "SeeAllIssues"];
-        manyToManyJoinsList.AddRange(appClaimKeysAdmin.Select(s => new ManyToManyJoin
-        {
-            PtId = roleDataTypeId, PKey = AdminRoleKey, CtId = appClaimDataTypeId, CKey = s
-        }));
+        //string[] appClaimKeysAdmin = ["Confirm", "SaveSamples", "SeeAllIssues"];
+        //manyToManyJoinsList.AddRange(appClaimKeysAdmin.Select(s => new ManyToManyJoin
+        //{
+        //    PtId = roleDataTypeId, PKey = AdminRoleKey, CtId = appClaimDataTypeId, CKey = s
+        //}));
 
         //Ling AppClaim ლინგვისტის როლისათვის განსაკუთრებული უფლებების განსაზღვრა
-        string[] appClaimKeysLing = ["Confirm", "SaveSamples", "SeeAllIssues"];
-        manyToManyJoinsList.AddRange(appClaimKeysLing.Select(s => new ManyToManyJoin
-        {
-            PtId = roleDataTypeId, PKey = lingRoleKey, CtId = appClaimDataTypeId, CKey = s
-        }));
+        //string[] appClaimKeysLing = ["Confirm", "SaveSamples", "SeeAllIssues"];
+        //manyToManyJoinsList.AddRange(appClaimKeysLing.Select(s => new ManyToManyJoin
+        //{
+        //    PtId = roleDataTypeId, PKey = managerRoleKey, CtId = appClaimDataTypeId, CKey = s
+        //}));
 
         //მენიუს ჯგუფებზე უფლებების დარიგება
 
         //ling meng ლინგვისტის როლისათვის მენიუს ჯგუფებზე უფლებების განსაზღვრა (ემთხვევა ადმინისტრატორის მენიუს ჯგუფებს)
         //ადმინისტრატორისათვის მენიუს ჯგუფებზე უფლებების განსაზღვრა არ ხდება, რადგან ყველა ჯგუფზე ეძლევა უფლება ერთად
-        string[] menGroupKeysLing = ["Model", "Roots", "ModelOverview", "VerbPersonMarkers", "Recounts"];
+        string[] menGroupKeysLing = ["HumansAndContracts", "GroupsAndLessons", "CRM", "Accounting"];
         manyToManyJoinsList.AddRange(menGroupKeysLing.Select(s => new ManyToManyJoin
         {
-            PtId = roleDataTypeId, PKey = lingRoleKey, CtId = menuGroupDataTypeId, CKey = s
+            PtId = roleDataTypeId, PKey = managerRoleKey, CtId = menuGroupDataTypeId, CKey = s
         }));
 
-        //spec meng სპეციალისტის როლისათვის მენიუს ჯგუფებზე უფლებების განსაზღვრა 
-        string[] menGroupKeysSpec = ["Roots", "Recounts"];
-        manyToManyJoinsList.AddRange(menGroupKeysSpec.Select(s => new ManyToManyJoin
-        {
-            PtId = roleDataTypeId, PKey = specRoleKey, CtId = menuGroupDataTypeId, CKey = s
-        }));
+        ////spec meng სპეციალისტის როლისათვის მენიუს ჯგუფებზე უფლებების განსაზღვრა 
+        //string[] menGroupKeysSpec = ["Roots", "Recounts"];
+        //manyToManyJoinsList.AddRange(menGroupKeysSpec.Select(s => new ManyToManyJoin
+        //{
+        //    PtId = roleDataTypeId, PKey = specRoleKey, CtId = menuGroupDataTypeId, CKey = s
+        //}));
 
         //მენიუს ელემენტებზე უფლებების დარიგება
 
@@ -97,27 +95,21 @@ public sealed class MimNewManyToManyJoinSeeder : MimManyToManyJoinsSeeder
         //რადგან ყველა ელემენტზე ეძლევა უფლება ერთად
         string[] menKeysLing =
         [
-            "derivationTreeEditor", "ForConfirmRootsList", "phoneticsTypes", "phoneticsTypeProhibitions",
-            "phoneticsOptions", "phoneticsOptionDetails", "phoneticsChanges", "derivationTypes", "morphemeGroups",
-            "morphemeRanges", "phoneticsTypesOverview", "derivationFormulasOverview", "morphemesOverview",
-            "nounParadigmsOverview", "verbRowParadigmsOverview", "verbPersonMarkersOverview", "issues",
-            "actantCombinationsReCounter", "createAfterDominantPersonMarkers", "createVerbPersonMarkerCombinations",
-            "createForRecountVerbPersonMarkers", "createVerbPersonMarkerCombinationFormulaDetails", "verbRowFilters",
-            "verbRowFilterDetails", "personVariabilityTypes", "personVariabilityDetails", "pronouns",
-            "morphemeRangesByInflectionBlocks", "inflectionBlocks", "inflectionTypes",
-            "morphemeRangesByDerivationTypes", "morphPhoneticsOccasions", "labels"
+            "humans", "studentContracts", "teacherContracts", "groups",
+            "lessons", "crmCalls", "chargesAndPayments", "deposits", "payments",
+            "salary", "workHours"
         ];
         manyToManyJoinsList.AddRange(menKeysLing.Select(s => new ManyToManyJoin
         {
-            PtId = roleDataTypeId, PKey = lingRoleKey, CtId = menuDataTypeId, CKey = s
+            PtId = roleDataTypeId, PKey = managerRoleKey, CtId = menuDataTypeId, CKey = s
         }));
 
-        //spec menu სპეციალისტის როლისათვის მენიუს ელემენტებზე უფლებების განსაზღვრა
-        string[] menKeysSpec = ["derivationTreeEditor", "issues"];
-        manyToManyJoinsList.AddRange(menKeysSpec.Select(s => new ManyToManyJoin
-        {
-            PtId = roleDataTypeId, PKey = specRoleKey, CtId = menuDataTypeId, CKey = s
-        }));
+        ////spec menu სპეციალისტის როლისათვის მენიუს ელემენტებზე უფლებების განსაზღვრა
+        //string[] menKeysSpec = ["derivationTreeEditor", "issues"];
+        //manyToManyJoinsList.AddRange(menKeysSpec.Select(s => new ManyToManyJoin
+        //{
+        //    PtId = roleDataTypeId, PKey = specRoleKey, CtId = menuDataTypeId, CKey = s
+        //}));
 
         return manyToManyJoinsList;
     }
