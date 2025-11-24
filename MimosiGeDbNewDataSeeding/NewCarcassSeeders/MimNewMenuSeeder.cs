@@ -27,7 +27,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             //HumansAndContracts group
             new()
             {
-                MenKey = "humans",
+                MenKey = "Humans",
                 MenName = "ადამიანები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("HumansAndContracts"),
                 SortId = 1,
@@ -36,7 +36,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             },
             new()
             {
-                MenKey = "studentContracts",
+                MenKey = "StudentContracts",
                 MenName = "მოსწავლეების კონტრაქტები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("HumansAndContracts"),
                 SortId = 1,
@@ -45,7 +45,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             },
             new()
             {
-                MenKey = "teacherContracts",
+                MenKey = "TeacherContracts",
                 MenName = "მასწავლებლების კონტრაქტები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("HumansAndContracts"),
                 SortId = 1,
@@ -55,7 +55,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             //GroupsAndLessons group
             new()
             {
-                MenKey = "groups",
+                MenKey = "Groups",
                 MenName = "ჯგუფები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("GroupsAndLessons"),
                 SortId = 1,
@@ -64,7 +64,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             },
             new()
             {
-                MenKey = "lessons",
+                MenKey = "Lessons",
                 MenName = "გაკვეთილები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("GroupsAndLessons"),
                 SortId = 1,
@@ -74,7 +74,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             //CRM group
             new()
             {
-                MenKey = "crmCalls",
+                MenKey = "CrmCalls",
                 MenName = "CRM დარეკვები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("CRM"),
                 SortId = 1,
@@ -102,7 +102,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             //Accounting group
             new()
             {
-                MenKey = "chargesAndPayments",
+                MenKey = "ChargesAndPayments",
                 MenName = "დარიცხვები და გადახდები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("Accounting"),
                 SortId = 1,
@@ -111,7 +111,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             },
             new()
             {
-                MenKey = "deposits",
+                MenKey = "Deposits",
                 MenName = "დეპოზიტები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("Accounting"),
                 SortId = 1,
@@ -120,7 +120,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             },
             new()
             {
-                MenKey = "payments",
+                MenKey = "Payments",
                 MenName = "გადახდები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("Accounting"),
                 SortId = 1,
@@ -129,7 +129,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             },
             new()
             {
-                MenKey = "salary",
+                MenKey = "Salary",
                 MenName = "ხელფასები",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("Accounting"),
                 SortId = 1,
@@ -138,7 +138,7 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             },
             new()
             {
-                MenKey = "workHours",
+                MenKey = "WorkHours",
                 MenName = "სამუშაო საათების შესრულება",
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("Accounting"),
                 SortId = 1,
