@@ -5,7 +5,7 @@ namespace MimosiGeDb.Models;
 
 public sealed class Human
 {
-    public int humId { get; set; }
+    public int HumId { get; set; }
 
     /// <summary>
     ///     გვარი
