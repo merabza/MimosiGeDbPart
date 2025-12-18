@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using CarcassMasterDataDom;
+using SystemToolsShared;
 
 namespace MimosiGeDb.Models;
 
-public sealed class AcademicYear
+public sealed class AcademicYear : IDataType
 {
     public int AyId { get; set; }
 
@@ -23,4 +26,33 @@ public sealed class AcademicYear
     public DateTime FinishDate { get; set; }
 
     public ICollection<StudentContract> StudentContracts { get; set; } = new List<StudentContract>();
+
+    [NotMapped] public static string DtKeyKey => nameof(AyId).CountDtKey();
+
+    [NotMapped]
+    public int Id
+    {
+        get => AyId;
+        set => AyId = value;
+    }
+
+    [NotMapped] public string? Key => null;
+
+    [NotMapped] public string Name => AcademicYearName;
+
+    [NotMapped] public int? ParentId => null;
+
+    public bool UpdateTo(IDataType data)
+    {
+        if (data is not AcademicYear other)
+            return false;
+
+        return AyId == other.AyId && AcademicYearName == other.AcademicYearName && StartDate == other.StartDate &&
+               FinishDate == other.FinishDate;
+    }
+
+    public dynamic EditFields()
+    {
+        return new { AyId, AcademicYearName, StartDate, FinishDate };
+    }
 }

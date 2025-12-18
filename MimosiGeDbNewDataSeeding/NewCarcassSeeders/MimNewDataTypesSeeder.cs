@@ -24,14 +24,14 @@ public sealed class MimNewDataTypesSeeder : MimDataTypesSeeder
         var newDataTypes = new[]
         {
             //AcademicYear
-            DataTypeFactory.Create("აკადემიური წლები", "აკადემიური წელი", "აკადემიური წლის",
+            DataTypeFactory.Create(AcademicYear.DtKeyKey, "აკადემიური წლები", "აკადემიური წელი", "აკადემიური წლის",
                 DataSeederRepo.GetTableName<AcademicYear>(), nameof(AcademicYear.AyId), null,
                 nameof(AcademicYear.AcademicYearName), null, null, null,
                 GetDateOnlyCell(nameof(AcademicYear.StartDate), "სასწავლო წლის დასაწყისი"),
                 GetDateOnlyCell(nameof(AcademicYear.FinishDate), "სასწავლო წლის დასასრული")),
 
             //BankAccounts
-            DataTypeFactory.Create("ბანკის ანგარიშები", "ბანკის ანგარიში", "ბანკის ანგარიშის",
+            DataTypeFactory.Create(BankAccount.DtKeyKey, "ბანკის ანგარიშები", "ბანკის ანგარიში", "ბანკის ანგარიშის",
                 DataSeederRepo.GetTableName<BankAccount>(), nameof(BankAccount.BaId), null,
                 nameof(BankAccount.BankCode), null, nameof(BankAccount.BankName), null,
                 GetDateOnlyCell(nameof(BankAccount.AccountNumber), "ანგარიშის ნომერი"),
