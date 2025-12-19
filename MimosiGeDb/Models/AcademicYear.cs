@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using CarcassMasterDataDom;
-using SystemToolsShared;
 
 namespace MimosiGeDb.Models;
 
@@ -55,10 +54,7 @@ public sealed class AcademicYear : IDataType
     {
         return new AcademicYear
         {
-            AyId = AyId,
-            AcademicYearName = AcademicYearName,
-            StartDate = StartDate,
-            FinishDate = FinishDate
+            AyId = AyId, AcademicYearName = AcademicYearName, StartDate = StartDate, FinishDate = FinishDate
         };
     }
 }

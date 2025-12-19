@@ -1,7 +1,6 @@
-﻿using CarcassMasterDataDom;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using SystemToolsShared;
+using CarcassMasterDataDom;
 
 namespace MimosiGeDb.Models;
 
