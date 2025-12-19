@@ -31,7 +31,7 @@ public sealed class BankAccount : IDataType
 
     public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
-    [NotMapped] public static string DtKeyKey => nameof(BaId).CountDtKey();
+    //[NotMapped] public static string DtKeyKey => nameof(BaId).CountDtKey();
 
     [NotMapped]
     public int Id
@@ -57,6 +57,13 @@ public sealed class BankAccount : IDataType
 
     public dynamic EditFields()
     {
-        return new { BaId, BankName, BankCode, AccountNumber, DesperateDebt };
+        return new BankAccount
+        {
+            BaId = BaId,
+            BankName = BankName,
+            BankCode = BankCode,
+            AccountNumber = AccountNumber,
+            DesperateDebt = DesperateDebt
+        };
     }
 }

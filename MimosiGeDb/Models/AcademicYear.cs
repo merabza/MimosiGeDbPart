@@ -27,7 +27,7 @@ public sealed class AcademicYear : IDataType
 
     public ICollection<StudentContract> StudentContracts { get; set; } = new List<StudentContract>();
 
-    [NotMapped] public static string DtKeyKey => nameof(AyId).CountDtKey();
+    //[NotMapped] public static string DtKeyKey => nameof(AyId).CountDtKey();
 
     [NotMapped]
     public int Id
@@ -53,6 +53,12 @@ public sealed class AcademicYear : IDataType
 
     public dynamic EditFields()
     {
-        return new { AyId, AcademicYearName, StartDate, FinishDate };
+        return new AcademicYear
+        {
+            AyId = AyId,
+            AcademicYearName = AcademicYearName,
+            StartDate = StartDate,
+            FinishDate = FinishDate
+        };
     }
 }
