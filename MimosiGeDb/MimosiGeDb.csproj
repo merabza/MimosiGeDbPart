@@ -3,12 +3,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <ItemGroup>
         <ProjectReference Include="..\..\BackendCarcass\CarcassDb\CarcassDb.csproj" />
-        <ProjectReference Include="..\..\WebSystemTools\WebInstallers\WebInstallers.csproj" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.1" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Installers\" />
     </ItemGroup>
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
