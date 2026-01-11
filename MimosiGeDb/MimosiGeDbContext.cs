@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using CarcassDb;
+using Carcass.Database;
 using DatabaseToolsShared;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
