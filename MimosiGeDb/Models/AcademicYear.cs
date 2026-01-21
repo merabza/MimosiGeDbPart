@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using CarcassMasterData;
+using BackendCarcass.MasterData;
 
 namespace MimosiGeDb.Models;
 

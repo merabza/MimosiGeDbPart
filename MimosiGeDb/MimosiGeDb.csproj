@@ -2,8 +2,10 @@
 
 <Project Sdk="Microsoft.NET.Sdk">
     <ItemGroup>
+        <ProjectReference Include="..\..\BackendCarcass\BackendCarcass.Database\BackendCarcass.Database.csproj" />
         <ProjectReference Include="..\..\BackendCarcass\Carcass.Database\Carcass.Database.csproj" />
         <ProjectReference Include="..\..\SystemTools\DatabaseToolsShared\DatabaseToolsShared.csproj" />
+        <ProjectReference Include="..\..\SystemTools\SystemTools.DatabaseToolsShared\SystemTools.DatabaseToolsShared.csproj" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />

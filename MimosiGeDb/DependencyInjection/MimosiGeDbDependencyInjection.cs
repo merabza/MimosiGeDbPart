@@ -1,7 +1,7 @@
 //Created by DatabaseInstallerClassCreator at 2/15/2025 11:07:44 AM
 
 using System;
-using Carcass.Database;
+using BackendCarcass.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
