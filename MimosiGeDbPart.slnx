@@ -1,0 +1,33 @@
+<Solution>
+    <Folder Name="/BackendCarcass/">
+        <Project Path="../BackendCarcass/BackendCarcass.Database/BackendCarcass.Database.csproj" />
+        <Project Path="../BackendCarcass/BackendCarcass.DatabaseConfiguration/BackendCarcass.DatabaseConfiguration.csproj" />
+        <Project Path="../BackendCarcass/BackendCarcass.DataSeeding/BackendCarcass.DataSeeding.csproj" />
+        <Project Path="../BackendCarcass/BackendCarcass.Db/BackendCarcass.Db.csproj" />
+        <Project Path="../BackendCarcass/BackendCarcass.Identity/BackendCarcass.Identity.csproj" />
+        <Project Path="../BackendCarcass/BackendCarcass.LibCrud/BackendCarcass.LibCrud.csproj" />
+        <Project Path="../BackendCarcass/BackendCarcass.Mappers/BackendCarcass.Mappers.csproj" />
+        <Project Path="../BackendCarcass/BackendCarcass.MasterData/BackendCarcass.MasterData.csproj" />
+        <Project Path="../BackendCarcass/BackendCarcass.Repositories/BackendCarcass.Repositories.csproj" />
+        <Project Path="../BackendCarcass/BackendCarcass.Rights/BackendCarcass.Rights.csproj" />
+    </Folder>
+    <Folder Name="/BackendCarcassShared/">
+        <Project Path="../BackendCarcassShared/BackendCarcassContracts/BackendCarcassContracts.csproj" />
+    </Folder>
+    <Folder Name="/Solution Items/">
+        <File Path=".editorconfig" />
+        <File Path="Directory.Build.props" />
+        <File Path="Directory.Packages.props" />
+    </Folder>
+    <Folder Name="/SystemTools/">
+        <Project Path="../SystemTools/SystemTools.ApiContracts/SystemTools.ApiContracts.csproj" />
+        <Project Path="../SystemTools/SystemTools.DatabaseToolsShared/SystemTools.DatabaseToolsShared.csproj" />
+        <Project Path="../SystemTools/SystemTools.DomainShared/SystemTools.DomainShared.csproj" />
+        <Project Path="../SystemTools/SystemTools.ReCounterContracts/SystemTools.ReCounterContracts.csproj" />
+        <Project Path="../SystemTools/SystemTools.SystemToolsShared/SystemTools.SystemToolsShared.csproj" />
+    </Folder>
+    <Project Path="MimosiGeDb/MimosiGeDb.csproj" />
+    <Project Path="MimosiGeDbMasterDataDom/MimosiGeDbMasterDataDom.csproj" />
+    <Project Path="MimosiGeDbNewDataSeeding/MimosiGeDbNewDataSeeding.csproj" />
+    <Project Path="MimosiGeDbPart/MimosiGeDbPart.csproj" />
+</Solution>
