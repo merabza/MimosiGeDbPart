@@ -21,46 +21,46 @@ public sealed class MimNewDataSeedersFactory : MimDataSeedersFactory
 
     public override ITableDataSeeder CreateCrmAnswerTypeSeeder()
     {
-        return new MimNewCrmAnswerTypeSeeder(DataSeedFolder, Repo);
+        return new MimNewCrmAnswerTypeSeeder(DataSeedFolder, Repo, UnitOfWork);
     }
 
     public override ITableDataSeeder CreateWeekDaysSeeder()
     {
-        return new MimNewWeekDaysSeeder(DataSeedFolder, Repo);
+        return new MimNewWeekDaysSeeder(DataSeedFolder, Repo, UnitOfWork);
     }
 
     public override ITableDataSeeder CreateCrudRightTypesSeeder()
     {
-        return new MimNewCrudRightTypesSeeder(DataSeedFolder, Repo);
+        return new MimNewCrudRightTypesSeeder(DataSeedFolder, Repo, UnitOfWork);
     }
 
     public override ITableDataSeeder CreateDataTypesSeeder()
     {
-        return new MimNewDataTypesSeeder(DataSeedFolder, CarcassRepo, Repo);
+        return new MimNewDataTypesSeeder(DataSeedFolder, CarcassRepo, Repo, UnitOfWork);
     }
 
     public override ITableDataSeeder CreateMenuGroupsSeeder()
     {
-        return new MimNewMenuGroupsSeeder(DataSeedFolder, Repo);
+        return new MimNewMenuGroupsSeeder(DataSeedFolder, Repo, UnitOfWork);
     }
 
     public override ITableDataSeeder CreateMenuSeeder()
     {
-        return new MimNewMenuSeeder(DataSeedFolder, Repo);
+        return new MimNewMenuSeeder(DataSeedFolder, Repo, UnitOfWork);
     }
 
     public override ITableDataSeeder CreateManyToManyJoinsSeeder()
     {
-        return new MimNewManyToManyJoinSeeder(SecretDataFolder, DataSeedFolder, CarcassRepo, Repo);
+        return new MimNewManyToManyJoinSeeder(SecretDataFolder, DataSeedFolder, CarcassRepo, Repo, UnitOfWork);
     }
 
     public override ITableDataSeeder CreateRolesSeeder()
     {
-        return new MimNewRolesSeeder(MyRoleManager, SecretDataFolder, DataSeedFolder, Repo);
+        return new MimNewRolesSeeder(MyRoleManager, SecretDataFolder, DataSeedFolder, Repo, UnitOfWork);
     }
 
     public override ITableDataSeeder CreateUsersSeeder()
     {
-        return new MimNewUsersSeeder(MyUserManager, SecretDataFolder, DataSeedFolder, Repo);
+        return new MimNewUsersSeeder(MyUserManager, SecretDataFolder, DataSeedFolder, Repo, UnitOfWork);
     }
 }

@@ -5,7 +5,6 @@ namespace MimosiGeDb.Models;
 
 public sealed class Lesson
 {
-    private Group? _groupNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -70,10 +69,8 @@ public sealed class Lesson
 
     public Group GroupNavigation
     {
-        get =>
-            _groupNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
-        set => _groupNavigation = value;
+        get => field ?? throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
+        set;
     }
 
     public ICollection<LessonByStudent> LessonsByStudents { get; set; } = new List<LessonByStudent>();

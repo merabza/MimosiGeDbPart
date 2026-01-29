@@ -7,7 +7,6 @@ using MimosiGeDbDataSeeding;
 using MimosiGeDbDataSeeding.CarcassSeeders;
 using SystemTools.DatabaseToolsShared;
 using SystemTools.DomainShared.Repositories;
-using SystemTools.RepositoriesShared;
 
 namespace MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 
@@ -25,7 +24,7 @@ public sealed class MimNewManyToManyJoinSeeder : MimManyToManyJoinsSeeder
 
     public override List<ManyToManyJoin> CreateListByRules()
     {
-        var manyToManyJoinsList = base.CreateListByRules();
+        List<ManyToManyJoin> manyToManyJoinsList = base.CreateListByRules();
 
         //აქ უნდა მოხდეს იმ ჩანაწერების დაგენერირება დამატებით, რომლებიც პროექტის მხარეს კეთდება და არა კარკასის მხარეს.
         //ამ დამატებითი ჩანაწერების გაკეთების საჭიროება შეიძლება დადგეს,
@@ -33,15 +32,15 @@ public sealed class MimNewManyToManyJoinSeeder : MimManyToManyJoinsSeeder
 
         var tempData = DataSeederTempData.Instance;
 
-        var roleTableName = UnitOfWork.GetTableName<Role>();
+        string roleTableName = UnitOfWork.GetTableName<Role>();
         //var appClaimTableName = DataSeederRepo.GetTableName<AppClaim>();
 
         //როლის დატატიპის იდენტიფიკატორი
-        var roleDataTypeId = tempData.GetIntIdByKey<DataType>(roleTableName);
+        int roleDataTypeId = tempData.GetIntIdByKey<DataType>(roleTableName);
         //მენიუს ჯგუფის დატატიპის იდენტიფიკატორი
-        var menuGroupDataTypeId = tempData.GetIntIdByKey<DataType>(UnitOfWork.GetTableName<MenuGroup>());
+        int menuGroupDataTypeId = tempData.GetIntIdByKey<DataType>(UnitOfWork.GetTableName<MenuGroup>());
         //მენიუს ელემენტების დატატიპის იდენტიფიკატორი
-        var menuDataTypeId = tempData.GetIntIdByKey<DataType>(UnitOfWork.GetTableName<MenuItm>());
+        int menuDataTypeId = tempData.GetIntIdByKey<DataType>(UnitOfWork.GetTableName<MenuItm>());
         //თვითონ დატატიპის დატატიპის იდენტიფიკატორი
         //var dataTypeDataTypeId = tempData.GetIntIdByKey<DataType>(UnitOfWork.GetTableName<DataType>());
         //განსაკუთრებული უფლების დატატიპის იდენტიფიკატორი
