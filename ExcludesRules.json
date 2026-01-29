@@ -249,7 +249,7 @@
     {
       "TableName": "Humans",
       "OldFieldName": "Id",
-      "NewFieldName": "humId"
+      "NewFieldName": "HumId"
     },
     {
       "TableName": "StudentContractDetails",
