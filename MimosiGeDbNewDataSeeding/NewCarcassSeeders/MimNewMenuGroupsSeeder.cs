@@ -1,18 +1,17 @@
 ﻿using System.Collections.Generic;
 using BackendCarcass.Database.Models;
-using CarcassDb.Models;
-using DatabaseToolsShared;
 using MimosiGeDbDataSeeding;
 using MimosiGeDbDataSeeding.CarcassSeeders;
 using SystemTools.DatabaseToolsShared;
+using SystemTools.DomainShared.Repositories;
 
 namespace MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 
 public sealed class MimNewMenuGroupsSeeder : MimMenuGroupsSeeder
 {
     // ReSharper disable once ConvertToPrimaryConstructor
-    public MimNewMenuGroupsSeeder(string dataSeedFolder, IMimDataSeederRepository repo) : base(dataSeedFolder, repo,
-        ESeedDataType.OnlyRules)
+    public MimNewMenuGroupsSeeder(string dataSeedFolder, IMimDataSeederRepository repo, IUnitOfWork unitOfWork) : base(
+        dataSeedFolder, repo, unitOfWork, ESeedDataType.OnlyRules)
     {
     }
 

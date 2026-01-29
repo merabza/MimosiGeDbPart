@@ -1,15 +1,13 @@
-﻿using CarcassDataSeeding;
-using CarcassDataSeeding.Comparers;
-using CarcassDb.Models;
-using DatabaseToolsShared;
-using MimosiGeDbDataSeeding;
-using MimosiGeDbDataSeeding.CarcassSeeders;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using BackendCarcass.Database.Models;
 using BackendCarcass.DataSeeding;
 using BackendCarcass.DataSeeding.Comparers;
+using MimosiGeDbDataSeeding;
+using MimosiGeDbDataSeeding.CarcassSeeders;
 using SystemTools.DatabaseToolsShared;
+using SystemTools.DomainShared.Repositories;
+using SystemTools.RepositoriesShared;
 
 namespace MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 
@@ -17,8 +15,8 @@ public sealed class MimNewManyToManyJoinSeeder : MimManyToManyJoinsSeeder
 {
     // ReSharper disable once ConvertToPrimaryConstructor
     public MimNewManyToManyJoinSeeder(string secretDataFolder, string dataSeedFolder,
-        ICarcassDataSeederRepository carcassRepo, IMimDataSeederRepository repo) : base(secretDataFolder, carcassRepo,
-        dataSeedFolder, repo, ESeedDataType.OnlyRules, [
+        ICarcassDataSeederRepository carcassRepo, IMimDataSeederRepository repo, IUnitOfWork unitOfWork) : base(
+        secretDataFolder, carcassRepo, dataSeedFolder, repo, unitOfWork, ESeedDataType.OnlyRules, [
             nameof(ManyToManyJoin.PtId), nameof(ManyToManyJoin.PKey), nameof(ManyToManyJoin.CtId),
             nameof(ManyToManyJoin.CKey)
         ])
@@ -35,17 +33,17 @@ public sealed class MimNewManyToManyJoinSeeder : MimManyToManyJoinsSeeder
 
         var tempData = DataSeederTempData.Instance;
 
-        var roleTableName = DataSeederRepo.GetTableName<Role>();
+        var roleTableName = UnitOfWork.GetTableName<Role>();
         //var appClaimTableName = DataSeederRepo.GetTableName<AppClaim>();
 
         //როლის დატატიპის იდენტიფიკატორი
         var roleDataTypeId = tempData.GetIntIdByKey<DataType>(roleTableName);
         //მენიუს ჯგუფის დატატიპის იდენტიფიკატორი
-        var menuGroupDataTypeId = tempData.GetIntIdByKey<DataType>(DataSeederRepo.GetTableName<MenuGroup>());
+        var menuGroupDataTypeId = tempData.GetIntIdByKey<DataType>(UnitOfWork.GetTableName<MenuGroup>());
         //მენიუს ელემენტების დატატიპის იდენტიფიკატორი
-        var menuDataTypeId = tempData.GetIntIdByKey<DataType>(DataSeederRepo.GetTableName<MenuItm>());
+        var menuDataTypeId = tempData.GetIntIdByKey<DataType>(UnitOfWork.GetTableName<MenuItm>());
         //თვითონ დატატიპის დატატიპის იდენტიფიკატორი
-        //var dataTypeDataTypeId = tempData.GetIntIdByKey<DataType>(DataSeederRepo.GetTableName<DataType>());
+        //var dataTypeDataTypeId = tempData.GetIntIdByKey<DataType>(UnitOfWork.GetTableName<DataType>());
         //განსაკუთრებული უფლების დატატიპის იდენტიფიკატორი
         //var appClaimDataTypeId = tempData.GetIntIdByKey<DataType>(appClaimTableName);
 

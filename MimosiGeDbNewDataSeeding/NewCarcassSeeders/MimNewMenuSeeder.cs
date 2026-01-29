@@ -1,21 +1,20 @@
 ﻿using System.Collections.Generic;
 using BackendCarcass.Database.Models;
 using BackendCarcass.DataSeeding;
-using CarcassDataSeeding;
-using CarcassDb.Models;
-using DatabaseToolsShared;
 using MimosiGeDb.Models;
 using MimosiGeDbDataSeeding;
 using MimosiGeDbDataSeeding.CarcassSeeders;
 using SystemTools.DatabaseToolsShared;
+using SystemTools.DomainShared.Repositories;
+using SystemTools.RepositoriesShared;
 
 namespace MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 
 public sealed class MimNewMenuSeeder : MimMenuSeeder
 {
     // ReSharper disable once ConvertToPrimaryConstructor
-    public MimNewMenuSeeder(string dataSeedFolder, IMimDataSeederRepository repo) : base(dataSeedFolder, repo,
-        ESeedDataType.OnlyRules)
+    public MimNewMenuSeeder(string dataSeedFolder, IMimDataSeederRepository repo, IUnitOfWork unitOfWork) : base(
+        dataSeedFolder, repo, unitOfWork, ESeedDataType.OnlyRules)
     {
     }
 
@@ -86,18 +85,18 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             },
             new()
             {
-                MenKey = DataSeederRepo.GetTableName<CrmAnswerType>(),
+                MenKey = UnitOfWork.GetTableName<CrmAnswerType>(),
                 MenName = "CRM პასუხების ტიპები",
-                MenValue = DataSeederRepo.GetTableName<CrmAnswerType>(),
+                MenValue = UnitOfWork.GetTableName<CrmAnswerType>(),
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("CRM"),
                 SortId = 1,
                 MenLinkKey = "mdList"
             },
             new()
             {
-                MenKey = DataSeederRepo.GetTableName<CrmCallType>(),
+                MenKey = UnitOfWork.GetTableName<CrmCallType>(),
                 MenName = "CRM დარეკვის ტიპები",
-                MenValue = DataSeederRepo.GetTableName<CrmCallType>(),
+                MenValue = UnitOfWork.GetTableName<CrmCallType>(),
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("CRM"),
                 SortId = 1,
                 MenLinkKey = "mdList"
@@ -151,18 +150,18 @@ public sealed class MimNewMenuSeeder : MimMenuSeeder
             //Reports group
             new()
             {
-                MenKey = DataSeederRepo.GetTableName<ReportCategory>(),
+                MenKey = UnitOfWork.GetTableName<ReportCategory>(),
                 MenName = "რეპორტების ჯგუფები",
-                MenValue = DataSeederRepo.GetTableName<ReportCategory>(),
+                MenValue = UnitOfWork.GetTableName<ReportCategory>(),
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("Reports"),
                 SortId = 0,
                 MenLinkKey = "mdList"
             },
             new()
             {
-                MenKey = DataSeederRepo.GetTableName<Report>(),
+                MenKey = UnitOfWork.GetTableName<Report>(),
                 MenName = "რეპორტები",
-                MenValue = DataSeederRepo.GetTableName<Report>(),
+                MenValue = UnitOfWork.GetTableName<Report>(),
                 MenGroupId = tempData.GetIntIdByKey<MenuGroup>("Reports"),
                 SortId = 0,
                 MenLinkKey = "mdList"

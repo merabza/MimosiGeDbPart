@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using DatabaseToolsShared;
 using MimosiGeDb.Models;
 using MimosiGeDbDataSeeding;
 using MimosiGeDbDataSeeding.MimosiGeSeeders;
 using SystemTools.DatabaseToolsShared;
+using SystemTools.DomainShared.Repositories;
 
 namespace MimosiGeDbNewDataSeeding.NewSeeders;
 
 public sealed class MimNewWeekDaysSeeder : WeekDaysSeeder
 {
     // ReSharper disable once ConvertToPrimaryConstructor
-    public MimNewWeekDaysSeeder(string dataSeedFolder, IMimDataSeederRepository repo) : base(dataSeedFolder, repo,
-        ESeedDataType.OnlyRules, [nameof(WeekDay.ShortName)])
+    public MimNewWeekDaysSeeder(string dataSeedFolder, IMimDataSeederRepository repo, IUnitOfWork unitOfWork) : base(
+        dataSeedFolder, repo, unitOfWork, ESeedDataType.OnlyRules, [nameof(WeekDay.ShortName)])
     {
     }
 

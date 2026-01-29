@@ -12,7 +12,8 @@ namespace MimosiGeDb.DependencyInjection;
 // ReSharper disable once UnusedType.Global
 public static class MimosiGeDbDependencyInjection
 {
-    public static IServiceCollection AddMimosiGeDb(this IServiceCollection services, ILogger? debugLogger, IConfiguration configuration)
+    public static IServiceCollection AddMimosiGeDb(this IServiceCollection services, ILogger? debugLogger,
+        IConfiguration configuration)
     {
         const string connectionStringConfigurationKey = "Data:MimosiGeDatabase:ConnectionString";
         debugLogger?.Information("{MethodName} Started", nameof(AddMimosiGeDb));

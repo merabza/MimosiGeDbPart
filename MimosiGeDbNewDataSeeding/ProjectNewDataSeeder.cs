@@ -1,5 +1,4 @@
 ﻿using BackendCarcass.DataSeeding;
-using CarcassDataSeeding;
 using Microsoft.Extensions.Logging;
 using MimosiGeDbDataSeeding;
 
@@ -10,7 +9,7 @@ public sealed class ProjectNewDataSeeder : ProjectDataSeeder
     private readonly IDataFixRepository _dataFixRepository;
 
     // ReSharper disable once ConvertToPrimaryConstructor
-    public ProjectNewDataSeeder(ILogger<CarcassDataSeeder> logger, CarcassDataSeedersFactory dataSeedersFactory,
+    public ProjectNewDataSeeder(ILogger<ProjectNewDataSeeder> logger, CarcassDataSeedersFactory dataSeedersFactory,
         IDataFixRepository dataFixRepository, bool checkOnly) : base(logger, dataSeedersFactory, checkOnly)
     {
         _dataFixRepository = dataFixRepository;
@@ -19,7 +18,9 @@ public sealed class ProjectNewDataSeeder : ProjectDataSeeder
     public override bool SeedData()
     {
         if (!base.SeedData())
+        {
             return false;
+        }
 
         Logger.LogInformation("Seed Agr Project New Data Seeder Started");
 

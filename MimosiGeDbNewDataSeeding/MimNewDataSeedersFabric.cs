@@ -1,13 +1,11 @@
 ﻿using BackendCarcass.DataSeeding;
 using BackendCarcass.MasterData.Models;
-using CarcassDataSeeding;
-using CarcassMasterDataDom.Models;
-using DatabaseToolsShared;
 using Microsoft.AspNetCore.Identity;
 using MimosiGeDbDataSeeding;
 using MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 using MimosiGeDbNewDataSeeding.NewSeeders;
 using SystemTools.DatabaseToolsShared;
+using SystemTools.DomainShared.Repositories;
 
 namespace MimosiGeDbNewDataSeeding;
 
@@ -16,8 +14,8 @@ public sealed class MimNewDataSeedersFactory : MimDataSeedersFactory
     // ReSharper disable once ConvertToPrimaryConstructor
     public MimNewDataSeedersFactory(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager,
         string secretDataFolder, string dataSeedFolder, ICarcassDataSeederRepository carcassRepo,
-        IMimDataSeederRepository repo) : base(userManager, roleManager, secretDataFolder, dataSeedFolder, carcassRepo,
-        repo)
+        IMimDataSeederRepository repo, IUnitOfWork unitOfWork) : base(userManager, roleManager, secretDataFolder,
+        dataSeedFolder, carcassRepo, repo, unitOfWork)
     {
     }
 
