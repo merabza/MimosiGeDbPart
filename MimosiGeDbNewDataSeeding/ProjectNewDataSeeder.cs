@@ -1,4 +1,5 @@
-﻿using CarcassDataSeeding;
+﻿using BackendCarcass.DataSeeding;
+using CarcassDataSeeding;
 using Microsoft.Extensions.Logging;
 using MimosiGeDbDataSeeding;
 

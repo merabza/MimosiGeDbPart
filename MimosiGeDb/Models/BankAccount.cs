@@ -48,7 +48,9 @@ public sealed class BankAccount : IDataType
     public bool UpdateTo(IDataType data)
     {
         if (data is not BankAccount other)
+        {
             return false;
+        }
 
         return BaId == other.BaId && BankName == other.BankName && BankCode == other.BankCode &&
                AccountNumber == other.AccountNumber && DesperateDebt == other.DesperateDebt;

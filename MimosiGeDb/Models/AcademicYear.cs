@@ -44,7 +44,9 @@ public sealed class AcademicYear : IDataType
     public bool UpdateTo(IDataType data)
     {
         if (data is not AcademicYear other)
+        {
             return false;
+        }
 
         return AyId == other.AyId && AcademicYearName == other.AcademicYearName && StartDate == other.StartDate &&
                FinishDate == other.FinishDate;

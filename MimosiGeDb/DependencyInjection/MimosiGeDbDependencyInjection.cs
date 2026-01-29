@@ -5,21 +5,21 @@ using BackendCarcass.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace MimosiGeDb.DependencyInjection;
 
 // ReSharper disable once UnusedType.Global
 public static class MimosiGeDbDependencyInjection
 {
-    public static IServiceCollection AddMimosiGeDb(this IServiceCollection services, IConfiguration configuration,
-        bool debugMode)
+    public static IServiceCollection AddMimosiGeDb(this IServiceCollection services, ILogger? debugLogger, IConfiguration configuration)
     {
         const string connectionStringConfigurationKey = "Data:MimosiGeDatabase:ConnectionString";
-        if (debugMode) Console.WriteLine($"{nameof(AddMimosiGeDb)} Started");
+        debugLogger?.Information("{MethodName} Started", nameof(AddMimosiGeDb));
 
-        var connectionString = configuration[connectionStringConfigurationKey];
+        string? connectionString = configuration[connectionStringConfigurationKey];
 
-        if (string.IsNullOrWhiteSpace(connectionString) && !debugMode)
+        if (string.IsNullOrWhiteSpace(connectionString) && debugLogger is not null)
         {
             Console.WriteLine($"{connectionStringConfigurationKey} is empty");
             return services;
@@ -27,7 +27,7 @@ public static class MimosiGeDbDependencyInjection
 
         services.AddDbContext<CarcassDbContext>(options => options.UseSqlServer(connectionString));
         services.AddDbContext<MimosiGeDbContext>(options => options.UseSqlServer(connectionString));
-        if (debugMode) Console.WriteLine($"{nameof(AddMimosiGeDb)} Finished");
+        debugLogger?.Information("{MethodName} Finished", nameof(AddMimosiGeDb));
 
         return services;
     }

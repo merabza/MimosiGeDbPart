@@ -37,7 +37,9 @@ public sealed class Course : IDataType
     public bool UpdateTo(IDataType data)
     {
         if (data is not Course other)
+        {
             return false;
+        }
 
         return CrsId == other.CrsId && CourseName == other.CourseName;
     }

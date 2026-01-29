@@ -6,6 +6,10 @@ using MimosiGeDbDataSeeding;
 using MimosiGeDbDataSeeding.CarcassSeeders;
 using System.Collections.Generic;
 using System.Linq;
+using BackendCarcass.Database.Models;
+using BackendCarcass.DataSeeding;
+using BackendCarcass.DataSeeding.Comparers;
+using SystemTools.DatabaseToolsShared;
 
 namespace MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 

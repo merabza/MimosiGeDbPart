@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using BackendCarcass.Database;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
 using MimosiGeDb.Models;
 using SystemTools.DatabaseToolsShared;
@@ -84,10 +85,11 @@ public sealed class MimosiGeDbContext : CarcassDbContext
     {
         //Console.WriteLine("MimosiGeDbContext ChangeOptionsType Start...");
 
-        var sqlExt = options.Extensions.FirstOrDefault(e => e is SqlServerOptionsExtension) ??
-                     throw new Exception("Failed to retrieve SQL connection string for base Context");
-        var connectionString = ((SqlServerOptionsExtension)sqlExt).ConnectionString ??
-                               throw new Exception("Connection string for base Context dos not specified");
+        IDbContextOptionsExtension sqlExt = options.Extensions.FirstOrDefault(e => e is SqlServerOptionsExtension) ??
+                                            throw new Exception(
+                                                "Failed to retrieve SQL connection string for base Context");
+        string connectionString = ((SqlServerOptionsExtension)sqlExt).ConnectionString ??
+                                  throw new Exception("Connection string for base Context dos not specified");
         //Console.WriteLine("MimosiGeDbContext ChangeOptionsType Pass 2...");
 
         return new DbContextOptionsBuilder<T>().UseSqlServer(connectionString).EnableSensitiveDataLogging().Options;
