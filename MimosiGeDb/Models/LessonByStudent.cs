@@ -2,7 +2,7 @@
 
 public sealed class LessonByStudent
 {
-    public GroupByStudent? GroupByStudentNavigation;
+    public GroupByStudent? GroupByStudentNavigation { get; set; }
     public int Id { get; set; }
 
     /// <summary>
