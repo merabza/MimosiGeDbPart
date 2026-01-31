@@ -6,7 +6,6 @@ using MimosiGeDbDataSeeding;
 using MimosiGeDbDataSeeding.CarcassSeeders;
 using SystemTools.DatabaseToolsShared;
 using SystemTools.DomainShared.Repositories;
-using SystemTools.RepositoriesShared;
 
 namespace MimosiGeDbNewDataSeeding.NewCarcassSeeders;
 
