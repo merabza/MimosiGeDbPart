@@ -28,6 +28,5 @@
         <Project Path="../SystemTools/SystemTools.SystemToolsShared/SystemTools.SystemToolsShared.csproj" />
     </Folder>
     <Project Path="MimosiGeDb/MimosiGeDb.csproj" />
-    <Project Path="MimosiGeDbNewDataSeeding/MimosiGeDbNewDataSeeding.csproj" />
     <Project Path="MimosiGeDbPart/MimosiGeDbPart.csproj" />
 </Solution>
