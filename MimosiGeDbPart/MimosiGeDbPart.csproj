@@ -13,9 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MimosiGeDbMasterDataDom\MimosiGeDbMasterDataDom.csproj" />
-        <ProjectReference Include="..\MimosiGeDbNewDataSeeding\MimosiGeDbNewDataSeeding.csproj" />
-        <ProjectReference Include="..\MimosiGeDb\MimosiGeDb.csproj" />
+      <ProjectReference Include="..\MimosiGeDb\MimosiGeDb.csproj" />
     </ItemGroup>
 
 </Project>
