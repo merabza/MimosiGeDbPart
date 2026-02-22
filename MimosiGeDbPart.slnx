@@ -12,7 +12,7 @@
         <Project Path="../BackendCarcass/BackendCarcass.Rights/BackendCarcass.Rights.csproj" />
     </Folder>
     <Folder Name="/BackendCarcassShared/">
-        <Project Path="../BackendCarcassShared/BackendCarcassContracts/BackendCarcassContracts.csproj" />
+        <Project Path="../BackendCarcassShared/BackendCarcassShared.BackendCarcassContracts/BackendCarcassShared.BackendCarcassContracts.csproj" />
     </Folder>
     <Folder Name="/Solution Items/">
         <File Path=".editorconfig" />
@@ -27,6 +27,6 @@
         <Project Path="../SystemTools/SystemTools.RepositoriesShared/SystemTools.RepositoriesShared.csproj" />
         <Project Path="../SystemTools/SystemTools.SystemToolsShared/SystemTools.SystemToolsShared.csproj" />
     </Folder>
-    <Project Path="MimosiGeDb/MimosiGeDb.csproj" />
+    <Project Path="MimosiGeDbPart.Db/MimosiGeDbPart.Db.csproj" />
     <Project Path="MimosiGeDbPart/MimosiGeDbPart.csproj" />
 </Solution>
