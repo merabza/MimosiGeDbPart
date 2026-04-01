@@ -13,7 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MimosiGeDbPart.Db\MimosiGeDbPart.Db.csproj" />
+      <ProjectReference Include="..\MimosiGeDbPart.Db\MimosiGeDbPart.Db.csproj" />
     </ItemGroup>
 
 </Project>
