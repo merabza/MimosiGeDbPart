@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using SystemTools.Domain.Abstractions;
+using SystemTools.SystemToolsShared;
 
 namespace MimosiGeDbPart.Db.DependencyInjection;
 
@@ -28,6 +30,10 @@ public static class MimosiGeDbDependencyInjection
 
         services.AddDbContext<CarcassDbContext>(options => options.UseSqlServer(connectionString));
         services.AddDbContext<MimosiGeDbContext>(options => options.UseSqlServer(connectionString));
+
+        services.AddScoped<IUnitOfWork, MimosiGeUnitOfWork>();
+        services.AddScoped<IDatabaseAbstraction, MimosiGeDatabaseAbstractionRepository>();
+
         debugLogger?.Information("{MethodName} Finished", nameof(AddMimosiGeDb));
 
         return services;
