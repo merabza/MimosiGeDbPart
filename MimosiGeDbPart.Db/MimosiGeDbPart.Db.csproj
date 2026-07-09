@@ -1,9 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <ItemGroup>
-        <ProjectReference Include="..\..\BackendCarcass\BackendCarcass.Database\BackendCarcass.Database.csproj" />
-    </ItemGroup>
-    <ItemGroup>
+        <PackageReference Include="BackendCarcass.Database" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
