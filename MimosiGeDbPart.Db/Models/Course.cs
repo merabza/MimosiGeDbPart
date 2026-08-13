@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using BackendCarcass.MasterData;
+using BackendCarcassDomain.Entities;
 
 namespace MimosiGeDbPart.Db.Models;
 
