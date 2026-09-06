@@ -1,12 +1,14 @@
 //Created by DatabaseInstallerClassCreator at 2/15/2025 11:07:44 AM
 
 using System;
+using BackendCarcass.Application;
 using BackendCarcass.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using SystemTools.Domain.Abstractions;
+using SystemTools.SharedKernel;
 using SystemTools.SystemToolsShared;
 
 namespace MimosiGeDbPart.Db.DependencyInjection;
@@ -28,8 +30,10 @@ public static class MimosiGeDbDependencyInjection
             return services;
         }
 
+        services.AddScoped<IDomainEventsDispatcher, DomainEventsDispatcher>();
         services.AddDbContext<CarcassDbContext>(options => options.UseSqlServer(connectionString));
         services.AddDbContext<MimosiGeDbContext>(options => options.UseSqlServer(connectionString));
+        services.AddScoped<ICarcassApplicationDbContext>(sp => sp.GetRequiredService<MimosiGeDbContext>());
 
         services.AddScoped<IUnitOfWork, MimosiGeUnitOfWork>();
         services.AddScoped<IDatabaseAbstraction, MimosiGeDatabaseAbstractionRepository>();
