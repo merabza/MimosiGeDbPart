@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
 using MimosiGeDbPart.Db.Models;
 using SystemTools.DatabaseToolsShared;
+using SystemTools.SharedKernel;
 
 namespace MimosiGeDbPart.Db;
 
@@ -23,8 +24,9 @@ public sealed class MimosiGeDbContext : CarcassDbContext
         //Console.WriteLine("MimosiGeDbContext Constructor 3...");
     }
 
-    public MimosiGeDbContext(DbContextOptions<MimosiGeDbContext> options) : base(
-        ChangeOptionsType<CarcassDbContext>(options))
+    public MimosiGeDbContext(DbContextOptions<MimosiGeDbContext> options,
+        IDomainEventsDispatcher domainEventsDispatcher) : base(ChangeOptionsType<CarcassDbContext>(options),
+        domainEventsDispatcher)
     {
         //Console.WriteLine("MimosiGeDbContext Constructor 4...");
     }
