@@ -23,5 +23,8 @@
         <Project Path="../SystemTools/SystemTools.SharedKernel/SystemTools.SharedKernel.csproj" />
         <Project Path="../SystemTools/SystemTools.SystemToolsShared/SystemTools.SystemToolsShared.csproj" />
     </Folder>
+    <Folder Name="/Tests/">
+        <Project Path="MimosiGeDbPart.Db.Tests/MimosiGeDbPart.Db.Tests.csproj" />
+    </Folder>
     <Project Path="MimosiGeDbPart.Db/MimosiGeDbPart.Db.csproj" />
 </Solution>

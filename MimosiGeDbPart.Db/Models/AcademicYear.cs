@@ -48,8 +48,10 @@ public sealed class AcademicYear : IDataType
             return false;
         }
 
-        return AyId == other.AyId && AcademicYearName == other.AcademicYearName && StartDate == other.StartDate &&
-               FinishDate == other.FinishDate;
+        AcademicYearName = other.AcademicYearName;
+        StartDate = other.StartDate;
+        FinishDate = other.FinishDate;
+        return true;
     }
 
     public dynamic EditFields()

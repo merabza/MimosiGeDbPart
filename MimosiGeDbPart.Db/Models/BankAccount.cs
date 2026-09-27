@@ -52,8 +52,11 @@ public sealed class BankAccount : IDataType
             return false;
         }
 
-        return BaId == other.BaId && BankName == other.BankName && BankCode == other.BankCode &&
-               AccountNumber == other.AccountNumber && DesperateDebt == other.DesperateDebt;
+        BankName = other.BankName;
+        BankCode = other.BankCode;
+        AccountNumber = other.AccountNumber;
+        DesperateDebt = other.DesperateDebt;
+        return true;
     }
 
     public dynamic EditFields()

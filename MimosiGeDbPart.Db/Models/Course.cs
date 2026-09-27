@@ -41,7 +41,8 @@ public sealed class Course : IDataType
             return false;
         }
 
-        return CrsId == other.CrsId && CourseName == other.CourseName;
+        CourseName = other.CourseName;
+        return true;
     }
 
     public dynamic EditFields()
