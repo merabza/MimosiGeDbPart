@@ -11,7 +11,10 @@ public sealed class StudentStatus
     /// </summary>
     public string StudentStatusName { get; set; }
 
-    public int? Rate { get; set; }
+    /// <summary>
+    ///     დალაგების რიგი
+    /// </summary>
+    public int Rate { get; set; }
 
     public ICollection<Group> Groups { get; set; } = new List<Group>();
 

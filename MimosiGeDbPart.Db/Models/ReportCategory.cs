@@ -9,7 +9,7 @@ public sealed class ReportCategory
     /// <summary>
     ///     უწყისის კატეგორიის სახელი
     /// </summary>
-    public string? ReportCategoryName { get; set; }
+    public required string ReportCategoryName { get; set; }
 
     public ICollection<ReportByCategory> ReportsByCategories { get; set; } = new List<ReportByCategory>();
 }

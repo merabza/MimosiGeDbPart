@@ -6,7 +6,10 @@ public sealed class LessonStatus
 {
     public int Id { get; set; }
 
-    public string? StatusName { get; set; }
+    /// <summary>
+    ///     სტატუსის დასახელება
+    /// </summary>
+    public required string StatusName { get; set; }
 
     public ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
 }

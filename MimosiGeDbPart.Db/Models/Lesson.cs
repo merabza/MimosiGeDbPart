@@ -40,7 +40,7 @@ public sealed class Lesson
     /// <summary>
     ///     გაკვეთილის ჩატარების სტატუსი
     /// </summary>
-    public int Status { get; set; }
+    public int LessonStatusId { get; set; } = 1;
 
     /// <summary>
     ///     შენიშვნა
@@ -58,7 +58,7 @@ public sealed class Lesson
     public DateTime? RecoverDate { get; set; }
 
     /// <summary>
-    ///     ჯგუფში დროების განაწილების მიხედვით თეორიულად მინმალური თარიღი იმ თვისთვის, როცა ეს გაკვეთილი ჩატარდა
+    ///     ჯგუფში დროების განაწილების მიხედვით თეორიულად მინიმალური თარიღი იმ თვისთვის, როცა ეს გაკვეთილი ჩატარდა
     /// </summary>
     public DateTime TeoMinDate { get; set; }
 
@@ -67,18 +67,15 @@ public sealed class Lesson
     /// </summary>
     public DateTime TeoMaxDate { get; set; }
 
-    public Group GroupNavigation
-    {
-        get => field ?? throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
-        set;
-    }
+    public Group Group { get; set; } = null!;
 
     public ICollection<LessonByStudent> LessonsByStudents { get; set; } = new List<LessonByStudent>();
 
     public ICollection<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; } =
         new List<LessonCheckCreateErrorLog>();
 
-    public LessonStatus StatusNavigation { get; set; } = null!;
+    public LessonStatus LessonStatus { get; set; } = null!;
+    public TeacherSalaryScheme SalaryScheme { get; set; } = null!;
     public TeacherContract? SubstituteTeacherContract { get; set; }
     public TeacherContract TeacherContract { get; set; } = null!;
 }

@@ -17,8 +17,6 @@ public sealed class Course : IDataType
 
     public ICollection<StudentContractDetail> StudentContractDetails { get; set; } = new List<StudentContractDetail>();
 
-    public ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
-
     //[NotMapped] public static string DtKeyKey => nameof(CrsId).CountDtKey();
 
     [NotMapped]

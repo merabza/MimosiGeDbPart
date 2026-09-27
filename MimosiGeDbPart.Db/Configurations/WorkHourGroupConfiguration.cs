@@ -8,9 +8,8 @@ public sealed class WorkHourGroupConfiguration : IEntityTypeConfiguration<WorkHo
 {
     public void Configure(EntityTypeBuilder<WorkHourGroup> entity)
     {
+        entity.ToTable("WorkHourGroups", t => t.HasComment("სამუშაო საათების ჯგუფები (ადმინისტრაცია და სხვ.)"));
         entity.HasKey(e => e.WhgId);
-
-        entity.HasIndex(e => e.WhgId);
 
         entity.HasIndex(e => e.WhgKey);
 

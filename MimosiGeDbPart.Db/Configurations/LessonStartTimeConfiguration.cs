@@ -8,9 +8,11 @@ public sealed class LessonStartTimeConfiguration : IEntityTypeConfiguration<Less
 {
     public void Configure(EntityTypeBuilder<LessonStartTime> entity)
     {
-        entity.HasKey(e => e.LstTime);
+        entity.ToTable("LessonStartTimes", t => t.HasComment("გაკვეთილის დაწყების დროები"));
+        entity.HasKey(e => e.LstId);
+        entity.HasIndex(e => e.LstTime).IsUnique();
 
-        //entity.Property(e => e.LstId);
-        entity.Property(e => e.LstTime).HasComment("გაკვეთილის დაწყების დრო");
+        entity.Property(e => e.LstId).HasComment("იდენტიფიკატორი");
+        entity.Property(e => e.LstTime).HasColumnType("time(0)").HasComment("გაკვეთილის დაწყების დრო");
     }
 }

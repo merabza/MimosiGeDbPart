@@ -5,13 +5,6 @@ namespace MimosiGeDbPart.Db.Models;
 
 public sealed class StudentContract
 {
-    private AcademicYear? _academicYearNavigation;
-
-    private Human? _parentHumanNavigation;
-
-    private Human? _studentHumanNavigation;
-
-    private StudentStatus? _studentStatusNavigation;
     public int ScId { get; set; }
 
     /// <summary>
@@ -47,7 +40,7 @@ public sealed class StudentContract
     /// <summary>
     ///     გადახდის სასურველი დღე თვეში
     /// </summary>
-    public float? DesiredMonthlyPaymentDay { get; set; }
+    public int? DesiredMonthlyPaymentDay { get; set; }
 
     /// <summary>
     ///     შემდეგი გადახდის თარიღი
@@ -57,45 +50,23 @@ public sealed class StudentContract
     /// <summary>
     ///     შემდეგი გადახდის თარიღს სჭირდება გადაანგარიშება
     /// </summary>
-    public bool DirtyNextPayDate { get; set; }
+    public bool DirtyNextPayDate { get; set; } = true;
 
-    public AcademicYear AcademicYearNavigation
-    {
-        get =>
-            _academicYearNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(_academicYearNavigation));
-        set => _academicYearNavigation = value;
-    }
+    public AcademicYear AcademicYear { get; set; } = null!;
 
-    public Human ParentHumanNavigation
-    {
-        get =>
-            _parentHumanNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(_parentHumanNavigation));
-        set => _parentHumanNavigation = value;
-    }
+    public Human ParentHuman { get; set; } = null!;
 
-    public Human StudentHumanNavigation
-    {
-        get =>
-            _studentHumanNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(_studentHumanNavigation));
-        set => _studentHumanNavigation = value;
-    }
+    public Human StudentHuman { get; set; } = null!;
 
-    public StudentStatus StudentStatusNavigation
-    {
-        get =>
-            _studentStatusNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(_studentStatusNavigation));
-        set => _studentStatusNavigation = value;
-    }
+    public StudentStatus? StudentStatus { get; set; }
 
     public ICollection<CrmCall> CrmCalls { get; set; } = new List<CrmCall>();
+
+    public ICollection<GroupByStudent> GroupsByStudents { get; set; } = new List<GroupByStudent>();
+
+    public ICollection<LessonByStudent> LessonsByStudents { get; set; } = new List<LessonByStudent>();
 
     public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
     public ICollection<StudentContractDetail> StudentContractDetails { get; set; } = new List<StudentContractDetail>();
-
-    public ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
 }

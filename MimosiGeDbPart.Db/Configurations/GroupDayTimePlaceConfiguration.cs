@@ -8,32 +8,34 @@ public sealed class GroupDayTimePlaceConfiguration : IEntityTypeConfiguration<Gr
 {
     public void Configure(EntityTypeBuilder<GroupDayTimePlace> entity)
     {
+        entity.ToTable("GroupDayTimePlaces",
+            t => t.HasComment("ჯგუფის განრიგი: კვირის დღე, დაწყების დრო, საათები, ოთახი და მოქმედების პერიოდი"));
         entity.HasKey(e => e.GdtpId);
 
         entity.HasIndex(e => e.GroupId);
 
         entity.HasIndex(e => e.RoomId);
 
-        entity.Property(e => e.GdtpId);
+        entity.Property(e => e.GdtpId).HasComment("იდენტიფიკატორი");
         entity.Property(e => e.EndDate).HasComment("გაუქმების თარიღი");
         entity.Property(e => e.GroupId).HasComment("ჯგუფი");
-        entity.Property(e => e.HoursCount).HasDefaultValue(1f).HasComment("საათები");
+        entity.Property(e => e.HoursCount).HasComment("საათები");
+        entity.Property(e => e.LessonStartTimeId).HasComment("გაკვეთილის დაწყების დრო");
         entity.Property(e => e.RoomId).HasComment("ოთახი");
-        entity.Property(e => e.StartDate).HasDefaultValueSql("getdate()").HasComment("გააქტიურების თარიღი");
-        //entity.Property(e => e.LessonStarTimeId).HasComment("გაკვეთილის დაწყების დრო");
-        entity.Property(e => e.LessonStarTime).HasComment("გაკვეთილის დაწყების დრო (დროებითი ველი)");
-        entity.Property(e => e.WeekDay).HasComment("კვირის დღე");
+        entity.Property(e => e.StartDate).HasDefaultValueSql("CONVERT(date, getdate())")
+            .HasComment("გააქტიურების თარიღი");
+        entity.Property(e => e.WeekDayId).HasComment("კვირის დღე");
 
-        entity.HasOne(d => d.GroupNavigation).WithMany(p => p.GroupDayTimePlace).HasForeignKey(d => d.GroupId)
-            .OnDelete(DeleteBehavior.ClientSetNull);
+        entity.HasOne(d => d.Group).WithMany(p => p.GroupDayTimePlaces).HasForeignKey(d => d.GroupId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        entity.HasOne(d => d.RoomNavigation).WithMany(p => p.GroupDayTimePlace).HasForeignKey(d => d.RoomId)
-            .OnDelete(DeleteBehavior.ClientSetNull);
+        entity.HasOne(d => d.Room).WithMany(p => p.GroupDayTimePlaces).HasForeignKey(d => d.RoomId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        entity.HasOne(d => d.LessonStartTimeNavigation).WithMany(p => p.GroupDayTimePlaces)
-            .HasForeignKey(d => d.LessonStarTime).OnDelete(DeleteBehavior.ClientSetNull);
+        entity.HasOne(d => d.LessonStartTime).WithMany(p => p.GroupDayTimePlaces)
+            .HasForeignKey(d => d.LessonStartTimeId).OnDelete(DeleteBehavior.Restrict);
 
-        entity.HasOne(d => d.WeekDayNavigation).WithMany(p => p.GroupDayTimePlace).HasForeignKey(d => d.WeekDay)
-            .OnDelete(DeleteBehavior.ClientSetNull);
+        entity.HasOne(d => d.WeekDay).WithMany(p => p.GroupDayTimePlaces).HasForeignKey(d => d.WeekDayId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

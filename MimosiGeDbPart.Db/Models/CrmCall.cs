@@ -4,11 +4,6 @@ namespace MimosiGeDbPart.Db.Models;
 
 public sealed class CrmCall
 {
-    private CrmAnswerType? _answerTypeNavigation;
-
-    private CrmCallType? _callTypeNavigation;
-
-    private StudentContract? _studentContractNavigation;
     public int CcId { get; set; }
 
     /// <summary>
@@ -19,7 +14,7 @@ public sealed class CrmCall
     /// <summary>
     ///     დარეკვის მიზეზის იდენტიფიკატორი
     /// </summary>
-    public int CallTypeId { get; set; }
+    public int CallTypeId { get; set; } = 1;
 
     /// <summary>
     ///     დარეკვის თარიღი
@@ -41,27 +36,9 @@ public sealed class CrmCall
     /// </summary>
     public DateTime? MustPayDate { get; set; }
 
-    public CrmAnswerType AnswerTypeNavigation
-    {
-        get =>
-            _answerTypeNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(AnswerTypeNavigation));
-        set => _answerTypeNavigation = value;
-    }
+    public CrmAnswerType AnswerType { get; set; } = null!;
 
-    public CrmCallType CallTypeNavigation
-    {
-        get =>
-            _callTypeNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(CallTypeNavigation));
-        set => _callTypeNavigation = value;
-    }
+    public CrmCallType CallType { get; set; } = null!;
 
-    public StudentContract StudentContractNavigation
-    {
-        get =>
-            _studentContractNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(StudentContractNavigation));
-        set => _studentContractNavigation = value;
-    }
+    public StudentContract StudentContract { get; set; } = null!;
 }

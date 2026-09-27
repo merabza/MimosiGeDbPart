@@ -17,16 +17,16 @@ public sealed class SalaryPart
     /// <summary>
     ///     ხელფასის მდგენელის ტიპი
     /// </summary>
-    public int? SpSalaryPartType { get; set; }
+    public int? SalaryPartTypeId { get; set; }
 
     /// <summary>
     ///     თანხა (მინუსი ნიშნავს გამოკლებას)
     /// </summary>
-    public decimal? SpAmount { get; set; }
+    public decimal SpAmount { get; set; }
 
-    public SalaryHeader Sh { get; set; } = null!;
+    public SalaryHeader SalaryHeader { get; set; } = null!;
 
-    public SalaryPartType? SpSalaryPartTypeNavigation { get; set; }
+    public SalaryPartType? SalaryPartType { get; set; }
 
     public TeacherContract TeacherContract { get; set; } = null!;
 }

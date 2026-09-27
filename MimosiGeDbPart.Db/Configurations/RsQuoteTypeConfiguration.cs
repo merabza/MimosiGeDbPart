@@ -8,10 +8,13 @@ public sealed class RsQuoteTypeConfiguration : IEntityTypeConfiguration<RsQuoteT
 {
     public void Configure(EntityTypeBuilder<RsQuoteType> entity)
     {
+        entity.ToTable("RsQuoteTypes", t => t.HasComment("განაცემის სახეები (შემოსავლების სამსახურის ცნობარი)"));
         entity.HasKey(e => e.QtId);
         entity.HasIndex(e => e.QtName).IsUnique();
 
-        entity.Property(e => e.QtId);
-        entity.Property(e => e.QtName).HasMaxLength(255);
+        //QtId შემოსავლების სამსახურის კოდია (1 = ხელფასი ...) და დეკლარაციაში იწერება, ამიტომ identity არ არის
+        entity.Property(e => e.QtId).ValueGeneratedNever()
+            .HasComment("განაცემის სახის კოდი (შემოსავლების სამსახურის)");
+        entity.Property(e => e.QtName).HasMaxLength(255).HasComment("განაცემის სახის დასახელება");
     }
 }

@@ -8,5 +8,5 @@ public sealed class Room
 
     public string RoomName { get; set; } = null!;
 
-    public ICollection<GroupDayTimePlace> GroupDayTimePlace { get; set; } = new List<GroupDayTimePlace>();
+    public ICollection<GroupDayTimePlace> GroupDayTimePlaces { get; set; } = new List<GroupDayTimePlace>();
 }

@@ -20,7 +20,7 @@ public sealed class TeacherContract
     /// <summary>
     ///     მასწავლებელი
     /// </summary>
-    public int TeacherHid { get; set; }
+    public int TeacherHumanId { get; set; }
 
     /// <summary>
     ///     ანგარიშის ნომერი
@@ -33,19 +33,14 @@ public sealed class TeacherContract
     public string? BankAccountCode { get; set; }
 
     /// <summary>
-    ///     მონაწილეობს სახელფასო პროგრამაში
-    /// </summary>
-    public bool SalaryProgram { get; set; }
-
-    /// <summary>
     ///     მონაწილეობს საპენსიო სქემაში
     /// </summary>
-    public bool PensionScema { get; set; }
+    public bool PensionScheme { get; set; }
 
     /// <summary>
     ///     განაცემის სახე (საგადასახადოსათვის)
     /// </summary>
-    public int? RsQuoteId { get; set; }
+    public int? RsQuoteTypeId { get; set; }
 
     /// <summary>
     ///     ქვეყანა (საგადასახადოსათვის)
@@ -75,7 +70,7 @@ public sealed class TeacherContract
     /// <summary>
     ///     ხელფასის ძირითადი სქემა საათობრივი ანაზღაურებისათვის
     /// </summary>
-    public int? SalarySchemaByHours { get; set; }
+    public int? SalarySchemaByHoursId { get; set; }
 
     /// <summary>
     ///     სამუშაო საათების ჯგუფი
@@ -92,12 +87,17 @@ public sealed class TeacherContract
     /// </summary>
     public DateTime? WorkHoursEnd { get; set; }
 
-    public int? Line { get; set; }
+    /// <summary>
+    ///     დროის ხაზი (რეპორტი r35)
+    /// </summary>
+    public int Line { get; set; }
 
     /// <summary>
     ///     ინდივიდუალური მეწარმე
     /// </summary>
     public bool IndEnt { get; set; }
+
+    public ICollection<GroupByTeacher> GroupsByTeachers { get; set; } = new List<GroupByTeacher>();
 
     public ICollection<Lesson> LessonsSubstituteTeacherContract { get; set; } = new List<Lesson>();
 
@@ -105,19 +105,15 @@ public sealed class TeacherContract
 
     public RsCountry RsCountry { get; set; } = null!;
 
-    public RsQuoteType? RsQuote { get; set; }
-
-    public ICollection<SalaryCharge> SalaryCharges { get; set; } = new List<SalaryCharge>();
+    public RsQuoteType? RsQuoteType { get; set; }
 
     public ICollection<SalaryLine> SalaryLines { get; set; } = new List<SalaryLine>();
 
     public ICollection<SalaryPart> SalaryParts { get; set; } = new List<SalaryPart>();
 
-    public TeacherSalaryScheme? SalarySchemaByHoursNavigation { get; set; }
+    public TeacherSalaryScheme? SalarySchemaByHours { get; set; }
 
-    public ICollection<SummaryComment> SummaryComments { get; set; } = new List<SummaryComment>();
-
-    public Human TeacherH { get; set; } = null!;
+    public Human TeacherHuman { get; set; } = null!;
 
     public WorkHourGroup? WorkHourGroup { get; set; }
 

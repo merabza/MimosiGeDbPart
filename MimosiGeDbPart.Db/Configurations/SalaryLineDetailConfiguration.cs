@@ -8,24 +8,25 @@ public sealed record SalaryLineDetailConfiguration : IEntityTypeConfiguration<Sa
 {
     public void Configure(EntityTypeBuilder<SalaryLineDetail> entity)
     {
+        entity.ToTable("SalaryLinesDetails", t => t.HasComment("ხელფასის სტრიქონის დეტალები ჯგუფების მიხედვით"));
         entity.HasKey(e => e.SadId);
 
         entity.HasIndex(e => e.GroupId);
 
         entity.HasIndex(e => e.SaId);
 
-        entity.HasIndex(e => e.SadId);
-
-        entity.Property(e => e.SadId).HasComment("სტრიქონის იდენტიფიკატორი");
+        entity.Property(e => e.SadId).HasComment("დეტალის იდენტიფიკატორი");
         entity.Property(e => e.GroupId).HasComment("ჯგუფი");
-        entity.Property(e => e.SaId).HasComment("სათაურის იდენტიფიკატორი");
-        entity.Property(e => e.SadAmount).HasComment("გადასარიცხი თანხა").HasColumnType("money");
-        entity.Property(e => e.SadHourCost).HasComment("ერთი საათის ღირებულება").HasColumnType("money");
-        entity.Property(e => e.SadHoursCount).HasComment("საათების რაოდენობა");
+        entity.Property(e => e.SaId).HasComment("ხელფასის სტრიქონის იდენტიფიკატორი");
+        entity.Property(e => e.SadAmount).HasDefaultValue(0m).HasComment("გადასარიცხი თანხა").HasColumnType("money");
+        entity.Property(e => e.SadHourCost).HasDefaultValue(0m).HasComment("ერთი საათის ღირებულება")
+            .HasColumnType("money");
+        entity.Property(e => e.SadHoursCount).HasDefaultValue(0f).HasComment("საათების რაოდენობა");
 
-        entity.HasOne(d => d.GroupNavigation).WithMany(p => p.SalaryLinesDetails).HasForeignKey(d => d.GroupId)
-            .OnDelete(DeleteBehavior.ClientSetNull);
+        entity.HasOne(d => d.Group).WithMany(p => p.SalaryLinesDetails).HasForeignKey(d => d.GroupId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        entity.HasOne(d => d.Sa).WithMany(p => p.SalaryLinesDetails).HasForeignKey(d => d.SaId);
+        entity.HasOne(d => d.SalaryLine).WithMany(p => p.SalaryLinesDetails).HasForeignKey(d => d.SaId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

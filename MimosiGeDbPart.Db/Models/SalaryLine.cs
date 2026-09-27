@@ -68,7 +68,7 @@ public sealed class SalaryLine
     /// <summary>
     ///     განაცემის სახე
     /// </summary>
-    public int? RsQuoteTypeId { get; set; }
+    public int? RsQuoteTypeId { get; set; } = 1;
 
     /// <summary>
     ///     ინდივიდუალური საშემოსავლო
@@ -79,7 +79,7 @@ public sealed class SalaryLine
 
     public ICollection<SalaryLineDetail> SalaryLinesDetails { get; set; } = new List<SalaryLineDetail>();
 
-    public SalaryHeader Sh { get; set; } = null!;
+    public SalaryHeader SalaryHeader { get; set; } = null!;
 
     public TeacherContract TeacherContract { get; set; } = null!;
 }

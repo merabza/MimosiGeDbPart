@@ -4,7 +4,6 @@ namespace MimosiGeDbPart.Db.Models;
 
 public sealed class GroupByTeacher
 {
-    private Group? _groupNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -32,11 +31,9 @@ public sealed class GroupByTeacher
     /// </summary>
     public DateTime? EndDate { get; set; }
 
-    public Group GroupNavigation
-    {
-        get =>
-            _groupNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
-        set => _groupNavigation = value;
-    }
+    public Group Group { get; set; } = null!;
+
+    public TeacherSalaryScheme SalaryScheme { get; set; } = null!;
+
+    public TeacherContract TeacherContract { get; set; } = null!;
 }

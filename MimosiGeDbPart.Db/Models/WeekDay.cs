@@ -10,7 +10,10 @@ public sealed class WeekDay
 
     public required string ShortName { get; set; }
 
-    public int WeekDeyNom { get; set; }
+    /// <summary>
+    ///     კვირის დღის ნომერი (1 = ორშაბათი)
+    /// </summary>
+    public int WeekDayNumber { get; set; }
 
-    public ICollection<GroupDayTimePlace> GroupDayTimePlace { get; set; } = new List<GroupDayTimePlace>();
+    public ICollection<GroupDayTimePlace> GroupDayTimePlaces { get; set; } = new List<GroupDayTimePlace>();
 }

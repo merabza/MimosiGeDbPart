@@ -35,12 +35,12 @@ public sealed class MimosiGeDbContext : CarcassDbContext
     public DbSet<AcademicYear> AcademicYears { get; set; }
     public DbSet<BankAccount> BankAccounts { get; set; }
     public DbSet<Course> Courses { get; set; }
-    public DbSet<CrmAnswerType> CrmAnswerType { get; set; }
-    public DbSet<CrmCallType> CrmCallType { get; set; }
+    public DbSet<CrmAnswerType> CrmAnswerTypes { get; set; }
+    public DbSet<CrmCallType> CrmCallTypes { get; set; }
     public DbSet<CrmCall> CrmCalls { get; set; }
     public DbSet<ErrorLogText> ErrorLogTexts { get; set; }
     public DbSet<GeoMonth> GeoMonths { get; set; }
-    public DbSet<GroupDayTimePlace> GroupDayTimePlace { get; set; }
+    public DbSet<GroupDayTimePlace> GroupDayTimePlaces { get; set; }
     public DbSet<GroupSize> GroupSizes { get; set; }
     public DbSet<Group> Groups { get; set; }
     public DbSet<GroupByStudent> GroupsByStudents { get; set; }
@@ -50,21 +50,14 @@ public sealed class MimosiGeDbContext : CarcassDbContext
     public DbSet<Lesson> Lessons { get; set; }
     public DbSet<LessonByStudent> LessonsByStudents { get; set; }
     public DbSet<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; }
-    public DbSet<MonthDay> MonthDays { get; set; }
     public DbSet<OperationMonth> OperationMonths { get; set; }
     public DbSet<Payment> Payments { get; set; }
     public DbSet<ReportCategory> ReportCategories { get; set; }
-    public DbSet<ReportParameterDate> ReportParameterDates { get; set; }
-    public DbSet<ReportParameterNumber> ReportParameterNumbers { get; set; }
     public DbSet<Report> Reports { get; set; }
     public DbSet<ReportByCategory> ReportsByCategories { get; set; }
     public DbSet<Room> Rooms { get; set; }
-    public DbSet<RsBeneficiaryCategory> RsBenefCategories { get; set; }
     public DbSet<RsCountry> RsCountries { get; set; }
     public DbSet<RsQuoteType> RsQuoteTypes { get; set; }
-    public DbSet<RsTaxRate> RsTaxRates { get; set; }
-    public DbSet<SalaryCharge> SalaryCharges { get; set; }
-    public DbSet<SalaryChargeChange> SalaryChargesChanges { get; set; }
     public DbSet<SalaryHeader> SalaryHeaders { get; set; }
     public DbSet<SalaryLine> SalaryLines { get; set; }
     public DbSet<SalaryLineDetail> SalaryLinesDetails { get; set; }
@@ -73,13 +66,10 @@ public sealed class MimosiGeDbContext : CarcassDbContext
     public DbSet<StudentContractDetail> StudentContractDetails { get; set; }
     public DbSet<StudentContract> StudentContracts { get; set; }
     public DbSet<StudentStatus> StudentStatuses { get; set; }
-    public DbSet<Stuff> Stuff { get; set; }
-    public DbSet<SummaryComment> SummaryComments { get; set; }
     public DbSet<TeacherContract> TeacherContracts { get; set; }
     public DbSet<TeacherSalaryScheme> TeacherSalarySchemes { get; set; }
     public DbSet<LessonStartTime> LessonStartTimes { get; set; }
-    public DbSet<WeekDay> WeekDaies { get; set; }
-    public DbSet<WeekNumber> WeekNumbers { get; set; }
+    public DbSet<WeekDay> WeekDays { get; set; }
     public DbSet<WorkHourGroup> WorkHourGroups { get; set; }
     public DbSet<WorkHour> WorkHours { get; set; }
 
@@ -94,7 +84,12 @@ public sealed class MimosiGeDbContext : CarcassDbContext
                                   throw new Exception("Connection string for base Context dos not specified");
         //Console.WriteLine("MimosiGeDbContext ChangeOptionsType Pass 2...");
 
-        return new DbContextOptionsBuilder<T>().UseSqlServer(connectionString).EnableSensitiveDataLogging().Options;
+        //პარამეტრების მნიშვნელობების ლოგირება მხოლოდ მაშინ ირთვება, როცა შემოსულ options-ში ჩართულია
+        //(AddMimosiGeDb მას მხოლოდ Development-ში რთავს)
+        bool sensitiveDataLoggingEnabled =
+            options.FindExtension<CoreOptionsExtension>()?.IsSensitiveDataLoggingEnabled ?? false;
+        return new DbContextOptionsBuilder<T>().UseSqlServer(connectionString)
+            .EnableSensitiveDataLogging(sensitiveDataLoggingEnabled).Options;
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

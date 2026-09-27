@@ -4,9 +4,6 @@ namespace MimosiGeDbPart.Db.Models;
 
 public sealed class LessonCheckCreateErrorLog
 {
-    private ErrorLogText? _errorLogTextNavigation;
-
-    private Group? _groupNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -32,28 +29,11 @@ public sealed class LessonCheckCreateErrorLog
     /// <summary>
     ///     შეცდომის კოდი
     /// </summary>
-    public int ErrorId { get; set; }
+    public int ErrorLogTextId { get; set; }
 
-    /// <summary>
-    ///     დასაშვებია ავტომატური გასწორება
-    /// </summary>
-    public bool AllowUpdate { get; set; }
+    public ErrorLogText ErrorLogText { get; set; } = null!;
 
-    public ErrorLogText ErrorLogTextNavigation
-    {
-        get =>
-            _errorLogTextNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(_errorLogTextNavigation));
-        set => _errorLogTextNavigation = value;
-    }
-
-    public Group GroupNavigation
-    {
-        get =>
-            _groupNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
-        set => _groupNavigation = value;
-    }
+    public Group Group { get; set; } = null!;
 
     public Lesson? Lesson { get; set; }
 }

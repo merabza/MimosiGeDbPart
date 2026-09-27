@@ -5,8 +5,6 @@ namespace MimosiGeDbPart.Db.Models;
 
 public sealed class GroupByStudent
 {
-    private Group? _groupNavigation;
-    private StudentContract? _studentContractNavigation;
     public int GbsId { get; set; }
 
     /// <summary>
@@ -22,22 +20,22 @@ public sealed class GroupByStudent
     /// <summary>
     ///     4 კვირაში საათების რაოდენობა
     /// </summary>
-    public float FourWeekHours { get; set; }
+    public float FourWeekHours { get; set; } = 8f;
 
     /// <summary>
     ///     4 კვირაში გადასახადი
     /// </summary>
-    public decimal FourWeekFee { get; set; }
+    public decimal FourWeekFee { get; set; } = 48m;
 
     /// <summary>
     ///     ერთი საათის ღირებულება
     /// </summary>
-    public decimal OneHourFee { get; set; }
+    public decimal OneHourFee { get; set; } = 6m;
 
     /// <summary>
     ///     საათის კოეფიციენტი
     /// </summary>
-    public float HoursCoefficient { get; set; }
+    public float HoursCoefficient { get; set; } = 1f;
 
     /// <summary>
     ///     გააქტიურების თარიღი
@@ -54,26 +52,9 @@ public sealed class GroupByStudent
     /// </summary>
     public string? Note { get; set; }
 
-    /// <summary>
-    ///     საჭიროებს დარიცხვების დაზუსტებას
-    /// </summary>
-    public bool DirtyCharges { get; set; }
+    public Group Group { get; set; } = null!;
 
-    public Group GroupNavigation
-    {
-        get =>
-            _groupNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(GroupNavigation));
-        set => _groupNavigation = value;
-    }
-
-    public StudentContract StudentContractNavigation
-    {
-        get =>
-            _studentContractNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(StudentContractNavigation));
-        set => _studentContractNavigation = value;
-    }
+    public StudentContract StudentContract { get; set; } = null!;
 
     public ICollection<LessonByStudent> LessonsByStudents { get; set; } = new List<LessonByStudent>();
 }

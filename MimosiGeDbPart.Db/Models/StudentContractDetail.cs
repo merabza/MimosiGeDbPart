@@ -1,13 +1,13 @@
-﻿using System;
-
-namespace MimosiGeDbPart.Db.Models;
+﻿namespace MimosiGeDbPart.Db.Models;
 
 public sealed class StudentContractDetail
 {
-    private Course? _courseNavigation;
     public int Id { get; set; }
 
-    public int? StudentContractId { get; set; }
+    /// <summary>
+    ///     მოსწავლის კონტრაქტი
+    /// </summary>
+    public int StudentContractId { get; set; }
 
     /// <summary>
     ///     საგანი
@@ -22,27 +22,21 @@ public sealed class StudentContractDetail
     /// <summary>
     ///     4 კვირაში საათების რაოდენობა
     /// </summary>
-    public float FourWeekHours { get; set; }
+    public float FourWeekHours { get; set; } = 8f;
 
     /// <summary>
     ///     4 კვირაში გადასახადი
     /// </summary>
-    public decimal FourWeekFee { get; set; }
+    public decimal FourWeekFee { get; set; } = 48m;
 
     /// <summary>
     ///     ერთი საათის ღირებულება
     /// </summary>
-    public decimal OneHourFee { get; set; }
+    public decimal OneHourFee { get; set; } = 6m;
 
-    public Course CourseNavigation
-    {
-        get =>
-            _courseNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(CourseNavigation));
-        set => _courseNavigation = value;
-    }
+    public Course Course { get; set; } = null!;
 
     public GroupSize GroupSize { get; set; } = null!;
 
-    public StudentContract? StudentContract { get; set; }
+    public StudentContract StudentContract { get; set; } = null!;
 }

@@ -9,12 +9,12 @@ public sealed class Report
     /// <summary>
     ///     უწყისის სახელი
     /// </summary>
-    public string? Description { get; set; }
+    public required string Description { get; set; }
 
     /// <summary>
     ///     უწყისის სახელი აქსესში
     /// </summary>
-    public string? ReportName { get; set; }
+    public required string ReportName { get; set; }
 
     /// <summary>
     ///     ფილტრები

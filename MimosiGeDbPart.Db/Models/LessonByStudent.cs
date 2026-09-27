@@ -2,7 +2,6 @@
 
 public sealed class LessonByStudent
 {
-    public GroupByStudent? GroupByStudentNavigation { get; set; }
     public int Id { get; set; }
 
     /// <summary>
@@ -23,7 +22,7 @@ public sealed class LessonByStudent
     /// <summary>
     ///     საათების რაოდენობა
     /// </summary>
-    public float HoursCount { get; set; }
+    public float HoursCount { get; set; } = 1f;
 
     /// <summary>
     ///     დაესწრო გაკვეთილს
@@ -46,19 +45,18 @@ public sealed class LessonByStudent
     public string? TeacherComment { get; set; }
 
     /// <summary>
-    ///     მოსწავლის კომეტარი
+    ///     მოსწავლის კომენტარი
     /// </summary>
     public string? StudentComment { get; set; }
 
     /// <summary>
-    ///     სტუდენთმა დაიგვიანა წუთი
+    ///     მოსწავლემ დაიგვიანა წუთები
     /// </summary>
-    public int SudentLateMinutes { get; set; }
+    public int StudentLateMinutes { get; set; }
 
-    /// <summary>
-    ///     წინასწარ გადახდილი თანხა (ბოლო თვის თანხის შესაბამისი)
-    /// </summary>
-    public decimal? PrepaidAmount { get; set; }
+    public GroupByStudent? GroupByStudent { get; set; }
 
     public Lesson Lesson { get; set; } = null!;
+
+    public StudentContract StudentContract { get; set; } = null!;
 }

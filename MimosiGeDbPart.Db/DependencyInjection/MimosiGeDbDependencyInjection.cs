@@ -32,7 +32,9 @@ public static class MimosiGeDbDependencyInjection
 
         services.AddScoped<IDomainEventsDispatcher, DomainEventsDispatcher>();
         services.AddDbContext<CarcassDbContext>(options => options.UseSqlServer(connectionString));
-        services.AddDbContext<MimosiGeDbContext>(options => options.UseSqlServer(connectionString));
+        //პარამეტრების მნიშვნელობები ლოგში მხოლოდ Development-ში (debugLogger არ არის null) უნდა მოხვდეს
+        services.AddDbContext<MimosiGeDbContext>(options =>
+            options.UseSqlServer(connectionString).EnableSensitiveDataLogging(debugLogger is not null));
         services.AddScoped<ICarcassApplicationDbContext>(sp => sp.GetRequiredService<MimosiGeDbContext>());
 
         services.AddScoped<IUnitOfWork, MimosiGeUnitOfWork>();

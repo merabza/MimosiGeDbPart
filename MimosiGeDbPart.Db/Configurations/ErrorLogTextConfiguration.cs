@@ -8,9 +8,11 @@ public sealed class ErrorLogTextConfiguration : IEntityTypeConfiguration<ErrorLo
 {
     public void Configure(EntityTypeBuilder<ErrorLogText> builder)
     {
+        builder.ToTable("ErrorLogTexts", t => t.HasComment("გაკვეთილების გენერატორის შეცდომების ტექსტები"));
         builder.HasKey(e => e.EltId);
         builder.HasIndex(e => e.Text).IsUnique();
 
+        builder.Property(e => e.EltId).HasComment("შეცდომის კოდი");
         builder.Property(e => e.Text).HasMaxLength(255).HasComment("შეცდომის ტექსტი");
     }
 }

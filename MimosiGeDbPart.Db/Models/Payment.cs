@@ -4,7 +4,6 @@ namespace MimosiGeDbPart.Db.Models;
 
 public sealed class Payment
 {
-    private BankAccount? _bankAccountNavigation;
     public int Id { get; set; }
 
     /// <summary>
@@ -20,7 +19,7 @@ public sealed class Payment
     /// <summary>
     ///     გადახდილი თანხა
     /// </summary>
-    public double Amount { get; set; }
+    public decimal Amount { get; set; }
 
     /// <summary>
     ///     დოკუმენტი
@@ -37,18 +36,7 @@ public sealed class Payment
     /// </summary>
     public bool Checked { get; set; }
 
-    /// <summary>
-    ///     მოქმედებს თარიღიდან
-    /// </summary>
-    public DateTime? ValidFromDate { get; set; }
-
-    public BankAccount BankAccountNavigation
-    {
-        get =>
-            _bankAccountNavigation ??
-            throw new InvalidOperationException("Uninitialized property: " + nameof(_bankAccountNavigation));
-        set => _bankAccountNavigation = value;
-    }
+    public BankAccount? BankAccount { get; set; }
 
     public StudentContract StudentContract { get; set; } = null!;
 }

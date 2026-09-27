@@ -8,12 +8,13 @@ public sealed class HumanConfiguration : IEntityTypeConfiguration<Human>
 {
     public void Configure(EntityTypeBuilder<Human> builder)
     {
+        builder.ToTable("Humans", t => t.HasComment("ადამიანები: მოსწავლეები, მშობლები და თანამშრომლები"));
         builder.HasKey(e => e.HumId);
         builder.HasIndex(e => e.PersonalId).IsUnique();
-        builder.Property(e => e.HumId);
+        builder.Property(e => e.HumId).HasComment("იდენტიფიკატორი");
         builder.Property(e => e.ActualAddress).HasMaxLength(255).HasComment("ფაქტიური მისამართი");
         builder.Property(e => e.BirthDate).HasComment("დაბადების თარიღი");
-        builder.Property(e => e.Email).HasMaxLength(255);
+        builder.Property(e => e.Email).HasMaxLength(255).HasComment("ელექტრონული ფოსტა");
         builder.Property(e => e.Employment).HasMaxLength(255).HasComment("დასაქმება");
         builder.Property(e => e.FirstName).HasMaxLength(255).HasComment("სახელი");
         builder.Property(e => e.LastName).HasMaxLength(255).HasComment("გვარი");

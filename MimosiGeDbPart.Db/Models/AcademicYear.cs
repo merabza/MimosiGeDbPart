@@ -24,6 +24,8 @@ public sealed class AcademicYear : IDataType
     /// </summary>
     public DateTime FinishDate { get; set; }
 
+    public ICollection<Group> Groups { get; set; } = new List<Group>();
+
     public ICollection<StudentContract> StudentContracts { get; set; } = new List<StudentContract>();
 
     //[NotMapped] public static string DtKeyKey => nameof(AyId).CountDtKey();

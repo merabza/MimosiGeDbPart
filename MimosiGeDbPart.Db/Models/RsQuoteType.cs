@@ -8,9 +8,9 @@ public sealed class RsQuoteType
 
     public required string QtName { get; set; }
 
-    public ICollection<RsTaxRate> RsTaxRates { get; set; } = new List<RsTaxRate>();
-
     public ICollection<SalaryLine> SalaryLines { get; set; } = new List<SalaryLine>();
+
+    public ICollection<SalaryPartType> SalaryPartTypes { get; set; } = new List<SalaryPartType>();
 
     public ICollection<TeacherContract> TeacherContracts { get; set; } = new List<TeacherContract>();
 }
