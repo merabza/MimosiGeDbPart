@@ -180,4 +180,40 @@ public sealed class MimosiGeDbContextModelTests
         // Assert
         Assert.Empty(columnsWithoutComment);
     }
+
+    [Fact]
+    public void MimosiDateTimeColumns_Always_MapToDatetime()
+    {
+        // Arrange
+        IModel model = CreateDesignTimeModel();
+
+        // Act
+        string[] columnsWithOtherType =
+        [
+            .. GetMimosiColumns(model)
+                .Where(c => (Nullable.GetUnderlyingType(c.Property.ClrType) ?? c.Property.ClrType) == typeof(DateTime))
+                .Where(c => c.Property.GetColumnType() != "datetime").Select(c => c.Name)
+        ];
+
+        // Assert
+        Assert.Empty(columnsWithOtherType);
+    }
+
+    [Fact]
+    public void MimosiDecimalColumns_Always_MapToMoney()
+    {
+        // Arrange
+        IModel model = CreateDesignTimeModel();
+
+        // Act
+        string[] columnsWithOtherType =
+        [
+            .. GetMimosiColumns(model)
+                .Where(c => (Nullable.GetUnderlyingType(c.Property.ClrType) ?? c.Property.ClrType) == typeof(decimal))
+                .Where(c => c.Property.GetColumnType() != "money").Select(c => c.Name)
+        ];
+
+        // Assert
+        Assert.Empty(columnsWithOtherType);
+    }
 }
