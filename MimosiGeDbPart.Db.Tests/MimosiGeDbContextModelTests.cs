@@ -39,8 +39,10 @@ public sealed class MimosiGeDbContextModelTests
 
     private static IModel CreateDesignTimeModel()
     {
-        DbContextOptions<MimosiGeDbContext> options =
-            new DbContextOptionsBuilder<MimosiGeDbContext>().UseSqlServer(FakeConnectionString).Options;
+        //EF აგებულ მოდელს პროცესის დონეზე ინახავს. ქეშის გარეშე ყოველი ტესტი მოდელს თავიდან აგებს,
+        //ამიტომ OnModelCreating და ConfigureConventions ყოველ ტესტში სრულდება
+        DbContextOptions<MimosiGeDbContext> options = new DbContextOptionsBuilder<MimosiGeDbContext>()
+            .UseSqlServer(FakeConnectionString).EnableServiceProviderCaching(false).Options;
         using var context = new MimosiGeDbContext(options, true);
         return context.GetService<IDesignTimeModel>().Model;
     }

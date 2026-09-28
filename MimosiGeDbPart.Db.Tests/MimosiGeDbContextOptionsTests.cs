@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Moq;
@@ -97,6 +98,20 @@ public sealed class MimosiGeDbContextOptionsTests
 
         // Assert
         Assert.Equal(FakeConnectionString, GetRelationalOptions(context).ConnectionString);
+    }
+
+    [Fact]
+    public void Constructor_WithoutCoreOptions_DisablesSensitiveDataLogging()
+    {
+        // Arrange
+        DbContextOptions<MimosiGeDbContext> options = new DbContextOptions<MimosiGeDbContext>(CreateOptions(true)
+            .Extensions.Where(e => e is not CoreOptionsExtension).ToDictionary(e => e.GetType()));
+
+        // Act
+        using var context = new MimosiGeDbContext(options, 0);
+
+        // Assert
+        Assert.False(IsSensitiveDataLoggingEnabled(context));
     }
 
     [Fact]
