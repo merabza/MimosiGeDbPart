@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MimosiGeCore.Application.Abstractions;
 using MimosiGeDbPart.Db.DependencyInjection;
 using Moq;
 using Serilog;
@@ -70,6 +71,21 @@ public sealed class MimosiGeDbDependencyInjectionTests
 
         // Assert
         Assert.Same(scope.ServiceProvider.GetRequiredService<MimosiGeDbContext>(), applicationDbContext);
+    }
+
+    // the application layer (AppMimosiGe.Infrastructure repositories) sees the database only through IMimosiGeDbContext
+    [Fact]
+    public void AddMimosiGeDb_WithConnectionString_RegistersMimosiGeDbContextAsMimosiGeDbContextAbstraction()
+    {
+        // Arrange
+        using ServiceProvider provider = RegisterMimosiGeDb(null, FakeConnectionString).BuildServiceProvider();
+        using IServiceScope scope = provider.CreateScope();
+
+        // Act
+        IMimosiGeDbContext mimosiGeDbContext = scope.ServiceProvider.GetRequiredService<IMimosiGeDbContext>();
+
+        // Assert
+        Assert.Same(scope.ServiceProvider.GetRequiredService<MimosiGeDbContext>(), mimosiGeDbContext);
     }
 
     [Fact]

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MimosiGeDbPart.Db.Models;
+using MimosiGeCore.Domain.Models;
 
 namespace MimosiGeDbPart.Db.Configurations;
 
@@ -14,7 +14,7 @@ public sealed class StudentContractConfiguration : IEntityTypeConfiguration<Stud
         //კონტრაქტის ნომერი სასწავლო წლის ფარგლებში უნიკალურია. ინდექსი AcademicYearId-ის FK-საც ემსახურება
         builder.HasIndex(e => new { e.AcademicYearId, e.ContractNumber }).IsUnique();
 
-        builder.HasIndex(e => e.ParentHumanId);
+        builder.HasIndex(e => e.PayerHumanId);
 
         builder.HasIndex(e => e.StudentHumanId);
 
@@ -27,15 +27,15 @@ public sealed class StudentContractConfiguration : IEntityTypeConfiguration<Stud
         builder.Property(e => e.DesiredMonthlyPaymentDay).HasComment("გადახდის სასურველი დღე თვეში");
         builder.Property(e => e.DirtyNextPayDate).HasComment("შემდეგი გადახდის თარიღს სჭირდება გადაანგარიშება");
         builder.Property(e => e.NextPayDate).HasComment("შემდეგი გადახდის თარიღი");
-        builder.Property(e => e.ParentHumanId).HasComment("მშობელი");
+        builder.Property(e => e.PayerHumanId).HasComment("გადამხდელი");
         builder.Property(e => e.StudentHumanId).HasComment("მოსწავლე");
         builder.Property(e => e.StudentStatusId).HasComment("მოსწავლის სტატუსი");
 
         builder.HasOne(d => d.AcademicYear).WithMany(p => p.StudentContracts).HasForeignKey(d => d.AcademicYearId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.HasOne(d => d.ParentHuman).WithMany(p => p.StudentContractsForParents)
-            .HasForeignKey(d => d.ParentHumanId).OnDelete(DeleteBehavior.Restrict);
+        builder.HasOne(d => d.PayerHuman).WithMany(p => p.StudentContractsForPayers)
+            .HasForeignKey(d => d.PayerHumanId).OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(d => d.StudentHuman).WithMany(p => p.StudentContractsForStudents)
             .HasForeignKey(d => d.StudentHumanId).OnDelete(DeleteBehavior.Restrict);

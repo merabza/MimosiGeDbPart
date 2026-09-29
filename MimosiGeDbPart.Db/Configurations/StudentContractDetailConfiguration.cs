@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MimosiGeDbPart.Db.Models;
+using MimosiGeCore.Domain.Models;
 
 namespace MimosiGeDbPart.Db.Configurations;
 

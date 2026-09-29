@@ -264,7 +264,7 @@
     {
       "TableName": "StudentContracts",
       "OldFieldName": "ParentHid",
-      "NewFieldName": "ParentHumanId"
+      "NewFieldName": "PayerHumanId"
     },
     {
       "TableName": "StudentContracts",

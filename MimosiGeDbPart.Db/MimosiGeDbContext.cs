@@ -4,13 +4,14 @@ using BackendCarcass.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
-using MimosiGeDbPart.Db.Models;
+using MimosiGeCore.Application.Abstractions;
+using MimosiGeCore.Domain.Models;
 using SystemTools.DatabaseToolsShared;
 using SystemTools.SharedKernel;
 
 namespace MimosiGeDbPart.Db;
 
-public sealed class MimosiGeDbContext : CarcassDbContext
+public sealed class MimosiGeDbContext : CarcassDbContext, IMimosiGeDbContext
 {
     public MimosiGeDbContext(DbContextOptions<MimosiGeDbContext> options, bool isDesignTime) : base(options,
         isDesignTime)

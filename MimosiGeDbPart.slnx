@@ -8,6 +8,10 @@
     <Folder Name="/BackendCarcassShared/">
         <Project Path="../BackendCarcassShared/BackendCarcassShared.Contracts/BackendCarcassShared.Contracts.csproj" />
     </Folder>
+    <Folder Name="/MimosiGeCore/">
+        <Project Path="../MimosiGeCore/MimosiGeCore.Application.Abstractions/MimosiGeCore.Application.Abstractions.csproj" />
+        <Project Path="../MimosiGeCore/MimosiGeCore.Domain/MimosiGeCore.Domain.csproj" />
+    </Folder>
     <Folder Name="/Solution Items/">
         <File Path=".editorconfig" />
         <File Path="Directory.Build.props" />

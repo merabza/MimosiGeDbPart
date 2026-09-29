@@ -6,6 +6,7 @@ using BackendCarcass.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MimosiGeCore.Application.Abstractions;
 using Serilog;
 using SystemTools.Domain.Abstractions;
 using SystemTools.SharedKernel;
@@ -36,6 +37,7 @@ public static class MimosiGeDbDependencyInjection
         services.AddDbContext<MimosiGeDbContext>(options =>
             options.UseSqlServer(connectionString).EnableSensitiveDataLogging(debugLogger is not null));
         services.AddScoped<ICarcassApplicationDbContext>(sp => sp.GetRequiredService<MimosiGeDbContext>());
+        services.AddScoped<IMimosiGeDbContext>(sp => sp.GetRequiredService<MimosiGeDbContext>());
 
         services.AddScoped<IUnitOfWork, MimosiGeUnitOfWork>();
         services.AddScoped<IDatabaseAbstraction, MimosiGeDatabaseAbstractionRepository>();

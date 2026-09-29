@@ -6,6 +6,8 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\BackendCarcass\BackendCarcass.Database\BackendCarcass.Database.csproj" />
+      <ProjectReference Include="..\..\MimosiGeCore\MimosiGeCore.Application.Abstractions\MimosiGeCore.Application.Abstractions.csproj" />
+      <ProjectReference Include="..\..\MimosiGeCore\MimosiGeCore.Domain\MimosiGeCore.Domain.csproj" />
       <ProjectReference Include="..\..\SystemTools\SystemTools.DatabaseToolsShared\SystemTools.DatabaseToolsShared.csproj" />
     </ItemGroup>
 </Project>
