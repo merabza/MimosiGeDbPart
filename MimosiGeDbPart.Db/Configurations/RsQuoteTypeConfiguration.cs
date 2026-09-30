@@ -13,8 +13,7 @@ public sealed class RsQuoteTypeConfiguration : IEntityTypeConfiguration<RsQuoteT
         entity.HasIndex(e => e.QtName).IsUnique();
 
         //QtId შემოსავლების სამსახურის კოდია (1 = ხელფასი ...) და დეკლარაციაში იწერება, ამიტომ identity არ არის
-        entity.Property(e => e.QtId).ValueGeneratedNever()
-            .HasComment("განაცემის სახის კოდი (შემოსავლების სამსახურის)");
+        entity.Property(e => e.QtId).ValueGeneratedNever().HasComment("განაცემის სახის კოდი (შემოსავლების სამსახურის)");
         entity.Property(e => e.QtName).HasMaxLength(255).HasComment("განაცემის სახის დასახელება");
     }
 }

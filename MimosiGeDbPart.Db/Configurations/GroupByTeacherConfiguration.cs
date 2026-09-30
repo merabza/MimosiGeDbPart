@@ -26,7 +26,7 @@ public sealed class GroupByTeacherConfiguration : IEntityTypeConfiguration<Group
         builder.HasOne(d => d.SalaryScheme).WithMany(p => p.GroupsByTeachers).HasForeignKey(d => d.SalarySchemaId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.HasOne(d => d.TeacherContract).WithMany(p => p.GroupsByTeachers)
-            .HasForeignKey(d => d.TeacherContractId).OnDelete(DeleteBehavior.Restrict);
+        builder.HasOne(d => d.TeacherContract).WithMany(p => p.GroupsByTeachers).HasForeignKey(d => d.TeacherContractId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

@@ -34,8 +34,8 @@ public sealed class StudentContractConfiguration : IEntityTypeConfiguration<Stud
         builder.HasOne(d => d.AcademicYear).WithMany(p => p.StudentContracts).HasForeignKey(d => d.AcademicYearId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.HasOne(d => d.PayerHuman).WithMany(p => p.StudentContractsForPayers)
-            .HasForeignKey(d => d.PayerHumanId).OnDelete(DeleteBehavior.Restrict);
+        builder.HasOne(d => d.PayerHuman).WithMany(p => p.StudentContractsForPayers).HasForeignKey(d => d.PayerHumanId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(d => d.StudentHuman).WithMany(p => p.StudentContractsForStudents)
             .HasForeignKey(d => d.StudentHumanId).OnDelete(DeleteBehavior.Restrict);
