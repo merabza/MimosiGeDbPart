@@ -18,7 +18,7 @@ public sealed record SalaryPartConfiguration : IEntityTypeConfiguration<SalaryPa
         entity.Property(e => e.SpId).HasComment("მდგენელის იდენტიფიკატორი");
         entity.Property(e => e.SalaryPartTypeId).HasComment("ხელფასის მდგენელის ტიპი");
         entity.Property(e => e.ShId).HasComment("სათაურის იდენტიფიკატორი");
-        entity.Property(e => e.SpAmount).HasDefaultValue(0m).HasComment("თანხა (მინუსი ნიშნავს გამოკლებას)")
+        entity.Property(e => e.SpAmount).HasDefaultValue(0m).HasComment("თანხა (გამოქვითვაც დადებითი რიცხვით იწერება)")
             .HasColumnType("money");
         entity.Property(e => e.TeacherContractId).HasComment("თანამშრომელი");
 
