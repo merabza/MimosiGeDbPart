@@ -26,7 +26,6 @@ public sealed class TeacherContractConfiguration : IEntityTypeConfiguration<Teac
         builder.Property(e => e.FixedAmount).HasDefaultValue(0m)
             .HasComment("განაცემის ყოველთვიური ფიქსირებული რაოდენობა");
         builder.Property(e => e.IndEnt).HasDefaultValue(false).HasComment("ინდივიდუალური მეწარმე");
-        builder.Property(e => e.Line).HasDefaultValue(0).HasComment("დროის ხაზი (რეპორტი r35)");
         builder.Property(e => e.NextMonth).HasDefaultValue(false).HasComment("განაცემი ეკუთვნის შემდეგ თვეს");
         builder.Property(e => e.PensionScheme).HasDefaultValue(false).HasComment("მონაწილეობს საპენსიო სქემაში");
         builder.Property(e => e.RsCountryId).HasComment("ქვეყანა (საგადასახადოსათვის)");
