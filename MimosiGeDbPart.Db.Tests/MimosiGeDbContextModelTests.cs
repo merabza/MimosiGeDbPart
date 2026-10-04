@@ -23,8 +23,8 @@ public sealed class MimosiGeDbContextModelTests
         "AcademicYears", "BankAccounts", "Courses", "CrmAnswerTypes", "CrmCalls", "CrmCallTypes", "ErrorLogTexts",
         "GeoMonths", "GroupDayTimePlaces", "Groups", "GroupsByStudents", "GroupsByTeachers", "GroupSizes", "Humans",
         "Lessons", "LessonsByStudents", "LessonsCheckCreateErrorLogs", "LessonStartTimes", "LessonStatuses",
-        "OperationMonths", "Payments", "ReportCategories", "Reports", "ReportsByCategories", "Rooms", "RsCountries",
-        "RsQuoteTypes", "SalaryHeaders", "SalaryLines", "SalaryLinesDetails", "SalaryParts", "SalaryPartTypes",
+        "OperationMonths", "Payments", "Rooms", "RsCountries", "RsQuoteTypes", "SalaryHeaders", "SalaryLines",
+        "SalaryLinesDetails", "SalaryParts", "SalaryPartTypes",
         "StudentContractDetails", "StudentContracts", "StudentStatuses", "TeacherContracts", "TeacherSalarySchemes",
         "WeekDays", "WorkHourGroups", "WorkHours"
     ];

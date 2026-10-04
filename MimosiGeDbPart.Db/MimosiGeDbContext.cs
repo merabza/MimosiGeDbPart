@@ -53,9 +53,6 @@ public sealed class MimosiGeDbContext : CarcassDbContext, IMimosiGeDbContext
     public DbSet<LessonCheckCreateErrorLog> LessonsCheckCreateErrorLogs { get; set; }
     public DbSet<OperationMonth> OperationMonths { get; set; }
     public DbSet<Payment> Payments { get; set; }
-    public DbSet<ReportCategory> ReportCategories { get; set; }
-    public DbSet<Report> Reports { get; set; }
-    public DbSet<ReportByCategory> ReportsByCategories { get; set; }
     public DbSet<Room> Rooms { get; set; }
     public DbSet<RsCountry> RsCountries { get; set; }
     public DbSet<RsQuoteType> RsQuoteTypes { get; set; }
