@@ -104,8 +104,8 @@ public sealed class MimosiGeDbContextOptionsTests
     public void Constructor_WithoutCoreOptions_DisablesSensitiveDataLogging()
     {
         // Arrange
-        DbContextOptions<MimosiGeDbContext> options = new DbContextOptions<MimosiGeDbContext>(CreateOptions(true)
-            .Extensions.Where(e => e is not CoreOptionsExtension).ToDictionary(e => e.GetType()));
+        var options = new DbContextOptions<MimosiGeDbContext>(CreateOptions(true).Extensions
+            .Where(e => e is not CoreOptionsExtension).ToDictionary(e => e.GetType()));
 
         // Act
         using var context = new MimosiGeDbContext(options, 0);
@@ -121,7 +121,7 @@ public sealed class MimosiGeDbContextOptionsTests
         DbContextOptions<MimosiGeDbContext> options = new DbContextOptionsBuilder<MimosiGeDbContext>().Options;
 
         // Act
-        Exception exception = Assert.Throws<Exception>(() => new MimosiGeDbContext(options, 0));
+        var exception = Assert.Throws<Exception>(() => new MimosiGeDbContext(options, 0));
 
         // Assert
         Assert.Equal("Failed to retrieve SQL connection string for base Context", exception.Message);
@@ -135,7 +135,7 @@ public sealed class MimosiGeDbContextOptionsTests
             new DbContextOptionsBuilder<MimosiGeDbContext>().UseSqlServer().Options;
 
         // Act
-        Exception exception = Assert.Throws<Exception>(() => new MimosiGeDbContext(options, 0));
+        var exception = Assert.Throws<Exception>(() => new MimosiGeDbContext(options, 0));
 
         // Assert
         Assert.Equal("Connection string for base Context dos not specified", exception.Message);

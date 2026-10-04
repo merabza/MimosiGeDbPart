@@ -66,8 +66,7 @@ public sealed class MimosiGeDbDependencyInjectionTests
         using IServiceScope scope = provider.CreateScope();
 
         // Act
-        ICarcassApplicationDbContext applicationDbContext =
-            scope.ServiceProvider.GetRequiredService<ICarcassApplicationDbContext>();
+        var applicationDbContext = scope.ServiceProvider.GetRequiredService<ICarcassApplicationDbContext>();
 
         // Assert
         Assert.Same(scope.ServiceProvider.GetRequiredService<MimosiGeDbContext>(), applicationDbContext);
@@ -82,7 +81,7 @@ public sealed class MimosiGeDbDependencyInjectionTests
         using IServiceScope scope = provider.CreateScope();
 
         // Act
-        IMimosiGeDbContext mimosiGeDbContext = scope.ServiceProvider.GetRequiredService<IMimosiGeDbContext>();
+        var mimosiGeDbContext = scope.ServiceProvider.GetRequiredService<IMimosiGeDbContext>();
 
         // Assert
         Assert.Same(scope.ServiceProvider.GetRequiredService<MimosiGeDbContext>(), mimosiGeDbContext);
@@ -92,7 +91,7 @@ public sealed class MimosiGeDbDependencyInjectionTests
     public void AddMimosiGeDb_WithConnectionString_RegistersMimosiGeUnitOfWork()
     {
         // Act
-        IUnitOfWork unitOfWork = ResolveInScope<IUnitOfWork>(null);
+        var unitOfWork = ResolveInScope<IUnitOfWork>(null);
 
         // Assert
         Assert.IsType<MimosiGeUnitOfWork>(unitOfWork);
@@ -102,7 +101,7 @@ public sealed class MimosiGeDbDependencyInjectionTests
     public void AddMimosiGeDb_WithConnectionString_RegistersMimosiGeDatabaseAbstractionRepository()
     {
         // Act
-        IDatabaseAbstraction databaseAbstraction = ResolveInScope<IDatabaseAbstraction>(null);
+        var databaseAbstraction = ResolveInScope<IDatabaseAbstraction>(null);
 
         // Assert
         Assert.IsType<MimosiGeDatabaseAbstractionRepository>(databaseAbstraction);
@@ -112,7 +111,7 @@ public sealed class MimosiGeDbDependencyInjectionTests
     public void AddMimosiGeDb_WithConnectionString_RegistersDomainEventsDispatcher()
     {
         // Act
-        IDomainEventsDispatcher dispatcher = ResolveInScope<IDomainEventsDispatcher>(null);
+        var dispatcher = ResolveInScope<IDomainEventsDispatcher>(null);
 
         // Assert
         Assert.IsType<DomainEventsDispatcher>(dispatcher);
@@ -122,7 +121,7 @@ public sealed class MimosiGeDbDependencyInjectionTests
     public void AddMimosiGeDb_WithConnectionString_ConfiguresCarcassDbContextConnectionString()
     {
         // Act
-        DbContextOptions<CarcassDbContext> options = ResolveInScope<DbContextOptions<CarcassDbContext>>(null);
+        var options = ResolveInScope<DbContextOptions<CarcassDbContext>>(null);
 
         // Assert
         Assert.Equal(FakeConnectionString, RelationalOptionsExtension.Extract(options).ConnectionString);
@@ -132,7 +131,7 @@ public sealed class MimosiGeDbDependencyInjectionTests
     public void AddMimosiGeDb_WithConnectionString_ConfiguresMimosiGeDbContextConnectionString()
     {
         // Act
-        DbContextOptions<MimosiGeDbContext> options = ResolveInScope<DbContextOptions<MimosiGeDbContext>>(null);
+        var options = ResolveInScope<DbContextOptions<MimosiGeDbContext>>(null);
 
         // Assert
         Assert.Equal(FakeConnectionString, RelationalOptionsExtension.Extract(options).ConnectionString);
@@ -142,8 +141,7 @@ public sealed class MimosiGeDbDependencyInjectionTests
     public void AddMimosiGeDb_WithDebugLogger_EnablesSensitiveDataLogging()
     {
         // Act
-        DbContextOptions<MimosiGeDbContext> options =
-            ResolveInScope<DbContextOptions<MimosiGeDbContext>>(Mock.Of<ILogger>());
+        var options = ResolveInScope<DbContextOptions<MimosiGeDbContext>>(Mock.Of<ILogger>());
 
         // Assert
         Assert.True(options.FindExtension<CoreOptionsExtension>()?.IsSensitiveDataLoggingEnabled);
@@ -153,7 +151,7 @@ public sealed class MimosiGeDbDependencyInjectionTests
     public void AddMimosiGeDb_WithoutDebugLogger_DisablesSensitiveDataLogging()
     {
         // Act
-        DbContextOptions<MimosiGeDbContext> options = ResolveInScope<DbContextOptions<MimosiGeDbContext>>(null);
+        var options = ResolveInScope<DbContextOptions<MimosiGeDbContext>>(null);
 
         // Assert
         Assert.False(options.FindExtension<CoreOptionsExtension>()?.IsSensitiveDataLoggingEnabled);
