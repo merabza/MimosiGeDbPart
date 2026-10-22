@@ -1,13 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <ItemGroup>
+        <PackageReference Include="BackendCarcass.Database" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+        <PackageReference Include="MimosiGeCore.Application.Abstractions" />
+        <PackageReference Include="MimosiGeCore.Domain" />
         <PackageReference Include="SystemTools.DatabaseToolsShared" />
-    </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\..\BackendCarcass\BackendCarcass.Database\BackendCarcass.Database.csproj" />
-      <ProjectReference Include="..\..\MimosiGeCore\MimosiGeCore.Application.Abstractions\MimosiGeCore.Application.Abstractions.csproj" />
-      <ProjectReference Include="..\..\MimosiGeCore\MimosiGeCore.Domain\MimosiGeCore.Domain.csproj" />
     </ItemGroup>
 </Project>
