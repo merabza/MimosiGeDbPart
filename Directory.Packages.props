@@ -4,9 +4,9 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="BackendCarcass.Database" Version="1.0.9805.30960" />
-    <PackageVersion Include="MimosiGeCore.Application.Abstractions" Version="0.0.9805.31045" />
-    <PackageVersion Include="MimosiGeCore.Domain" Version="0.0.9805.31045" />
+    <PackageVersion Include="BackendCarcass.Database" Version="1.0.9805.34891" />
+    <PackageVersion Include="MimosiGeCore.Application.Abstractions" Version="0.0.9805.35020" />
+    <PackageVersion Include="MimosiGeCore.Domain" Version="0.0.9805.35020" />
     <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.35.0.4138" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.13" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.13" />
