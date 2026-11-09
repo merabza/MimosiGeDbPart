@@ -17,15 +17,15 @@ public sealed class MimosiGeDbContextModelTests
     private const string FakeConnectionString =
         "Server=(local);Database=MimosiGeModelTests;Integrated Security=true;TrustServerCertificate=true";
 
-    //SCHEMA_MAPPING.md §2.3
+    //SCHEMA_MAPPING.md §2.3; BankTransactions და StudentPayers Access-ში არ იყო (TBC_INTEGRATION.md, D164, D169)
     private static readonly string[] MimosiTableNames =
     [
-        "AcademicYears", "BankAccounts", "Courses", "CrmAnswerTypes", "CrmCalls", "CrmCallTypes", "ErrorLogTexts",
+        "AcademicYears", "BankAccounts", "BankTransactions", "Courses", "CrmAnswerTypes", "CrmCalls", "CrmCallTypes", "ErrorLogTexts",
         "GeoMonths", "GroupDayTimePlaces", "Groups", "GroupsByStudents", "GroupsByTeachers", "GroupSizes", "Humans",
         "Lessons", "LessonsByStudents", "LessonsCheckCreateErrorLogs", "LessonStartTimes", "LessonStatuses",
         "OperationMonths", "Payments", "Rooms", "RsCountries", "RsQuoteTypes", "SalaryHeaders", "SalaryLines",
         "SalaryLinesDetails", "SalaryParts", "SalaryPartTypes",
-        "StudentContractDetails", "StudentContracts", "StudentStatuses", "TeacherContracts", "TeacherSalarySchemes",
+        "StudentContractDetails", "StudentContracts", "StudentPayers", "StudentStatuses", "TeacherContracts", "TeacherSalarySchemes",
         "WeekDays", "WorkHourGroups", "WorkHours"
     ];
 

@@ -20,8 +20,13 @@ public sealed class PaymentConfiguration : IEntityTypeConfiguration<Payment>
         builder.Property(e => e.Document).HasMaxLength(255).HasComment("დოკუმენტი");
         builder.Property(e => e.PayDate).HasDefaultValueSql("CONVERT(date, getdate())").HasComment("გადახდის თარიღი");
         builder.Property(e => e.StudentContractId).HasComment("კონტრაქტი");
+        builder.Property(e => e.BankTransactionId)
+            .HasComment("ბანკის ჩარიცხვა, რომლის განაწილებაცაა გადახდა (ხელით შეყვანილს არ აქვს)");
 
         builder.HasOne(d => d.BankAccount).WithMany(p => p.Payments).HasForeignKey(d => d.BankAccountId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasOne(d => d.BankTransaction).WithMany(p => p.Payments).HasForeignKey(d => d.BankTransactionId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(d => d.StudentContract).WithMany(p => p.Payments).HasForeignKey(d => d.StudentContractId)

@@ -35,6 +35,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext, IMimosiGeDbContext
     //ბაზაში არსებული ცხრილები წარმოდგენილი DbSet-ების სახით
     public DbSet<AcademicYear> AcademicYears { get; set; }
     public DbSet<BankAccount> BankAccounts { get; set; }
+    public DbSet<BankTransaction> BankTransactions { get; set; }
     public DbSet<Course> Courses { get; set; }
     public DbSet<CrmAnswerType> CrmAnswerTypes { get; set; }
     public DbSet<CrmCallType> CrmCallTypes { get; set; }
@@ -63,6 +64,7 @@ public sealed class MimosiGeDbContext : CarcassDbContext, IMimosiGeDbContext
     public DbSet<SalaryPart> SalaryParts { get; set; }
     public DbSet<StudentContractDetail> StudentContractDetails { get; set; }
     public DbSet<StudentContract> StudentContracts { get; set; }
+    public DbSet<StudentPayer> StudentPayers { get; set; }
     public DbSet<StudentStatus> StudentStatuses { get; set; }
     public DbSet<TeacherContract> TeacherContracts { get; set; }
     public DbSet<TeacherSalaryScheme> TeacherSalarySchemes { get; set; }
