@@ -4,16 +4,16 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="BackendCarcass.Database" Version="1.0.9811.36586" />
-    <PackageVersion Include="MimosiGeCore.Application.Abstractions" Version="0.0.9811.36670" />
-    <PackageVersion Include="MimosiGeCore.Domain" Version="0.0.9811.36670" />
+    <PackageVersion Include="BackendCarcass.Database" Version="1.0.9811.42574" />
+    <PackageVersion Include="MimosiGeCore.Application.Abstractions" Version="0.0.9811.42677" />
+    <PackageVersion Include="MimosiGeCore.Domain" Version="0.0.9811.42677" />
     <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.35.0.4138" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="11.0.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="11.0.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="11.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.11.0" />
     <PackageVersion Include="Moq" Version="4.21.0" />
-    <PackageVersion Include="SystemTools.DatabaseToolsShared" Version="1.0.9808.33287" />
+    <PackageVersion Include="SystemTools.DatabaseToolsShared" Version="1.0.9811.42356" />
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.1" />
   </ItemGroup>
