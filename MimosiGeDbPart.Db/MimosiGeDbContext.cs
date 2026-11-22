@@ -43,6 +43,12 @@ public sealed class MimosiGeDbContext : CarcassDbContext, IMimosiGeDbContext
     public DbSet<ErrorLogText> ErrorLogTexts { get; set; }
     public DbSet<GeoMonth> GeoMonths { get; set; }
     public DbSet<GroupDayTimePlace> GroupDayTimePlaces { get; set; }
+    public DbSet<GroupOrderDayTimePlace> GroupOrderDayTimePlaces { get; set; }
+    public DbSet<GroupOrderNumber> GroupOrderNumbers { get; set; }
+    public DbSet<GroupOrderStudent> GroupOrderStudents { get; set; }
+    public DbSet<GroupOrderTeacher> GroupOrderTeachers { get; set; }
+    public DbSet<GroupOrder> GroupOrders { get; set; }
+    public DbSet<GroupOrdersMode> GroupOrdersMode { get; set; }
     public DbSet<GroupSize> GroupSizes { get; set; }
     public DbSet<Group> Groups { get; set; }
     public DbSet<GroupByStudent> GroupsByStudents { get; set; }

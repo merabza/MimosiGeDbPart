@@ -16,6 +16,10 @@ public sealed class GroupDayTimePlaceConfiguration : IEntityTypeConfiguration<Gr
 
         entity.HasIndex(e => e.RoomId);
 
+        //ხაზი ერთ სტრიქონს ქმნის, ბრძანების შენახვა სტრიქონებს ამ კავშირით ადარებს (GROUP_ORDERS.md §5).
+        //SQL Server-ზე EF ფილტრს (IS NOT NULL) თვითონ ამატებს
+        entity.HasIndex(e => e.GroupOrderDayTimePlaceId).IsUnique();
+
         entity.Property(e => e.GdtpId).HasComment("იდენტიფიკატორი");
         entity.Property(e => e.EndDate).HasComment("გაუქმების თარიღი");
         entity.Property(e => e.GroupId).HasComment("ჯგუფი");
@@ -25,8 +29,14 @@ public sealed class GroupDayTimePlaceConfiguration : IEntityTypeConfiguration<Gr
         entity.Property(e => e.StartDate).HasDefaultValueSql("CONVERT(date, getdate())")
             .HasComment("გააქტიურების თარიღი");
         entity.Property(e => e.WeekDayId).HasComment("კვირის დღე");
+        entity.Property(e => e.GroupOrderDayTimePlaceId)
+            .HasComment("ბრძანების ხაზი, რომელმაც სტრიქონი შექმნა (ჯგუფების რეჟიმში ცარიელია)");
 
         entity.HasOne(d => d.Group).WithMany(p => p.GroupDayTimePlaces).HasForeignKey(d => d.GroupId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        //ხაზი არ იშლება, სანამ მისი სტრიქონი არსებობს (GROUP_ORDERS.md §10, A2)
+        entity.HasOne(d => d.GroupOrderDayTimePlace).WithMany().HasForeignKey(d => d.GroupOrderDayTimePlaceId)
             .OnDelete(DeleteBehavior.Restrict);
 
         entity.HasOne(d => d.Room).WithMany(p => p.GroupDayTimePlaces).HasForeignKey(d => d.RoomId)

@@ -26,6 +26,10 @@ public sealed class GroupByStudentConfiguration : IEntityTypeConfiguration<Group
 
         entity.HasIndex(e => e.StudentContractId);
 
+        //ხაზი ერთ სტრიქონს ქმნის, ბრძანების შენახვა სტრიქონებს ამ კავშირით ადარებს (GROUP_ORDERS.md §5).
+        //SQL Server-ზე EF ფილტრს (IS NOT NULL) თვითონ ამატებს
+        entity.HasIndex(e => e.GroupOrderStudentId).IsUnique();
+
         entity.Property(e => e.GbsId).HasComment("იდენტიფიკატორი");
 
         entity.Property(e => e.EndDate).HasComment("გაუქმების თარიღი");
@@ -38,8 +42,14 @@ public sealed class GroupByStudentConfiguration : IEntityTypeConfiguration<Group
         entity.Property(e => e.StartDate).HasDefaultValueSql("CONVERT(date, getdate())")
             .HasComment("გააქტიურების თარიღი");
         entity.Property(e => e.StudentContractId).HasComment("მოსწავლე");
+        entity.Property(e => e.GroupOrderStudentId)
+            .HasComment("ბრძანების ხაზი, რომელმაც სტრიქონი შექმნა (ჯგუფების რეჟიმში ცარიელია)");
 
         entity.HasOne(d => d.Group).WithMany(p => p.GroupsByStudents).HasForeignKey(d => d.GroupId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        //ხაზი არ იშლება, სანამ მისი სტრიქონი არსებობს (GROUP_ORDERS.md §10, A2)
+        entity.HasOne(d => d.GroupOrderStudent).WithMany().HasForeignKey(d => d.GroupOrderStudentId)
             .OnDelete(DeleteBehavior.Restrict);
 
         entity.HasOne(d => d.StudentContract).WithMany(p => p.GroupsByStudents).HasForeignKey(d => d.StudentContractId)
