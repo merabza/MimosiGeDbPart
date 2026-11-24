@@ -325,6 +325,21 @@ public sealed class MimosiGeDbContextModelTests
         Assert.True(lastNumber.IsConcurrencyToken);
     }
 
+    //ვიზარდების ერთდროული გაშვებისას რეჟიმი ორჯერ არ გადაირთვება (D221): UPDATE გადართვის ძველ დროსაც ამოწმებს
+    [Fact]
+    public void GroupOrdersModeSwitchedAt_Always_IsConcurrencyToken()
+    {
+        // Arrange
+        IModel model = CreateDesignTimeModel();
+
+        // Act
+        IProperty switchedAt = model.FindEntityType(typeof(GroupOrdersMode))!
+            .FindProperty(nameof(GroupOrdersMode.SwitchedAt))!;
+
+        // Assert
+        Assert.True(switchedAt.IsConcurrencyToken);
+    }
+
     //რეჟიმის ცხრილში მხოლოდ ერთი სტრიქონი შეიძლება იყოს (D183)
     [Fact]
     public void GroupOrdersMode_Always_AllowsOnlySingleRow()

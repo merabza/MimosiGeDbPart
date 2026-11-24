@@ -24,6 +24,8 @@ public sealed class GroupOrdersModeConfiguration : IEntityTypeConfiguration<Grou
         builder.Property(e => e.TransitionDate).HasComment("ბრძანებებზე გადასვლის დღე (D0)");
         builder.Property(e => e.SwitchedByUserName).HasMaxLength(UserConfiguration.UserNameMaxLength)
             .HasComment("მომხმარებელი, რომელმაც რეჟიმი ბოლოს გადართო");
-        builder.Property(e => e.SwitchedAt).HasComment("რეჟიმის ბოლო გადართვის დრო");
+        //ვიზარდების ერთდროული გაშვებისას მეორე მთლიანად უარყოფილია (DbUpdateConcurrencyException, D221): ყოველი
+        //გადართვა ამ დროს ცვლის. ბაზის სქემას ეს არ ცვლის
+        builder.Property(e => e.SwitchedAt).IsConcurrencyToken().HasComment("რეჟიმის ბოლო გადართვის დრო");
     }
 }
