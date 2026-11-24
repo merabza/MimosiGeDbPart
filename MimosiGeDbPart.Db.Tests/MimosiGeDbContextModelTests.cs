@@ -310,6 +310,21 @@ public sealed class MimosiGeDbContextModelTests
         Assert.Equal("[NumberYear] IS NOT NULL AND [Number] IS NOT NULL", index.GetFilter());
     }
 
+    //ერთდროული შენახვისას მთვლელი ერთ ნომერს ორჯერ არ გასცემს (D192): UPDATE მთვლელის ძველ მნიშვნელობასაც ამოწმებს
+    [Fact]
+    public void GroupOrderNumberLastNumber_Always_IsConcurrencyToken()
+    {
+        // Arrange
+        IModel model = CreateDesignTimeModel();
+
+        // Act
+        IProperty lastNumber = model.FindEntityType(typeof(GroupOrderNumber))!
+            .FindProperty(nameof(GroupOrderNumber.LastNumber))!;
+
+        // Assert
+        Assert.True(lastNumber.IsConcurrencyToken);
+    }
+
     //რეჟიმის ცხრილში მხოლოდ ერთი სტრიქონი შეიძლება იყოს (D183)
     [Fact]
     public void GroupOrdersMode_Always_AllowsOnlySingleRow()

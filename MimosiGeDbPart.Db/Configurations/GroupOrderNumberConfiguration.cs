@@ -13,6 +13,8 @@ public sealed class GroupOrderNumberConfiguration : IEntityTypeConfiguration<Gro
 
         builder.Property(e => e.NumberYear).ValueGeneratedNever()
             .HasComment("ნომრის წელი: სასწავლო წლის დაწყების წლის ბოლო ორი ციფრი");
-        builder.Property(e => e.LastNumber).HasComment("ბოლოს გაცემული ნომერი");
+        //ერთდროული შენახვისას ერთი ნომერი ორჯერ არ გაიცემა: თუ მთვლელი სხვამ უკვე შეცვალა, SaveChanges უარყოფილია
+        //(DbUpdateConcurrencyException). ბაზის სქემას ეს არ ცვლის
+        builder.Property(e => e.LastNumber).IsConcurrencyToken().HasComment("ბოლოს გაცემული ნომერი");
     }
 }
